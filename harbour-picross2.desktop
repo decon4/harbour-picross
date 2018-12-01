@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=harbour-picross2
+Exec=sailfish-qml harbour-picross2
+Name=Picross 2
+Name[fr]=Picross 2
+Name[it]=Picross 2
+Name[fi]=Picross 2

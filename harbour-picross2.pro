@@ -10,14 +10,13 @@
 #   - translation filenames have to be changed
 
 # The name of your application
-TARGET = harbour-picross
+TARGET = harbour-picross2
 
 CONFIG += sailfishapp_qml
 
 QT += sql core
 
 DISTFILES += \
-    qml/cover/CoverPage.qml \
     qml/pages/Case.qml \
     qml/pages/NewGame.qml \
     qml/pages/Grille.qml \
@@ -28,14 +27,15 @@ DISTFILES += \
     qml/DB.js \
     qml/pages/Settings.qml \
     qml/pages/Rules.qml \
-    qml/harbour-picross.qml \
     qml/pages/WholeGrid.qml \
-    rpm/harbour-picross.changes \
-    rpm/harbour-picross.spec \
-    rpm/harbour-picross.yaml \
-    harbour-picross.desktop \
     scripts/genPicross.sh \
-    qml/pages/ScorePage.qml
+    qml/pages/ScorePage.qml \
+    harbour-picross2.desktop \
+    rpm/harbour-picross2.yaml \
+    rpm/harbour-picross2.spec \
+    rpm/harbour-picross2.changes \
+    qml/harbour-picross2.qml \
+    qml/cover/CoverPage.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
