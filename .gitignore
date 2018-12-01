@@ -4,3 +4,4 @@ RPMS/
 qml/Levels.js.old
 *user*
 *.qm
+*.spec.*
