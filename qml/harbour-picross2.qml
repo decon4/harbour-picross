@@ -47,7 +47,7 @@ ApplicationWindow{
     }
 
     id: game
-    initialPage: Component { MainPage { } }
+    initialPage: Qt.resolvedUrl("pages/MainPage.qml")
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
     signal gridUpdated

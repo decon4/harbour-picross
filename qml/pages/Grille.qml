@@ -10,7 +10,7 @@ Rectangle {
     function calculateGridSize() {
         var gridSize = 0
         // Set spacer size automatically?
-        if(game.space == -1) {
+        if(game.space === -1) {
             switch(game.dimension) {
             case 12:
             case 17:

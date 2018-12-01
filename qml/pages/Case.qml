@@ -66,7 +66,7 @@ Rectangle {
                 if(!game.guessMode || (thisrect.estate!=="hint" && thisrect.estate!=="full")){
                     flick.interactive=false
                     flickUp.interactive=false
-                    if(game.vibrate==1)
+                    if(game.vibrate===1)
                         game.longBuzz.start()
                     flash.flash()
                 }
@@ -74,7 +74,7 @@ Rectangle {
 
         onCellNumberChanged: if(!flick.interactive && realX>=0 && realY>=0 && realX<game.dimension && realY<game.dimension){
                                  if(game.mySolvingGrid.get(cellNumber).myEstate!==thisrect.estate){
-                                     if(game.vibrate==1)
+                                     if(game.vibrate===1)
                                          game.shortBuzz.start()
                                      Source.slideClick(game.mySolvingGrid, cellNumber, thisrect.estate)
                                  }
