@@ -45,6 +45,4 @@ SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 CONFIG += sailfishapp_i18n
 
 TRANSLATIONS += \
-    translations/harbour-picross-fr.ts \
-    translations/harbour-picross-it.ts \
-    translations/harbour-picross-fi.ts
+    translations/*.ts
