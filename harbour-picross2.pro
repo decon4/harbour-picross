@@ -35,7 +35,8 @@ DISTFILES += \
     rpm/harbour-picross2.spec \
     rpm/harbour-picross2.changes \
     qml/harbour-picross2.qml \
-    qml/cover/CoverPage.qml
+    qml/cover/CoverPage.qml \
+    qml/pages/About.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

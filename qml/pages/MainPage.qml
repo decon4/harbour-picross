@@ -326,6 +326,15 @@ Page {
         PullDownMenu {
             enabled: game.slideMode===""
             MenuItem {
+                id: menuAbout
+                enabled: game.dimension === 0
+                visible: enabled
+                text: qsTr("About")
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("About.qml"))
+                }
+            }
+            MenuItem {
                 id: menuSettings
                 text: qsTr("Settings")
                 onClicked: {
@@ -365,7 +374,7 @@ Page {
 
             // Hint
             ViewPlaceholder {
-                enabled: (game.dimension===0)
+                enabled: game.dimension === 0
                 text: game.allLevelsCompleted ? qsTr("Congratulations!") : qsTr("Welcome to Picross")
                 hintText: game.allLevelsCompleted ? qsTr("You solved every level!") : qsTr("Please choose a level from the pulley menu")
             }
