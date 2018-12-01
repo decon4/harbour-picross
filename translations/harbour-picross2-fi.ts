@@ -2,6 +2,19 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
+    <name>About</name>
+    <message>
+        <location filename="../qml/pages/About.qml" line="44"/>
+        <source>Developed by</source>
+        <translation>Kehittänyt</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="60"/>
+        <source>Maintainer</source>
+        <translation>Ylläpitäjä</translation>
+    </message>
+</context>
+<context>
     <name>CoverPage</name>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="111"/>
@@ -1136,47 +1149,52 @@ arvaukset</translation>
         <translation>Taso</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="330"/>
+        <location filename="../qml/pages/MainPage.qml" line="332"/>
+        <source>About</source>
+        <translation>Tietoja</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="339"/>
         <source>Settings</source>
         <translation>Asetukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="339"/>
+        <location filename="../qml/pages/MainPage.qml" line="348"/>
         <source>Guess mode</source>
         <translation>Arvaustila</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="347"/>
+        <location filename="../qml/pages/MainPage.qml" line="356"/>
         <source>Clear grid</source>
         <translation>Tyhjennä ruudukko</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="348"/>
+        <location filename="../qml/pages/MainPage.qml" line="357"/>
         <source>Clearing the grid</source>
         <translation>Tyhjennetään ruudukko</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="352"/>
+        <location filename="../qml/pages/MainPage.qml" line="361"/>
         <source>Level select</source>
         <translation>Tasovalikko</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="369"/>
+        <location filename="../qml/pages/MainPage.qml" line="378"/>
         <source>Congratulations!</source>
         <translation>Onneksi olkoon!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="369"/>
+        <location filename="../qml/pages/MainPage.qml" line="378"/>
         <source>Welcome to Picross</source>
         <translation>Tervetuloa Picrossiin</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="370"/>
+        <location filename="../qml/pages/MainPage.qml" line="379"/>
         <source>You solved every level!</source>
         <translation>Olet ratkaissut jokaisen tason!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="370"/>
+        <location filename="../qml/pages/MainPage.qml" line="379"/>
         <source>Please choose a level from the pulley menu</source>
         <translation>Aloita valitsemalla taso ylävalikosta</translation>
     </message>

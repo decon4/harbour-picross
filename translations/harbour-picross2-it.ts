@@ -2,6 +2,17 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
+    <name>About</name>
+    <message>
+        <source>Developed by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintainer</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoverPage</name>
     <message>
         <source>Picross</source>
@@ -936,6 +947,10 @@ guesses</translation>
     <message>
         <source>Please choose a level from the pulley menu</source>
         <translation>Prego scegli un livello dal menu a scorrimento</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

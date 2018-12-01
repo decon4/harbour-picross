@@ -13,12 +13,6 @@
         <source>Maintainer</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="55"/>
-        <location filename="../qml/pages/About.qml" line="72"/>
-        <source>GitHub</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -1290,94 +1284,94 @@ guesses</source>
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="19"/>
+        <location filename="../qml/pages/Settings.qml" line="18"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="23"/>
+        <location filename="../qml/pages/Settings.qml" line="22"/>
         <source>Vibrate when press-and-hold</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="24"/>
-        <location filename="../qml/pages/Settings.qml" line="36"/>
+        <location filename="../qml/pages/Settings.qml" line="23"/>
+        <location filename="../qml/pages/Settings.qml" line="35"/>
         <source>Enabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="24"/>
-        <location filename="../qml/pages/Settings.qml" line="36"/>
+        <location filename="../qml/pages/Settings.qml" line="23"/>
+        <location filename="../qml/pages/Settings.qml" line="35"/>
         <source>Disabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="35"/>
+        <location filename="../qml/pages/Settings.qml" line="34"/>
         <source>Zoom on indicators</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="47"/>
+        <location filename="../qml/pages/Settings.qml" line="46"/>
         <source>Load saves by default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="48"/>
+        <location filename="../qml/pages/Settings.qml" line="47"/>
         <source>Saves will be loaded by default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="48"/>
+        <location filename="../qml/pages/Settings.qml" line="47"/>
         <source>Load them by a long press</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="58"/>
+        <location filename="../qml/pages/Settings.qml" line="57"/>
         <source>Swipe throught difficulty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="59"/>
+        <location filename="../qml/pages/Settings.qml" line="58"/>
         <source>Swipe is enabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="59"/>
+        <location filename="../qml/pages/Settings.qml" line="58"/>
         <source>Swipe disable. Click on a difficulty name to load it</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="70"/>
+        <location filename="../qml/pages/Settings.qml" line="69"/>
         <source>Space between separators</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="83"/>
+        <location filename="../qml/pages/Settings.qml" line="82"/>
         <source>Clear ALL databases (saves &amp; progress)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="86"/>
+        <location filename="../qml/pages/Settings.qml" line="85"/>
         <source>Clearing ALL Databases</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="95"/>
+        <location filename="../qml/pages/Settings.qml" line="94"/>
         <source>Clear only saves database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="97"/>
+        <location filename="../qml/pages/Settings.qml" line="96"/>
         <source>Clearing only saves database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="105"/>
+        <location filename="../qml/pages/Settings.qml" line="104"/>
         <source>Reset settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="107"/>
+        <location filename="../qml/pages/Settings.qml" line="106"/>
         <source>Resetting settings</source>
         <translation type="unfinished"></translation>
     </message>

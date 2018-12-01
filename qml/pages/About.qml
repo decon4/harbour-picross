@@ -52,7 +52,7 @@ Page {
             }
             Button{
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("GitHub")
+                text: "GitHub"
                 onClicked: Qt.openUrlExternally("https://github.com/Baspar/harbour-picross")
             }
             Label {
@@ -60,7 +60,6 @@ Page {
                 text: qsTr("Maintainer")
                 font.pixelSize: Theme.fontSizeLarge
                 color: Theme.highlightColor
-
             }
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -69,7 +68,7 @@ Page {
             }
             Button{
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("GitHub")
+                text: "GitHub"
                 onClicked: Qt.openUrlExternally("https://github.com/direc85/harbour-picross")
             }
         }
