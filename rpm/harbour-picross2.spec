@@ -13,7 +13,7 @@ Name:       harbour-picross2
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Picross
-Version:    2.0
+Version:    2.1
 Release:    1
 Group:      Qt/Qt
 License:    GPL-3.0

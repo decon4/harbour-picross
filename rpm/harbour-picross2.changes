@@ -7,6 +7,9 @@
 
 # * date Author's Name <author's email> version-release
 # - Summary of changes
+* Fri Dec 7 2018 Matti Viljanen <matti.viljanen@kapsi.fi> 2.1-1
+- Don't start next levels game timer in winning screen
+
 * Thu Nov 29 2018 Matti Viljanen <matti.viljanen@kapsi.fi> 2.0-1
 - Fix: level selection empty
 - QML-only application, fix QML warnings
