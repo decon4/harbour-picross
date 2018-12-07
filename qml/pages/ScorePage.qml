@@ -55,6 +55,8 @@ Page {
                 game.gridUpdated()
                 if(nextDiff == -1 && nextLevel == -1)
                     game.dimension = 0
+                game.pause = true
+                game.time = 0
             }
 
             // Clear loaded level
