@@ -1255,32 +1255,32 @@ arvaukset</translation>
 <context>
     <name>ScorePage</name>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="78"/>
+        <location filename="../qml/pages/ScorePage.qml" line="80"/>
         <source>Next level</source>
         <translation>Seuraava taso</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="88"/>
+        <location filename="../qml/pages/ScorePage.qml" line="90"/>
         <source>Level details</source>
         <translation>Tason tiedot</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="88"/>
+        <location filename="../qml/pages/ScorePage.qml" line="90"/>
         <source>Level completed!</source>
         <translation>Taso ratkaistu!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="94"/>
+        <location filename="../qml/pages/ScorePage.qml" line="96"/>
         <source>Level</source>
         <translation>Taso</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="145"/>
+        <location filename="../qml/pages/ScorePage.qml" line="147"/>
         <source>Your time</source>
         <translation>Sinun aikasi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="161"/>
+        <location filename="../qml/pages/ScorePage.qml" line="163"/>
         <source>Best time</source>
         <translation>Paras aika</translation>
     </message>

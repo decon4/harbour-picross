@@ -1251,32 +1251,32 @@ guesses</source>
 <context>
     <name>ScorePage</name>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="78"/>
+        <location filename="../qml/pages/ScorePage.qml" line="80"/>
         <source>Next level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="88"/>
+        <location filename="../qml/pages/ScorePage.qml" line="90"/>
         <source>Level details</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="88"/>
+        <location filename="../qml/pages/ScorePage.qml" line="90"/>
         <source>Level completed!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="94"/>
+        <location filename="../qml/pages/ScorePage.qml" line="96"/>
         <source>Level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="145"/>
+        <location filename="../qml/pages/ScorePage.qml" line="147"/>
         <source>Your time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="161"/>
+        <location filename="../qml/pages/ScorePage.qml" line="163"/>
         <source>Best time</source>
         <translation type="unfinished"></translation>
     </message>
