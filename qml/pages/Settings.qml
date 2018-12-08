@@ -21,11 +21,8 @@ Page{
                 checked: DB.getParameter("vibrate")!==0
                 text: qsTr("Vibrate when press-and-hold")
                 description: checked?qsTr("Enabled"):qsTr("Disabled")
-                onClicked:{
-                    if(checked)
-                        DB.setParameter("vibrate", 1)
-                    else
-                        DB.setParameter("vibrate", 0)
+                onClicked: {
+                    DB.setParameter("vibrate", checked ? 1 : 0)
                     game.vibrate=checked
                 }
             }
@@ -34,34 +31,21 @@ Page{
                 text: qsTr("Zoom on indicators")
                 description: checked?qsTr("Enabled"):qsTr("Disabled")
                 onClicked:{
-                    if(checked)
-                        DB.setParameter("zoomindic", 1)
-                    else
-                        DB.setParameter("zoomindic", 0)
-                    game.zoomIndic=(checked?1:0)
+                    DB.setParameter("zoomindic", checked ? 1 : 0)
+                    game.zoomIndic=(checked ? 1 : 0)
                 }
             }
             TextSwitch{
                 checked: DB.getParameter("autoLoadSave")===1
                 text: qsTr("Load saves by default")
                 description: checked?qsTr("Saves will be loaded by default"):qsTr("Load them by a long press")
-                onClicked:{
-                    if(checked)
-                        DB.setParameter("autoLoadSave", 1)
-                    else
-                        DB.setParameter("autoLoadSave", 0)
-                }
+                onClicked: DB.setParameter("autoLoadSave", checked ? 1 : 0)
             }
             TextSwitch{
                 checked: DB.getParameter("slideInteractive")===1
                 text: qsTr("Swipe throught difficulty")
                 description: checked?qsTr("Swipe is enabled"):qsTr("Swipe disable. Click on a difficulty name to load it")
-                onClicked:{
-                    if(checked)
-                        DB.setParameter("slideInteractive", 1)
-                    else
-                        DB.setParameter("slideInteractive", 0)
-                }
+                onClicked: DB.setParameter("slideInteractive", checked ? 1 : 0)
             }
             TextSwitch {
                 checked: DB.getParameter("showKeypad")===1
