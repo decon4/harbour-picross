@@ -369,10 +369,12 @@ Page {
 
         // Grid part
         Column{
-            anchors.top: rectPageHeader.bottom
-            anchors.bottom: parent.bottom
-            width: parent.width
-
+            anchors {
+                top: rectPageHeader.bottom
+                bottom: parent.bottom
+                left: parent.left
+                right: parent.right
+            }
             // Hint
             ViewPlaceholder {
                 enabled: game.dimension === 0
@@ -384,6 +386,7 @@ Page {
             WholeGrid{
                 id: wholeGrid
                 width: parent.width
+                height: parent.height
                 visible: game.dimension !== 0
                 enabled: game.dimension !== 0
             }

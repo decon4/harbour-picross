@@ -463,7 +463,7 @@ Item{
     }
     KeyPad {
         visible: game.showKeypad
-        anchors.top: bottomRect.top
+        anchors.top: bottomRect.bottom
         width: parent.width
         anchors.bottom: parent.bottom
     }
