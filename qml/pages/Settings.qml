@@ -26,7 +26,7 @@ Page{
                         DB.setParameter("vibrate", 1)
                     else
                         DB.setParameter("vibrate", 0)
-                    game.vibrate=(checked?1:0)
+                    game.vibrate=checked
                 }
             }
             TextSwitch{
@@ -116,7 +116,7 @@ Page{
                     remorseSettings.execute(qsTr("Resetting settings"), function(){
                         DB.destroySettings()
                         game.space = DB.getParameter("space")
-                        game.vibrate = DB.getParameter("vibrate")
+                        game.vibrate = DB.getParameter("vibrate") === 1
                         game.zoomIndic = DB.getParameter("zoomindic")
                         game.showKeypad = DB.getParameter("showKeypad") === 1
                         pageStack.pop()

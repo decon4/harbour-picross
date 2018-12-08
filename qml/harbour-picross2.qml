@@ -73,7 +73,7 @@ ApplicationWindow{
     property bool foldTopMode: true
     property bool foldLeftMode: true
 
-    property int vibrate
+    property bool vibrate
     property bool zoomIndic
     property bool showKeypad
 
@@ -125,9 +125,9 @@ ApplicationWindow{
 
         //Parameters
         space = DB.getParameter("space")
-        vibrate = DB.getParameter("vibrate")
+        vibrate = DB.getParameter("vibrate") === 1
         zoomIndic = DB.getParameter("zoomindic")
-        showKeypad = DB.getParameter("showKeypad")
+        showKeypad = DB.getParameter("showKeypad") === 1
 
         // Are all levels completed?
         allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
