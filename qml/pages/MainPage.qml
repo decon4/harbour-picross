@@ -86,14 +86,14 @@ Page {
             NumberAnimation {
                 target: flash
                 property: "opacity"
-                to: 0.5
+                to: 0.25
                 duration: 0
             }
             NumberAnimation {
                 target: flash
                 property: "opacity"
                 to: 0
-                duration: 500
+                duration: 250
             }
         }
     }
