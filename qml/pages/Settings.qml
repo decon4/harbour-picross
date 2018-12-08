@@ -63,6 +63,16 @@ Page{
                         DB.setParameter("slideInteractive", 0)
                 }
             }
+            TextSwitch {
+                checked: DB.getParameter("showKeypad")===1
+                text: qsTr("Display keypad")
+                description: qsTr("Use on-screen arrow keys and cursor.")
+                onClicked: {
+                    DB.setParameter("showKeypad", checked ? 1 : 0)
+                    game.showKeypad = checked ? 1 : 0
+                }
+            }
+
             Slider {
                 id: slider
                 width: parent.width

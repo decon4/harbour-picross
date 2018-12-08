@@ -75,8 +75,10 @@ ApplicationWindow{
 
     property int vibrate
     property bool zoomIndic
+    property bool showKeypad
 
     property int dimension: 0
+    property int selectedIndex: 0
     property real zoom: 1
     property string hintTitle: ""
     property string title: ""
@@ -94,6 +96,16 @@ ApplicationWindow{
 
     property int maxHeight:0
     property int maxWidth:0
+
+    /*
+    // 0.5fps on 15x15 grid...
+    Behavior on zoom {
+        NumberAnimation {
+                easing.type: Easing.OutQuint
+                duration: 100
+        }
+    }
+    */
 
     function clearData() {
         level = -1
@@ -115,6 +127,7 @@ ApplicationWindow{
         space = DB.getParameter("space")
         vibrate = DB.getParameter("vibrate")
         zoomIndic = DB.getParameter("zoomindic")
+        showKeypad = DB.getParameter("showKeypad")
 
         // Are all levels completed?
         allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
@@ -153,6 +166,7 @@ ApplicationWindow{
         pause=false
         slideMode=""
         game.zoom=1
+        selectedIndex = (dimension+(dimension % 2 === 0 ? 1 : 0)) * (dimension / 2)
     }
 
     onCheckWin: {
@@ -169,4 +183,21 @@ ApplicationWindow{
         pageStack.replace(Qt.resolvedUrl("pages/ScorePage.qml"))
         allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
     }
+
+    function updateIndex(change) {
+        var currentIndex = selectedIndex
+        currentIndex += change
+        if(currentIndex < 0)
+            currentIndex += dimension*dimension
+        else if(currentIndex >= dimension*dimension)
+            currentIndex -= dimension*dimension
+        selectedIndex = currentIndex
+    }
+
+    Keys.onLeftPressed: updateIndex(-1)
+    Keys.onRightPressed: updateIndex(1)
+    Keys.onUpPressed: updateIndex(-dimension)
+    Keys.onDownPressed: updateIndex(dimension)
+
+    Keys.onSpacePressed: Source.click(game.mySolvingGrid, game.selectedIndex)
 }

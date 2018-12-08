@@ -18,7 +18,10 @@ QT += sql core
 
 DISTFILES += \
     qml/components/Case.qml \
+    qml/components/Cursor.qml \
     qml/components/Grille.qml \
+    qml/components/Key.qml \
+    qml/components/KeyPad.qml \
     qml/components/Rules.qml \
     qml/components/SolvedGrid.qml \
     qml/components/UnZoomButton.qml \

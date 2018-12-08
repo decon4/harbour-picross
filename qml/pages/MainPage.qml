@@ -382,7 +382,10 @@ Page {
 
             // Whole grid
             WholeGrid{
+                id: wholeGrid
                 width: parent.width
+                visible: game.dimension !== 0
+                enabled: game.dimension !== 0
             }
         }
     }
