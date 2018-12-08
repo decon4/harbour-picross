@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import "../Source.js" as Source
 import "../Levels.js" as Levels
 import "../DB.js" as DB
+import "../components"
 
 Dialog{
     property int diffSelected: -1

@@ -5,8 +5,6 @@ import "../Source.js" as Source
 import "../DB.js" as DB
 
 Item{
-    visible: game.dimension !== 0
-    enabled: game.dimension !== 0
     id: gridPartRectangle
 
     property int sizeIndicLeft: maxSizeIndicLeft
@@ -54,7 +52,7 @@ Item{
     }
 
     // Un-zoom button
-    UnZoomButton{}
+    UnZoomButton { }
 
     // Top indicator
     Item{
@@ -462,5 +460,11 @@ Item{
         width: 10
         color: Theme.highlightColor
         opacity:0.3
+    }
+    KeyPad {
+        visible: game.showKeypad
+        anchors.top: bottomRect.top
+        width: parent.width
+        anchors.bottom: parent.bottom
     }
 }

@@ -17,26 +17,27 @@ CONFIG += sailfishapp_qml
 QT += sql core
 
 DISTFILES += \
-    qml/pages/Case.qml \
-    qml/pages/NewGame.qml \
-    qml/pages/Grille.qml \
-    qml/pages/UnZoomButton.qml \
+    qml/components/Case.qml \
+    qml/components/Grille.qml \
+    qml/components/Rules.qml \
+    qml/components/SolvedGrid.qml \
+    qml/components/UnZoomButton.qml \
+    qml/components/WholeGrid.qml \
+    qml/pages/About.qml \
     qml/pages/MainPage.qml \
-    qml/Source.js \
-    qml/Levels.js \
-    qml/DB.js \
-    qml/pages/Settings.qml \
-    qml/pages/Rules.qml \
-    qml/pages/WholeGrid.qml \
-    scripts/genPicross.sh \
+    qml/pages/NewGame.qml \
     qml/pages/ScorePage.qml \
-    harbour-picross2.desktop \
+    qml/pages/Settings.qml \
+    qml/DB.js \
+    qml/Levels.js \
+    qml/Source.js \
+    qml/harbour-picross2.qml \
+    qml/cover/CoverPage.qml \
     rpm/harbour-picross2.yaml \
     rpm/harbour-picross2.spec \
     rpm/harbour-picross2.changes \
-    qml/harbour-picross2.qml \
-    qml/cover/CoverPage.qml \
-    qml/pages/About.qml
+    scripts/genPicross.sh \
+    harbour-picross2.desktop
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

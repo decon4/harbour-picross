@@ -86,4 +86,16 @@ Rectangle {
             color: Theme.rgba(Theme.highlightColor, 0.1)
         }
     }
+
+    Cursor {
+        id: cursor
+        visible: game.showKeypad
+        width: unitSize
+        height: unitSize
+        space: insideBorderSize
+        offset: insideBorderSize
+        origX: grille.x
+        origY: grille.y
+    }
+
 }

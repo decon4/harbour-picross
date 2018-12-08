@@ -62,14 +62,15 @@ Rectangle {
 
 
         onPressAndHold: {
-            if(!game.won)
-                if(!game.guessMode || (thisrect.estate!=="hint" && thisrect.estate!=="full")){
+            if(!game.won) {
+                if(!game.guessMode || (thisrect.estate!=="hint" && thisrect.estate!=="full")) {
                     flick.interactive=false
                     flickUp.interactive=false
                     if(game.vibrate===1)
                         game.longBuzz.start()
                     flash.flash()
                 }
+            }
         }
 
         onCellNumberChanged: if(!flick.interactive && realX>=0 && realY>=0 && realX<game.dimension && realY<game.dimension){
@@ -78,7 +79,12 @@ Rectangle {
                                          game.shortBuzz.start()
                                      Source.slideClick(game.mySolvingGrid, cellNumber, thisrect.estate)
                                  }
+                                 game.selectedIndex = cellNumber
                              }
+
+        onPressed: {
+            game.selectedIndex = myID
+        }
 
         onReleased:{
             flick.interactive=true
