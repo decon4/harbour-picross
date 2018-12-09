@@ -80,8 +80,8 @@ Page {
                 ProgressBar{
                     anchors.horizontalCenter: parent.horizontalCenter
                     width: page.width/2
-                    maximumValue: 3
-                    minimumValue: 1
+                    maximumValue: 3.0
+                    minimumValue: 0.9
                     value:Math.floor(pinchArea.zoomTmp===-1?10*game.zoom:10*pinchArea.zoomTmp)/10
                 }
             }
