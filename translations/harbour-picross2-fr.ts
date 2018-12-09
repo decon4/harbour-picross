@@ -1097,5 +1097,13 @@ temporaires</translation>
         <source>Zoom on indicators</source>
         <translation>Zoomer les allusions</translation>
     </message>
+    <message>
+        <source>Show gamepad</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use on-screen arrows, action button and cursor.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
