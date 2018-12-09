@@ -220,7 +220,6 @@ Dialog{
                                     diffSelected=myDiff
                                     levelSelected=myLevel
                                     save=DB.getParameter("autoLoadSave")===0?"":DB.getSave(myDiff, myLevel)
-                                    prepareLevelTimer.start()
                                 } else {
                                     diffSelected=-1
                                     levelSelected=-1
@@ -228,45 +227,47 @@ Dialog{
                             }
                         }
 
-                        // Context menu
-                        Component {
+                        ContextMenu {
                             id: contextMenu
-                            ContextMenu {
-                                MenuItem {
-                                    text: qsTr("Play from scratch")
-                                    onClicked: {
-                                        diffSelected=myDiff
-                                        levelSelected=myLevel
-                                        save=""
-                                    }
+                            MenuItem {
+                                text: qsTr("Play from scratch")
+                                onClicked: {
+                                    diffSelected=myDiff
+                                    levelSelected=myLevel
+                                    save=""
+                                    accept()
                                 }
-                                MenuItem {
-                                    visible: DB.getSave(myDiff, myLevel)!==""
-                                    text: qsTr("Restore save")
-                                    onClicked: {
-                                        diffSelected=myDiff
-                                        levelSelected=myLevel
-                                        save=DB.getSave(myDiff, myLevel)
-                                    }
+                            }
+                            MenuItem {
+                                id: restoreSave
+                                visible: DB.getSave(myDiff, myLevel)!==""
+                                text: qsTr("Restore save")
+                                onClicked: {
+                                    diffSelected=myDiff
+                                    levelSelected=myLevel
+                                    save=DB.getSave(myDiff, myLevel)
+                                    accept()
                                 }
-                                MenuItem {
-                                    visible: DB.getSave(myDiff, myLevel)!==""
-                                    text: qsTr("Erase save")
-                                    onClicked: {
-                                        DB.eraseSave(myDiff, myLevel)
-                                    }
+                            }
+                            MenuItem {
+                                id: eraseSave
+                                visible: DB.getSave(myDiff, myLevel)!==""
+                                text: qsTr("Erase save")
+                                onClicked: {
+                                    DB.eraseSave(myDiff, myLevel)
+                                    restoreSave.visible = false
+                                    eraseSave.visible = false
                                 }
-                                MenuItem {
-                                    visible: DB.isCompleted(myDiff, myLevel)
-                                    text: qsTr("Details")
-                                    onClicked: {
-                                        pageStack.push(Qt.resolvedUrl("ScorePage.qml"), {"gDiff": myDiff, "gLevel": myLevel, "highScorePage": true})
-                                    }
+                            }
+                            MenuItem {
+                                visible: DB.isCompleted(myDiff, myLevel)
+                                text: qsTr("Details")
+                                onClicked: {
+                                    pageStack.push(Qt.resolvedUrl("ScorePage.qml"), {"gDiff": myDiff, "gLevel": myLevel, "highScorePage": true})
                                 }
                             }
                         }
                     }
-
                 }
             }
         }
@@ -279,26 +280,11 @@ Dialog{
             mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
     }
 
-    Timer{
-        id: prepareLevelTimer
-        interval: 0
-        onTriggered: prepareLevel()
-    }
-
-    function prepareLevel() {
+    onAccepted: {
+        game.hideGrid = true
         game.diff=diffSelected
         game.level=levelSelected
         game.save=save
-        Levels.initSolvedGrid(game.solvedGrid, diffSelected, levelSelected)
-        game.gridUpdated()
-        game.pause = true
-
-    }
-
-    onAccepted: {
-        prepareLevel()
-        Source.save()
-        game.pause = false
     }
 
     onRejected: {

@@ -51,7 +51,6 @@ ApplicationWindow{
     initialPage: Qt.resolvedUrl("pages/MainPage.qml")
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
-    signal gridUpdated
     signal checkWin
     signal win
 
@@ -76,6 +75,7 @@ ApplicationWindow{
     property bool vibrate
     property bool zoomIndic
     property bool showKeypad
+    property bool hideGrid: false
 
     property int dimension: 0
     property int selectedIndex: 0
@@ -149,7 +149,8 @@ ApplicationWindow{
         }
     }
 
-    onGridUpdated: {
+    function loadLevel() {
+        Levels.initSolvedGrid(game.solvedGrid, game.diff, game.level)
         maxWidth=0
         maxHeight=0
         foldTopMode=true

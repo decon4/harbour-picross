@@ -49,11 +49,10 @@ Page {
 
             // Prepare the next level
             if(!game.allLevelsCompleted) {
+                game.hideGrid = true
                 game.diff=nextDiff
                 game.level=nextLevel
                 game.save=DB.getSave(game.diff, game.level)
-                Levels.initSolvedGrid(game.solvedGrid, game.diff, game.level)
-                game.gridUpdated()
                 if(nextDiff == -1 && nextLevel == -1)
                     game.dimension = 0
                 game.pause = true

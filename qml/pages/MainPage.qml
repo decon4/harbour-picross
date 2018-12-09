@@ -11,6 +11,24 @@ Page {
         // Prepare the next level
         if(status == PageStatus.Active) {
             pageStack.pop(Qt.resolvedUrl("pages/ScorePage.qml"))
+            if(game.hideGrid) {
+                // Update title immediatelly
+                titleAnimation.enabled = false
+                descriptionAnimation.enabled = false
+                pageHeader.title = qsTr("Picross")
+                pageHeader.description = "";
+                titleAnimation.enabled = true
+                descriptionAnimation.enabled = true
+
+                game.loadLevel()
+                Source.save()
+
+                game.hideGrid = false
+                game.pause = false
+
+                // Animate title
+                resetPageHeader.start()
+            }
         }
     }
 
@@ -24,11 +42,12 @@ Page {
         qsTr("Expert"),
         qsTr("Insane")
     ]
+
     property string hintTitleCp: game.hintTitle
     onHintTitleCpChanged: {
         pageHeader.title=qsTr("Dimension")+": "+game.dimension+"x"+game.dimension
         pageHeader.description=qsTr("Good luck!")
-        resetPageHeader.start()
+        if(!game.hideGrid) resetPageHeader.start()
     }
 
     id: page
@@ -299,6 +318,7 @@ Page {
                 title: qsTr("Picross")
                 description: " "
                 Behavior on title{
+                    id: titleAnimation
                     SequentialAnimation {
                         NumberAnimation { target: pageHeader; property: "opacity"; to: 0 }
                         PropertyAction {}
@@ -306,6 +326,7 @@ Page {
                     }
                 }
                 Behavior on description{
+                    id: descriptionAnimation
                     SequentialAnimation {
                         NumberAnimation { target: pageHeader; property: "opacity"; to: 0 }
                         PropertyAction {}
@@ -377,18 +398,31 @@ Page {
             }
             // Hint
             ViewPlaceholder {
-                enabled: game.dimension === 0
+                enabled: game.dimension === 0 && !game.hideGrid
                 text: game.allLevelsCompleted ? qsTr("Congratulations!") : qsTr("Welcome to Picross")
                 hintText: game.allLevelsCompleted ? qsTr("You solved every level!") : qsTr("Please choose a level from the pulley menu")
             }
+
 
             // Whole grid
             WholeGrid{
                 id: wholeGrid
                 width: parent.width
                 height: parent.height
-                visible: game.dimension !== 0
-                enabled: game.dimension !== 0
+                visible: !game.hideGrid && game.dimension !== 0
+                enabled: !game.hideGrid && game.dimension !== 0
+            }
+            Item {
+                visible: game.hideGrid
+                enabled: game.hideGrid
+                width: parent.width
+                height: parent.height
+
+                BusyIndicator {
+                    size: BusyIndicatorSize.Large
+                    anchors.centerIn: parent
+                    running: game.hideGrid
+                }
             }
         }
     }
