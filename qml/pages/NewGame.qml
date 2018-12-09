@@ -207,7 +207,7 @@ Dialog{
                             text: hintTitle
                             font.pixelSize: Theme.fontSizeSmall
                         }
-                        onClicked:{
+                        onPressed: {
                             if(cheatMode){
                                 DB.setIsCompleted(myDiff, myLevel, 'true')
                                 levelCheckboxTick.visible = true
