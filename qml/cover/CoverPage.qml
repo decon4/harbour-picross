@@ -112,6 +112,7 @@ CoverBackground {
     }
     CoverActionList {
         id: coverAction
+        enabled: !game.inLevelSelect
         CoverAction {
             iconSource: "image://theme/icon-cover-new"
             onTriggered: {

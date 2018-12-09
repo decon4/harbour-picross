@@ -55,6 +55,7 @@ ApplicationWindow{
     signal win
 
     property bool allLevelsCompleted: false
+    property bool inLevelSelect: false
 
     property QtObject longBuzz
     property QtObject shortBuzz

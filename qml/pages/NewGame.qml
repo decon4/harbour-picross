@@ -11,7 +11,7 @@ Dialog{
     property string save: ""
     property bool cheatMode: false
 
-    id: dialog
+    id: newGameDialog
     canAccept: diffSelected != -1 && levelSelected != -1
 
     // Title: New game
@@ -26,8 +26,8 @@ Dialog{
     Column{
         id: decoratorTop
         anchors.top: pageTitle.bottom
-        width: dialog.width
-        anchors.horizontalCenter: dialog.horizontalCenter
+        width: newGameDialog.width
+        anchors.horizontalCenter: newGameDialog.horizontalCenter
         SilicaListView{
             id: silicaDiffList
             height: Theme.fontSizeHuge
@@ -276,6 +276,7 @@ Dialog{
 
     // Load last diff
     Component.onCompleted:{
+        game.inLevelSelect = true
         Source.save()
         if(!cheatMode)
             mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
@@ -286,9 +287,11 @@ Dialog{
         game.diff=diffSelected
         game.level=levelSelected
         game.save=save
+        game.inLevelSelect = false
     }
 
     onRejected: {
         game.pause=false
+        game.inLevelSelect = false
     }
 }
