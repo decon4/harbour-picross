@@ -7,6 +7,16 @@
 
 # * date Author's Name <author's email> version-release
 # - Summary of changes
+* Sun Dec 9 2018 Matti Viljanen <matti.viljanen@kapsi.fi> 2.2-1
+- On-screen keypad
+- Disable cover action if already on level select
+- Code reorganisation
+- Make flash animation weaker and shorter
+- Reseting settings actually works now
+- Fix stuttering level selection
+- Add loading indicator to main page
+- Auto save when entering level select
+
 * Fri Dec 7 2018 Matti Viljanen <matti.viljanen@kapsi.fi> 2.1-1
 - Don't start next levels game timer in winning screen
 
