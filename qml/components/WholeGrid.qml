@@ -462,7 +462,8 @@ Item{
         opacity:0.3
     }
     KeyPad {
-        visible: game.showKeypad
+        visible: game.showKeypad && game.zoom === 1
+        enabled: visible
         anchors.top: bottomRect.bottom
         width: parent.width
         anchors.bottom: parent.bottom

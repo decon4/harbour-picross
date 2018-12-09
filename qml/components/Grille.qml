@@ -89,7 +89,7 @@ Rectangle {
 
     Cursor {
         id: cursor
-        visible: game.showKeypad
+        visible: game.showKeypad && game.zoom === 1
         width: unitSize
         height: unitSize
         space: insideBorderSize
