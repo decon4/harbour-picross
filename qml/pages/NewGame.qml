@@ -276,6 +276,7 @@ Dialog{
 
     // Load last diff
     Component.onCompleted:{
+        Source.save()
         if(!cheatMode)
             mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
     }
