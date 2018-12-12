@@ -246,25 +246,40 @@ Dialog{
                             anchors.verticalCenter: parent.verticalCenter
                         }
 
-                        // First row, e.g. "[3x3] Box"
+                        // If the level has a saved state, draw the pen on the right
+                        Image {
+                            id: levelSavedIndicator
+                            source: "image://theme/icon-m-edit"
+                            width: levelItem.hasSavedState ? 2*Theme.fontSizeExtraSmall : 0
+                            height: 2*Theme.fontSizeExtraSmall
+                            anchors {
+                                verticalCenter: parent.verticalCenter
+                                right: parent.right
+                                rightMargin: levelItem.hasSavedState ? Theme.paddingMedium : 0
+                            }
+                        }
+
+                        // First row, e.g. "[3x3] Box", with possibly a pen symbol
                         Label{
                             id: levelTitle
                             text: levelNumber+". ["+dimension+"x"+dimension+"] " + (isCompleted ? title : "")
                             font.pixelSize: Theme.fontSizeMedium
+                            truncationMode: TruncationMode.Fade
                             anchors.left: levelCheckbox.right
                             anchors.leftMargin: Theme.paddingMedium
                             anchors.topMargin: Theme.paddingSmall
-                            anchors.right: parent.right
+                            anchors.right: levelSavedIndicator.left
                         }
                         // Second row, e.g. "Numbers = size of the groups"
                         Label{
                             id: levelDescription
+                            text: hintTitle
+                            font.pixelSize: Theme.fontSizeSmall
+                            truncationMode: TruncationMode.Fade
                             anchors.top: levelTitle.bottom
                             anchors.left: levelCheckbox.right
                             anchors.leftMargin: Theme.paddingMedium
-                            anchors.right: parent.right
-                            text: hintTitle
-                            font.pixelSize: Theme.fontSizeSmall
+                            anchors.right: levelSavedIndicator.left
                         }
                         onPressed: {
                             if(cheatMode){
