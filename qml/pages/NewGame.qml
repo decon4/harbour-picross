@@ -9,14 +9,15 @@ Dialog{
     property int diffSelected: -1
     property int levelSelected: -1
     property string save: ""
+    property bool autoLoadSaves: DB.getParameter("autoLoadSave") === 1
     property bool cheatMode: false
 
     id: newGameDialog
     canAccept: diffSelected != -1 && levelSelected != -1
 
     // Title: New game
-    DialogHeader{
-        id: pageTitle
+    DialogHeader {
+        id: header
         title: cheatMode?qsTr("Cheat..."):qsTr("Level select")
         acceptText: qsTr("Play")
         cancelText: qsTr("Back")
@@ -25,7 +26,7 @@ Dialog{
     // Difficulty list
     Item {
         id: diffSelector
-        anchors.top: pageTitle.bottom
+        anchors.top: header.bottom
         width: parent.width
         height: Theme.paddingSmall + Theme.fontSizeHuge + Theme.paddingSmall
 
@@ -109,39 +110,43 @@ Dialog{
     }
 
     // Level list
-    SlideshowView{
-        interactive: DB.getParameter("slideInteractive")===1 && diffSelected===-1
+    SlideshowView {
         id: mySlideShowView
+        interactive: DB.getParameter("slideInteractive")===1 && diffSelected===-1
         clip: true
         width: parent.width
-        anchors.top: decoratorTop.bottom
+        anchors.top: diffSelector.bottom
         anchors.bottom: parent.bottom
+
         model: ListModel{
             id: difficultyList
             Component.onCompleted: Levels.getDifficultiesAndLevels(difficultyList)
         }
-        delegate : Rectangle{
-            property int myDiff: index
+
+        delegate : Item {
+            id: currentLevelList
+            property int difficultyIndex: index
+            property int completedLevels: DB.getNbCompletedLevel(difficultyIndex)
             width: parent.width
             height: parent.height
-            color: "transparent"
             Column{
                 anchors.topMargin: Theme.paddingSmall
                 anchors.fill: parent
                 spacing: Theme.paddingSmall
+
                 // Diff details
-                Item{
-                    height: diffHeader.height
+                Label{
+                    id: diffLabel
                     width: parent.width
-                    Label{
-                        id: diffHeader
-                        anchors.centerIn: parent
-                        text: name+" ["+DB.getNbCompletedLevel(myDiff)+"/"+levelList.count+"]"
-                        color: Theme.highlightColor
-                        Component.onCompleted: {
-                            if(Levels.isLocked(myDiff))
-                                text = name+" [?/?]"
-                        }
+                    horizontalAlignment: Text.AlignHCenter
+                    color: Theme.highlightColor
+                    text: name+" ["+completedLevels+"/"+levelList.count+"]"
+                    Component.onCompleted: {
+                        if(Levels.isLocked(difficultyIndex))
+                            text = name+" [?/?]"
+                    }
+                    MouseArea{
+                        anchors.fill: parent
                         MouseArea{
                             anchors.fill: parent
                             //onPressAndHold: cheatMode = !cheatMode
@@ -159,16 +164,15 @@ Dialog{
 
                 // Level list
                 SilicaListView{
+                    id: levelView
                     clip: true
                     VerticalScrollDecorator{}
-                    id: levelView
-                    height: parent.height - separatorRect.height - diffHeader.height - Theme.paddingMedium
+                    height: parent.height - separatorRect.height - diffLabel.height - Theme.paddingMedium
                     width: parent.width
 
                     ViewPlaceholder{
-                        verticalOffset: -pageTitle.height
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        enabled : Levels.isLocked(myDiff)
+                        verticalOffset: -(mySlideShowView.y + separatorRect.y) / 2
+                        enabled: Levels.isLocked(difficultyIndex)
                         text: qsTr("Locked")
                         hintText: qsTr("Complete all previous levels to unlock this difficulty")
                     }
@@ -176,20 +180,26 @@ Dialog{
                     model: ListModel{
                         id: levelList
                         Component.onCompleted: {
-                            if(!Levels.isLocked(myDiff))
-                                Levels.arrayToList(myDiff, levelList)
+                            if(!Levels.isLocked(difficultyIndex))
+                                Levels.arrayToList(difficultyIndex, levelList)
                             else
                                 levelList.clear()
                         }
                     }
                     delegate: ListItem{
-                        property int myLevel: index
-                        id: listItem
+                        id: levelItem
                         menu: contextMenu
                         contentHeight: levelTitle.height + levelDescription.height + Theme.paddingSmall
-                        Rectangle{
+
+                        property int levelIndex:  index   // 0-based index
+                        property int levelNumber: index+1 // 1-based index
+
+                        property bool hasSavedState: DB.getSave(difficultyIndex, levelIndex) !== ""
+                        property bool isCompleted: DB.isCompleted(difficultyIndex, levelIndex)
+
+                        Rectangle {
                             anchors.fill: parent
-                            visible: (listItem.highlighted || (myLevel==levelSelected && myDiff==diffSelected))
+                            visible: (levelItem.highlighted || (levelIndex==levelSelected && difficultyIndex==diffSelected))
                             color: Theme.highlightBackgroundColor
                             opacity: Theme.highlightBackgroundOpacity
                         }
@@ -207,7 +217,7 @@ Dialog{
                         // If the level is completed, draw the tick in the box
                         Image {
                             id: levelCheckboxTick
-                            visible: DB.isCompleted(myDiff, myLevel)
+                            visible: isCompleted
                             source: "image://theme/icon-m-dismiss"
                             width: Theme.fontSizeExtraSmall*1.6
                             height: Theme.fontSizeExtraSmall*1.6
@@ -218,7 +228,7 @@ Dialog{
                         // First row, e.g. "[3x3] Box"
                         Label{
                             id: levelTitle
-                            text: (myLevel+1)+". ["+dimension+"x"+dimension+"] " + (DB.isCompleted(myDiff, myLevel)?title:"?????")
+                            text: levelNumber+". ["+dimension+"x"+dimension+"] " + (isCompleted ? title : "")
                             font.pixelSize: Theme.fontSizeMedium
                             anchors.left: levelCheckbox.right
                             anchors.leftMargin: Theme.paddingMedium
@@ -260,8 +270,8 @@ Dialog{
                             MenuItem {
                                 text: qsTr("Play from scratch")
                                 onClicked: {
-                                    diffSelected=myDiff
-                                    levelSelected=myLevel
+                                    diffSelected=difficultyIndex
+                                    levelSelected=levelIndex
                                     save=""
                                     accept()
                                 }
@@ -271,9 +281,9 @@ Dialog{
                                 visible: DB.getSave(myDiff, myLevel)!==""
                                 text: qsTr("Restore save")
                                 onClicked: {
-                                    diffSelected=myDiff
-                                    levelSelected=myLevel
-                                    save=DB.getSave(myDiff, myLevel)
+                                    diffSelected=difficultyIndex
+                                    levelSelected=levelIndex
+                                    save=DB.getSave(difficultyIndex, levelIndex)
                                     accept()
                                 }
                             }
@@ -282,13 +292,12 @@ Dialog{
                                 visible: DB.getSave(myDiff, myLevel)!==""
                                 text: qsTr("Erase save")
                                 onClicked: {
-                                    DB.eraseSave(myDiff, myLevel)
-                                    restoreSave.visible = false
-                                    eraseSave.visible = false
+                                    DB.eraseSave(difficultyIndex, levelIndex)
+                                    levelItem.hasSavedState = false
                                 }
                             }
                             MenuItem {
-                                visible: DB.isCompleted(myDiff, myLevel)
+                                visible: isCompleted
                                 text: qsTr("Details")
                                 onClicked: {
                                     pageStack.push(Qt.resolvedUrl("ScorePage.qml"), {"gDiff": myDiff, "gLevel": myLevel, "highScorePage": true})
