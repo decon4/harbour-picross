@@ -18,64 +18,92 @@ Dialog{
     DialogHeader{
         id: pageTitle
         title: cheatMode?qsTr("Cheat..."):qsTr("Level select")
-        acceptText: qsTr("Play");
-        cancelText: qsTr("Back");
+        acceptText: qsTr("Play")
+        cancelText: qsTr("Back")
     }
 
     // Difficulty list
-    Column{
-        id: decoratorTop
+    Item {
+        id: diffSelector
         anchors.top: pageTitle.bottom
-        width: newGameDialog.width
-        anchors.horizontalCenter: newGameDialog.horizontalCenter
-        SilicaListView{
-            id: silicaDiffList
-            height: Theme.fontSizeHuge
-            orientation: ListView.Horizontal
+        width: parent.width
+        height: Theme.paddingSmall + Theme.fontSizeHuge + Theme.paddingSmall
+
+        // Indicator bar background
+        Rectangle {
             width: parent.width
-            model:ListModel{
-                id: diffList
-                Component.onCompleted: Levels.getDifficultiesAndLevels(diffList)
+            height: Theme.paddingSmall
+            color: Theme.highlightColor
+            opacity: Theme.highlightBackgroundOpacity
+        }
+
+        // Indicator bar highlight
+        Rectangle{
+            width: parent.width / diffListModel.count
+            height: Theme.paddingSmall
+            x: parent.width / diffListModel.count * mySlideShowView.currentIndex
+            color: Theme.secondaryHighlightColor
+            opacity: 1 - Theme.highlightBackgroundOpacity / 3
+            Behavior on x { NumberAnimation { duration: 100 } }
+        }
+
+        // The clickable difficulty items
+        SilicaListView {
+            id: diffSelectorItems
+            y: Theme.paddingSmall
+            width: parent.width
+            height: Theme.fontSizeHuge
+
+            orientation: ListView.Horizontal
+
+            // Model: difficulty levels
+            model: ListModel {
+                id: diffListModel
+                Component.onCompleted: Levels.getDifficultiesAndLevels(diffListModel)
             }
-            // Difficulty item (bounding box)
-            delegate : Rectangle{
-                color: Theme.highlightDimmerColor
+
+            // Delegate: each difficulty
+            delegate: Item {
                 height: parent.height
-                width: decoratorTop.width/diffList.count
-                // Difficulty text
-                Label{
-                    anchors.centerIn: parent
-                    color: (Levels.isLocked(index))?"grey":"white"
-                    text:name
+                width: diffSelector.width / diffListModel.count
+
+                // "Text background" for item
+                Rectangle {
+                    id: diffItemBack
+                    anchors.fill: parent
+                    color: Theme.highlightColor
+                    opacity: Theme.highlightBackgroundOpacity / 3
+                    Behavior on opacity { NumberAnimation { duration: 100 } }
+                }
+
+                // Difficulty text for item
+                Label {
+                    anchors.centerIn: diffItemBack
+                    property bool locked: Levels.isLocked(index)
+                    color: locked ? Theme.highlightColor : Theme.primaryColor
+                    opacity: locked ? 0.5 : 1
+                    text : name
                     font.pixelSize: Theme.fontSizeTiny
                     font.bold: true
                 }
-                MouseArea{
+
+                MouseArea {
                     anchors.fill: parent
+                    onContainsMouseChanged: {
+                        if(containsMouse) {
+                            diffItemBack.opacity = Theme.highlightBackgroundOpacity
+                        }
+                        else {
+                            diffItemBack.opacity = Theme.highlightBackgroundOpacity / 3
+                        }
+                    }
                     onClicked: {
+                        diffItemBack.opacity = Theme.highlightBackgroundOpacity
                         mySlideShowView.currentIndex = index
+                        Theme.highlightDimmerColor
                         levelSelected = -1
                     }
-                    onPressed: parent.color = Theme.highlightColor
-                    onReleased: parent.color = Theme.highlightDimmerColor
                 }
-            }
-        }
-        Item{
-            width: parent.width
-            // Difficulty highlight rectangle...
-            Rectangle{
-                x: parent.width/diffList.count*mySlideShowView.currentIndex-silicaDiffList.contentY
-                height: Theme.paddingSmall
-                color: Theme.highlightColor
-                width: parent.width/diffList.count
-                Behavior on x {NumberAnimation{duration: 100}}
-            }
-            /// ...and its background
-            Rectangle{
-                width: parent.width
-                height: Theme.paddingSmall
-                color: Theme.rgba(Theme.highlightColor, 0.2)
             }
         }
     }
