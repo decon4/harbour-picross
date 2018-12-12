@@ -6,7 +6,6 @@ Page {
 
     PageHeader {
         id: aboutTitle
-        //title: qsTr("About Picross")
     }
 
     SilicaFlickable {
@@ -35,7 +34,7 @@ Page {
                 source: "/usr/share/icons/hicolor/172x172/apps/harbour-picross2.png"
             }
             Label {
-                text: "Picross"
+                text: "Picross v2.3"
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeExtraLarge
             }

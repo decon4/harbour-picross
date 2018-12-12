@@ -4,12 +4,12 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="44"/>
+        <location filename="../qml/pages/About.qml" line="47"/>
         <source>Developed by</source>
         <translation>Kehittänyt</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="60"/>
+        <location filename="../qml/pages/About.qml" line="63"/>
         <source>Maintainer</source>
         <translation>Ylläpitäjä</translation>
     </message>
