@@ -13,7 +13,7 @@ Name:       harbour-picross2
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Picross
-# Checklist: .spec .yaml About.qml
+# Checklist: .spec .yaml .changes About.qml
 Version:    2.3
 Release:    1
 Group:      Qt/Qt

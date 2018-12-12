@@ -4,12 +4,12 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="47"/>
+        <location filename="../qml/pages/About.qml" line="43"/>
         <source>Developed by</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="63"/>
+        <location filename="../qml/pages/About.qml" line="59"/>
         <source>Maintainer</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1199,52 +1199,53 @@ guesses</source>
 <context>
     <name>NewGame</name>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="20"/>
+        <location filename="../qml/pages/NewGame.qml" line="21"/>
         <source>Cheat...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="20"/>
+        <location filename="../qml/pages/NewGame.qml" line="21"/>
         <source>Level select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="21"/>
+        <location filename="../qml/pages/NewGame.qml" line="22"/>
+        <location filename="../qml/pages/NewGame.qml" line="152"/>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="22"/>
+        <location filename="../qml/pages/NewGame.qml" line="23"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="144"/>
+        <location filename="../qml/pages/NewGame.qml" line="176"/>
         <source>Locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="145"/>
+        <location filename="../qml/pages/NewGame.qml" line="177"/>
         <source>Complete all previous levels to unlock this difficulty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="233"/>
+        <location filename="../qml/pages/NewGame.qml" line="290"/>
         <source>Play from scratch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="244"/>
+        <location filename="../qml/pages/NewGame.qml" line="300"/>
         <source>Restore save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="255"/>
+        <location filename="../qml/pages/NewGame.qml" line="311"/>
         <source>Erase save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="264"/>
+        <location filename="../qml/pages/NewGame.qml" line="319"/>
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
