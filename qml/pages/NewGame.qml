@@ -15,6 +15,27 @@ Dialog{
     id: newGameDialog
     canAccept: diffSelected != -1 && levelSelected != -1
 
+    // Load last diff
+    Component.onCompleted:{
+        game.inLevelSelect = true
+        Source.save()
+        if(!cheatMode)
+            mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
+    }
+
+    onAccepted: {
+        game.hideGrid = true
+        game.diff=diffSelected
+        game.level=levelSelected
+        game.save=save
+        game.inLevelSelect = false
+    }
+
+    onRejected: {
+        game.pause=false
+        game.inLevelSelect = false
+    }
+
     // Title: New game
     DialogHeader {
         id: header
@@ -308,27 +329,5 @@ Dialog{
                 }
             }
         }
-    }
-
-
-    // Load last diff
-    Component.onCompleted:{
-        game.inLevelSelect = true
-        Source.save()
-        if(!cheatMode)
-            mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
-    }
-
-    onAccepted: {
-        game.hideGrid = true
-        game.diff=diffSelected
-        game.level=levelSelected
-        game.save=save
-        game.inLevelSelect = false
-    }
-
-    onRejected: {
-        game.pause=false
-        game.inLevelSelect = false
     }
 }
