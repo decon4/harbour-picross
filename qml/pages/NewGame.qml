@@ -166,13 +166,13 @@ Dialog{
                         if(Levels.isLocked(difficultyIndex))
                             text = name+" [?/?]"
                     }
-                    MouseArea{
-                        anchors.fill: parent
-                        MouseArea{
-                            anchors.fill: parent
-                            //onPressAndHold: cheatMode = !cheatMode
-                        }
-                    }
+                    //MouseArea{
+                    //    anchors.fill: parent
+                    //    onPressAndHold: {
+                    //        cheatMode = !cheatMode
+                    //        header.acceptText = cheatMode ? "" : qsTr("Play")
+                    //    }
+                    //}
                 }
 
                 // Separator
@@ -281,28 +281,32 @@ Dialog{
                             anchors.leftMargin: Theme.paddingMedium
                             anchors.right: levelSavedIndicator.left
                         }
+                        onClicked: {
+                            if(cheatMode && !isCompleted) {
+                                    DB.setIsCompleted(difficultyIndex, levelIndex, 'true')
+                                    currentLevelList.completedLevels++
+                                    isCompleted = true
+                                    levelCheckboxTick.visible = true
+                                }
+                            }
+
                         onPressed: {
-                            if(cheatMode){
-                                DB.setIsCompleted(myDiff, myLevel, 'true')
-                                levelCheckboxTick.visible = true
-                                levelTitle.text= (myLevel+1)+". ["+dimension+"x"+dimension+"] " + (DB.isCompleted(myDiff, myLevel)?title:"?????")
-                                levelTitle.color= listItem.highlighted || (myLevel == levelSelected && myDiff == diffSelected)
-                                        ? Theme.highlightColor
-                                        : DB.isCompleted(myDiff, myLevel)? Theme.primaryColor:"grey"
-                            }else{
-                                if(diffSelected !== myDiff || levelSelected !== myLevel){
-                                    diffSelected=myDiff
-                                    levelSelected=myLevel
-                                    save=DB.getParameter("autoLoadSave")===0?"":DB.getSave(myDiff, myLevel)
+                            if(!cheatMode) {
+                                if(diffSelected !== difficultyIndex || levelSelected !== levelIndex){
+                                    diffSelected=difficultyIndex
+                                    levelSelected=levelIndex
+                                    save = (autoLoadSaves && levelItem.hasSavedState) ? DB.getSave(difficultyIndex, levelIndex) : ""
                                 } else {
                                     diffSelected=-1
                                     levelSelected=-1
+                                    save = ""
                                 }
                             }
                         }
 
                         ContextMenu {
                             id: contextMenu
+                            hasContent: !cheatMode
                             MenuItem {
                                 text: qsTr("Play from scratch")
                                 onClicked: {
@@ -313,8 +317,7 @@ Dialog{
                                 }
                             }
                             MenuItem {
-                                id: restoreSave
-                                visible: DB.getSave(myDiff, myLevel)!==""
+                                visible: levelItem.hasSavedState
                                 text: qsTr("Restore save")
                                 onClicked: {
                                     diffSelected=difficultyIndex
@@ -325,7 +328,7 @@ Dialog{
                             }
                             MenuItem {
                                 id: eraseSave
-                                visible: DB.getSave(myDiff, myLevel)!==""
+                                visible: levelItem.hasSavedState
                                 text: qsTr("Erase save")
                                 onClicked: {
                                     DB.eraseSave(difficultyIndex, levelIndex)
@@ -336,7 +339,10 @@ Dialog{
                                 visible: isCompleted
                                 text: qsTr("Details")
                                 onClicked: {
-                                    pageStack.push(Qt.resolvedUrl("ScorePage.qml"), {"gDiff": myDiff, "gLevel": myLevel, "highScorePage": true})
+                                    pageStack.push(Qt.resolvedUrl("ScorePage.qml"), {
+                                                       "gDiff": difficultyIndex,
+                                                       "gLevel": levelIndex,
+                                                       "highScorePage": true})
                                 }
                             }
                         }
