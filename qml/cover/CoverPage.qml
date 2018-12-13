@@ -57,12 +57,12 @@ CoverBackground {
                     id: thisrect
                     width: (rectGrille.width-(game.gridSize-1)*2)/game.gridSize
                     height: width
-                    color: thisrect.estate=="full"?Theme.rgba(Theme.highlightColor, 0.6):Qt.rgba(0, 0, 0, 0.1)
+                    color: thisrect.estate=="full"?Theme.rgba(Theme.highlightColor, 0.2):Qt.rgba(0, 0, 0, 0.05)
                     radius: width * 0.1
 
                     Canvas{
                         id: cross
-                        opacity: (thisrect.estate=="hint")?0.6:0
+                        opacity: (thisrect.estate=="hint")?0.3:0
                         width: parent.width
                         height: parent.height
                         onPaint:{
