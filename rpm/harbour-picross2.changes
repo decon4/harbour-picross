@@ -9,12 +9,16 @@
 # - Summary of changes
 
 # * FIXME Matti Viljanen <matti.viljanen@kapsi.fi> 2.3-1
-# - Added version to About page
 # - Fix wrong color when dragging difficulty item
+# - Fix cursor wrapping
+# - Less opaque grid in application cover
+# - Cross made shorter and bolder
+# - Added version to About page
 # - Add saved level status indicator
+# - Don't show keypad hint if keypad is active after update
 # - Level select dialog uses SQLite more effectively
 # - Remove internal dependencies
-# - Code reorganisation
+# - Code cleanup, reorganisation and clarification
 
 * Sun Dec 9 2018 Matti Viljanen <matti.viljanen@kapsi.fi> 2.2-1
 - On-screen keypad
