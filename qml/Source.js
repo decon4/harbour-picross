@@ -178,7 +178,7 @@ function genIndicCol(list, grid){
     }
 }
 
-function completeLineX(x, toFill){
+function completeRowX(x, toFill){
     if(!toFill){
         for(var j=x*game.dimension; j<(x+1)*game.dimension; j++)
             if(game.mySolvingGrid.get(j).myEstate === "void")
