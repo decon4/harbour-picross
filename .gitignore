@@ -5,3 +5,4 @@ qml/Levels.js.old
 *user*
 *.qm
 *.spec.*
+*.autosave
