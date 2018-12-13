@@ -68,18 +68,18 @@ CoverBackground {
                         onPaint:{
                             var ctx = getContext("2d")
                             ctx.strokeStyle = Theme.highlightColor
-                            ctx.lineWidth = width * 0.05
+                            ctx.lineWidth = width * 0.1
                             ctx.lineCap = "round"
 
                             ctx.beginPath()
-                            ctx.moveTo(0.2*width,0.2*height)
-                            ctx.lineTo(0.8*width, 0.8*height)
+                            ctx.moveTo(0.3*width,0.3*height)
+                            ctx.lineTo(0.7*width, 0.7*height)
                             ctx.stroke()
                             ctx.closePath()
 
                             ctx.beginPath()
-                            ctx.moveTo(0.2*width, 0.8*height)
-                            ctx.lineTo(0.8*width, 0.2*height)
+                            ctx.moveTo(0.3*width, 0.7*height)
+                            ctx.lineTo(0.7*width, 0.3*height)
                             ctx.stroke()
                             ctx.closePath()
                         }

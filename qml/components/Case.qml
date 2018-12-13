@@ -1,17 +1,14 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-Rectangle {
+Item {
     property string estate
     property int myID
-
-
-
 
     id: thisrect
     width: unitSize
     height: width
-    color: "transparent"
+
     Rectangle {
         anchors.fill: parent
         opacity: game.guessMode && thisrect.estate==="full"?0.25:1
@@ -33,18 +30,18 @@ Rectangle {
         onPaint:{
             var ctx = getContext("2d")
             ctx.strokeStyle = Theme.highlightColor
-            ctx.lineWidth = width * 0.05
+            ctx.lineWidth = width * 0.1
             ctx.lineCap = "round"
 
             ctx.beginPath()
-            ctx.moveTo(0.2*width,0.2*height)
-            ctx.lineTo(0.8*width, 0.8*height)
+            ctx.moveTo(0.3*width,0.3*height)
+            ctx.lineTo(0.7*width, 0.7*height)
             ctx.stroke()
             ctx.closePath()
 
             ctx.beginPath()
-            ctx.moveTo(0.2*width, 0.8*height)
-            ctx.lineTo(0.8*width, 0.2*height)
+            ctx.moveTo(0.3*width, 0.7*height)
+            ctx.lineTo(0.7*width, 0.3*height)
             ctx.stroke()
             ctx.closePath()
         }
