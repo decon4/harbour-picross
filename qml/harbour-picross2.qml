@@ -220,13 +220,29 @@ ApplicationWindow{
     }
 
     function updateIndex(change) {
-        var currentIndex = selectedIndex
-        currentIndex += change
-        if(currentIndex < 0)
-            currentIndex += dimension*dimension
-        else if(currentIndex >= dimension*dimension)
-            currentIndex -= dimension*dimension
-        selectedIndex = currentIndex
+        var currRow = Math.floor(currIndex / gridSize)
+        var currColumn = currIndex % gridSize
+        // Left / Right
+        if(change === 1 || change === -1) {
+            var newColumn = currColumn + change
+            if(newColumn < 0)
+                newColumn = newColumn + gridSize
+            else if(newColumn >= gridSize)
+                newColumn = newColumn - gridSize
+            //console.log("("+currColumn+","+currRow+") -> ("+newColumn+","+currRow+")")
+            currIndex = gridSize * currRow + newColumn
+        }
+
+        // Left / Right
+        if(change === -gridSize || change === gridSize) {
+            var newRow = currRow + (change > 0 ? 1 : -1)
+            if(newRow < 0)
+                newRow = newRow + gridSize
+            else if(newRow >= gridSize)
+                newRow = newRow - gridSize
+            //console.log("("+currColumn+","+currRow+") -> ("+currColumn+","+newRow+")")
+            currIndex = gridSize * newRow + currColumn
+        }
     }
 
     Keys.onLeftPressed: updateIndex(-1)
