@@ -1064,134 +1064,132 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="38"/>
+        <location filename="../qml/pages/MainPage.qml" line="37"/>
         <source>Tutorial</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="39"/>
+        <location filename="../qml/pages/MainPage.qml" line="38"/>
         <source>Easy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="40"/>
+        <location filename="../qml/pages/MainPage.qml" line="39"/>
         <source>Medium</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="41"/>
+        <location filename="../qml/pages/MainPage.qml" line="40"/>
         <source>Hard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="42"/>
+        <location filename="../qml/pages/MainPage.qml" line="41"/>
         <source>Expert</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="43"/>
+        <location filename="../qml/pages/MainPage.qml" line="42"/>
         <source>Insane</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="48"/>
-        <location filename="../qml/pages/MainPage.qml" line="308"/>
+        <location filename="../qml/pages/MainPage.qml" line="47"/>
+        <location filename="../qml/pages/MainPage.qml" line="307"/>
         <source>Dimension</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="49"/>
+        <location filename="../qml/pages/MainPage.qml" line="48"/>
         <source>Good luck!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="71"/>
+        <location filename="../qml/pages/MainPage.qml" line="70"/>
         <source>Zoom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="171"/>
-        <location filename="../qml/pages/MainPage.qml" line="214"/>
+        <location filename="../qml/pages/MainPage.qml" line="170"/>
+        <location filename="../qml/pages/MainPage.qml" line="213"/>
         <source>Accepting guesses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="187"/>
-        <location filename="../qml/pages/MainPage.qml" line="228"/>
+        <location filename="../qml/pages/MainPage.qml" line="186"/>
+        <location filename="../qml/pages/MainPage.qml" line="227"/>
         <source>Rejecting guesses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="203"/>
+        <location filename="../qml/pages/MainPage.qml" line="202"/>
         <source>Accept
 guesses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="235"/>
+        <location filename="../qml/pages/MainPage.qml" line="234"/>
         <source>Reject
 guesses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="18"/>
-        <location filename="../qml/pages/MainPage.qml" line="318"/>
-        <location filename="../qml/pages/MainPage.qml" line="340"/>
-        <source>Picross</source>
+        <location filename="../qml/pages/MainPage.qml" line="444"/>
+        <source>Try the new on-screen keypad in settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="340"/>
+        <location filename="../qml/pages/MainPage.qml" line="339"/>
         <source>Level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="354"/>
+        <location filename="../qml/pages/MainPage.qml" line="353"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="361"/>
+        <location filename="../qml/pages/MainPage.qml" line="360"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="370"/>
+        <location filename="../qml/pages/MainPage.qml" line="369"/>
         <source>Guess mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="378"/>
+        <location filename="../qml/pages/MainPage.qml" line="377"/>
         <source>Clear grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="379"/>
+        <location filename="../qml/pages/MainPage.qml" line="378"/>
         <source>Clearing the grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="383"/>
+        <location filename="../qml/pages/MainPage.qml" line="382"/>
         <source>Level select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="402"/>
+        <location filename="../qml/pages/MainPage.qml" line="401"/>
         <source>Congratulations!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="402"/>
+        <location filename="../qml/pages/MainPage.qml" line="401"/>
         <source>Welcome to Picross</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="403"/>
+        <location filename="../qml/pages/MainPage.qml" line="402"/>
         <source>You solved every level!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="403"/>
+        <location filename="../qml/pages/MainPage.qml" line="402"/>
         <source>Please choose a level from the pulley menu</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1199,53 +1197,52 @@ guesses</source>
 <context>
     <name>NewGame</name>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="21"/>
+        <location filename="../qml/pages/NewGame.qml" line="42"/>
         <source>Cheat...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="21"/>
+        <location filename="../qml/pages/NewGame.qml" line="42"/>
         <source>Level select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="22"/>
-        <location filename="../qml/pages/NewGame.qml" line="152"/>
+        <location filename="../qml/pages/NewGame.qml" line="43"/>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="23"/>
+        <location filename="../qml/pages/NewGame.qml" line="44"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="176"/>
+        <location filename="../qml/pages/NewGame.qml" line="197"/>
         <source>Locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="177"/>
+        <location filename="../qml/pages/NewGame.qml" line="198"/>
         <source>Complete all previous levels to unlock this difficulty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="290"/>
+        <location filename="../qml/pages/NewGame.qml" line="311"/>
         <source>Play from scratch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="300"/>
+        <location filename="../qml/pages/NewGame.qml" line="321"/>
         <source>Restore save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="311"/>
+        <location filename="../qml/pages/NewGame.qml" line="332"/>
         <source>Erase save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="319"/>
+        <location filename="../qml/pages/NewGame.qml" line="340"/>
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>

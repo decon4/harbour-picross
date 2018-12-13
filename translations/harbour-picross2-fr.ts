@@ -901,10 +901,6 @@ guesses</source>
 temporaires</translation>
     </message>
     <message>
-        <source>Picross</source>
-        <translation>Picross</translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation>Paramètres</translation>
     </message>
@@ -950,6 +946,10 @@ temporaires</translation>
     </message>
     <message>
         <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try the new on-screen keypad in settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

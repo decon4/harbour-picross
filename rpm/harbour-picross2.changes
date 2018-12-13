@@ -13,6 +13,7 @@
 # - Fix wrong color when dragging difficulty item
 # - Add saved level status indicator
 # - Level select dialog uses SQLite more effectively
+# - Remove internal dependencies
 # - Code reorganisation
 
 * Sun Dec 9 2018 Matti Viljanen <matti.viljanen@kapsi.fi> 2.2-1

@@ -441,7 +441,7 @@ Page {
                 FadeAnimation { duration: 500 }
             }
         }
-        text: qsTr("Try enabling the new on-screen keypad")
+        text: qsTr("Try the new on-screen keypad in settings")
     }
     TouchInteractionHint {
         id: hint
