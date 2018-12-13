@@ -72,6 +72,7 @@ ApplicationWindow{
 
     property bool foldTopMode: true
     property bool foldLeftMode: true
+    property bool showKeypadHint: false
 
     property bool vibrate
     property bool zoomIndic
@@ -125,10 +126,7 @@ ApplicationWindow{
         DB.initialize()
 
         //Parameters
-        space = DB.getParameter("space")
-        vibrate = DB.getParameter("vibrate") === 1
-        zoomIndic = DB.getParameter("zoomindic")
-        showKeypad = DB.getParameter("showKeypad") === 1
+        loadSettings()
 
         // Are all levels completed?
         allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
@@ -148,6 +146,14 @@ ApplicationWindow{
             if(pageStack.depth === 1)
                 game.pause=false
         }
+    }
+
+    function loadSettings() {
+        space = DB.getParameter("space")
+        vibrate = DB.getParameter("vibrate") === 1
+        zoomIndic = DB.getParameter("zoomindic")
+        showKeypad = DB.getParameter("showKeypad") === 1
+        showKeypadHint = DB.getParameter("showKeypadHint") !== 0
     }
 
     function loadLevel() {

@@ -99,10 +99,7 @@ Page{
                 onClicked:{
                     remorseSettings.execute(qsTr("Resetting settings"), function(){
                         DB.destroySettings()
-                        game.space = DB.getParameter("space")
-                        game.vibrate = DB.getParameter("vibrate") === 1
-                        game.zoomIndic = DB.getParameter("zoomindic")
-                        game.showKeypad = DB.getParameter("showKeypad") === 1
+                        game.loadSettings()
                         pageStack.pop()
                     })
                 }

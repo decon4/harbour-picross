@@ -410,13 +410,17 @@ Page {
                 width: parent.width
                 height: parent.height
                 visible: !game.hideGrid && game.dimension !== 0
-                enabled: !game.hideGrid && game.dimension !== 0
-            }
-            Item {
-                visible: game.hideGrid
-                enabled: game.hideGrid
-                width: parent.width
-                height: parent.height
+                enabled: visible
+                opacity: visible ? 1.0 : 0.0
+
+                // Show the keypad hint, maybe
+                onVisibleChanged: {
+                    if(visible && game.showKeypadHint && game.dimension > 0) {
+                        game.showKeypadHint = false
+                        DB.setParameter("showKeypadHint", 0)
+                        hintLabel.opacity = 1.0
+                    }
+                }
 
                 BusyIndicator {
                     size: BusyIndicatorSize.Large
@@ -424,6 +428,35 @@ Page {
                     running: game.hideGrid
                 }
             }
+        }
+    }
+
+    InteractionHintLabel {
+        id: hintLabel
+        opacity: 0.0
+        enabled: opacity > 0.0
+        visible: opacity > 0.0
+        anchors.bottom: parent.bottom
+        Behavior on opacity {
+            SequentialAnimation {
+                PauseAnimation { duration: 500 }
+                FadeAnimation { duration: 500 }
+            }
+        }
+        text: qsTr("Try enabling the new on-screen keypad")
+    }
+    TouchInteractionHint {
+        id: hint
+        running: hintLabel.opacity === 1.0
+        opacity: running ? 1.0 : 0.0
+        enabled: opacity > 0.0
+        visible: opacity > 0.0
+        direction: TouchInteraction.Down
+        interactionMode: TouchInteraction.Pull
+        loops: 3
+        onRunningChanged: {
+            if(running === false)
+                hintLabel.opacity = 0.0
         }
     }
 }
