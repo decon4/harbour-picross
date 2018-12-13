@@ -2,9 +2,6 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Item {
-    property int currentIndex: game.selectedIndex
-    property int numCells: game.dimension*game.dimension
-
     Key {
         id: upArrow
         x: 2*Theme.paddingLarge + width
