@@ -42,7 +42,7 @@ ApplicationWindow{
     Timer{
         id: myTimer
         repeat: true
-        onTriggered: if(!won && !pause)game.time++
+        onTriggered: if(!won && !pause) time++
 
         Component.onCompleted: myTimer.start()
     }
@@ -79,8 +79,9 @@ ApplicationWindow{
     property bool showKeypad
     property bool hideGrid: false
 
-    property int dimension: 0
-    property int selectedIndex: 0
+    property int gridSize: 0
+    property int cellCount: gridSize * gridSize
+    property int currIndex: 0
     property real zoom: 1
     property string hintTitle: ""
     property string title: ""
@@ -113,7 +114,7 @@ ApplicationWindow{
         level = -1
         diff = -1
         time = 0
-        dimension = 0
+        gridSize = 0
         hintTitle = ""
         title = ""
         mySolvingGrid.clear()
@@ -141,10 +142,10 @@ ApplicationWindow{
     onApplicationActiveChanged:{
         if(!applicationActive){
             Source.save()
-            game.pause=true
+            pause=true
         } else {
             if(pageStack.depth === 1)
-                game.pause=false
+                pause=false
         }
     }
 
@@ -153,6 +154,8 @@ ApplicationWindow{
         vibrate = DB.getParameter("vibrate") === 1
         zoomIndic = DB.getParameter("zoomindic")
         showKeypad = DB.getParameter("showKeypad") === 1
+
+        // The odd one out: -1 (unset) is evaluated as true
         showKeypadHint = DB.getParameter("showKeypadHint") !== 0
 
         if(showKeypad && showKeypadHint)
@@ -160,24 +163,24 @@ ApplicationWindow{
     }
 
     function loadLevel() {
-        Levels.initSolvedGrid(game.solvedGrid, game.diff, game.level)
+        Levels.initSolvedGrid(solvedGrid, diff, level)
         maxWidth=0
         maxHeight=0
         foldTopMode=true
         won=false
-        Source.genIndicCol(game.indicUp, game.solvedGrid)
-        Source.genIndicLine(game.indicLeft, game.solvedGrid)
+        Source.genIndicCol(indicUp, solvedGrid)
+        Source.genIndicLine(indicLeft, solvedGrid)
         if(save!==""){
             Source.loadSave(save)
-            game.time=DB.getSavedTime(diff, level)
+            time=DB.getSavedTime(diff, level)
         } else {
-            Source.initVoid(game.mySolvingGrid)
-            game.time=0
+            Source.initVoid(mySolvingGrid)
+            time=0
         }
         pause=false
         slideMode=""
-        game.zoom=1
-        selectedIndex = (dimension+(dimension % 2 === 0 ? 1 : 0)) * (dimension / 2)
+        zoom=1
+        currIndex = (gridSize+(gridSize % 2 === 0 ? 1 : 0)) * (gridSize / 2)
     }
 
     onCheckWin: {
@@ -186,21 +189,21 @@ ApplicationWindow{
     }
 
     onWin: {
-        game.won=true
+        won=true
         DB.setIsCompleted(diff, level, 'true')
         DB.eraseSave(diff, level)
-        if(DB.getTime(diff, level) === 0 || DB.getTime(diff, level) > game.time)
-            DB.setTime(diff, level, game.time)
+        if(DB.getTime(diff, level) === 0 || DB.getTime(diff, level) > time)
+            DB.setTime(diff, level, time)
         pageStack.replace(Qt.resolvedUrl("pages/ScorePage.qml"))
         allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
     }
 
     function clickSelectedCell() {
-        Source.click(mySolvingGrid, selectedIndex)
+        Source.click(mySolvingGrid, currIndex)
     }
 
     function setSelectedCell(newEstate) {
-        Source.slideClick(mySolvingGrid, selectedIndex, newEstate)
+        Source.slideClick(mySolvingGrid, currIndex, newEstate)
     }
 
     function completeRowX(index, toFill) {
@@ -228,8 +231,8 @@ ApplicationWindow{
 
     Keys.onLeftPressed: updateIndex(-1)
     Keys.onRightPressed: updateIndex(1)
-    Keys.onUpPressed: updateIndex(-dimension)
-    Keys.onDownPressed: updateIndex(dimension)
+    Keys.onUpPressed: updateIndex(-gridSize)
+    Keys.onDownPressed: updateIndex(gridSize)
 
-    Keys.onSpacePressed: Source.click(game.mySolvingGrid, game.selectedIndex)
+    Keys.onSpacePressed: Source.click(mySolvingGrid, currIndex)
 }

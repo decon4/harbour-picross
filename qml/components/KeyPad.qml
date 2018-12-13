@@ -8,7 +8,7 @@ Item {
         y: parent.height/2 - height/2 - height
         iconSource: "image://theme/icon-m-up"
         function onPressed() {
-            game.updateIndex(-game.dimension)
+            game.updateIndex(-game.gridSize)
         }
         function onReleased() {
         }
@@ -29,7 +29,7 @@ Item {
         y: parent.height/2 + height/2
         iconSource: "image://theme/icon-m-down"
         function onPressed() {
-            game.updateIndex(game.dimension)
+            game.updateIndex(game.gridSize)
         }
         function onReleased() {}
     }

@@ -9,19 +9,19 @@ echo -n "HintTitle: "
 read hintTitle
 
 echo -n "Dimension: "
-read dimension
+read gridSize
 
-dim=$(echo $dimension | sed 's/[^0-9]*//g')
+dim=$(echo $gridSize | sed 's/[^0-9]*//g')
 
 if [[ $dim == "" ]]
 then
-    echo "\"$dimension\" does not contains any number"
+    echo "\"$gridSize\" does not contains any number"
     exit 2
 fi
 
 if [ $dim -gt 25 ] || [ $dim -lt 3 ]
 then
-    echo "Please enter a dimension between 3 and 25 (included)"
+    echo "Please enter grid size between 3 and 25 (included)"
     exit 1
 fi
 
@@ -32,7 +32,7 @@ out="
     {\n
            title: qstr(\"$title\"),\n
            hintTitle: qstr(\"$hintTitle\"),\n
-           dimension: $dim,\n
+           gridSize: $dim,\n
            grid:\n
            [\n"
 
@@ -40,7 +40,7 @@ drawing=""
 echo "Everything is fine, please enter the map"
 for i in $(seq 1 $dim)
 do
-    # Read line ( Re-read if size != dimension or if it contains other characters than 0 or 1)
+    # Read line ( Re-read if size != gridSize or if it contains other characters than 0 or 1)
     echo -n "$i: "
     read line
     while [ $(echo $line | wc -c) -ne $((dim+1)) ]||[ $(echo $line | sed 's/[01io]//g' | wc -c) -ne 1 ]

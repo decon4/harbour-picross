@@ -4,10 +4,10 @@ function initVoid(){
     game.guessMode=false
     game.mySolvingGrid.clear()
     game.nbSolvingFullCell=0
-    for(var i=0; i<game.dimension*game.dimension; i++)
+    for(var i=0; i<game.cellCount; i++)
         game.mySolvingGrid.append({"myEstate":"void"})
 
-    for(i=0; i<game.dimension; i++){
+    for(i=0; i<game.gridSize; i++){
         checkLineX(i)
         checkColX(i)
     }
@@ -25,7 +25,7 @@ function loadSave(save){
             if(!game.guessMode)
                 game.guessMode=true
     }
-    for(i=0; i<game.dimension; i++){
+    for(i=0; i<game.gridSize; i++){
         checkLineX(i)
         checkColX(i)
     }
@@ -52,8 +52,8 @@ function click(grid, x){
         grid.set(x, {"myEstate":str==="full"?"hint":str==="hint"?"void":"full"})
     }
 
-    checkLineX(Math.floor(x/game.dimension))
-    checkColX(x%game.dimension)
+    checkLineX(Math.floor(x/game.gridSize))
+    checkColX(x%game.gridSize)
 
     launchCheckWin()
 }
@@ -63,8 +63,8 @@ function doubleClick(grid, x){
     else
         grid.set(x, {"myEstate":"guess_hint"})
 
-    checkLineX(Math.floor(x/game.dimension))
-    checkColX(x%game.dimension)
+    checkLineX(Math.floor(x/game.gridSize))
+    checkColX(x%game.gridSize)
 }
 function slideClick(grid, x, mode){
     var old=grid.get(x).myEstate
@@ -78,8 +78,8 @@ function slideClick(grid, x, mode){
             game.nbSolvingFullCell--
         grid.set(x, {"myEstate":mode})
     }
-    checkLineX(Math.floor(x/game.dimension))
-    checkColX(x%game.dimension)
+    checkLineX(Math.floor(x/game.gridSize))
+    checkColX(x%game.gridSize)
     launchCheckWin()
 }
 
@@ -87,7 +87,7 @@ function genIndicLineXFilling(list, grid, x){
     list.clear()
     var cpt=0
     if(grid.count!==0){
-        for(var coord=x*game.dimension; coord<(x+1)*game.dimension; coord++){
+        for(var coord=x*game.gridSize; coord<(x+1)*game.gridSize; coord++){
             if(grid.get(coord).myEstate !== "hint" && grid.get(coord).myEstate !== "guess_hint") {
                 cpt++
             } else {
@@ -104,7 +104,7 @@ function genIndicColXFilling(list, grid, x){
     list.clear()
     var cpt=0
     if(grid.count!==0){
-        for(var coord=x; coord<x+game.dimension*(game.dimension-1)+1; coord+=game.dimension){
+        for(var coord=x; coord<x+game.gridSize*(game.gridSize-1)+1; coord+=game.gridSize){
             if(grid.get(coord).myEstate !== "hint" && grid.get(coord).myEstate !== "guess_hint") {
                 cpt++
             } else {
@@ -122,7 +122,7 @@ function genIndicLineX(list, grid, x){
     list.clear()
     var cpt=0
     if(grid.count!==0){
-        for(var coord=x*game.dimension; coord<(x+1)*game.dimension; coord++){
+        for(var coord=x*game.gridSize; coord<(x+1)*game.gridSize; coord++){
             if(grid.get(coord).myEstate === "full" || grid.get(coord).myEstate === "guess_full") {
                 cpt++
             } else {
@@ -139,7 +139,7 @@ function genIndicColX(list, grid, x){
     list.clear()
     var cpt=0
     if(grid.count!==0){
-        for(var coord=x; coord<x+game.dimension*(game.dimension-1)+1; coord+=game.dimension){
+        for(var coord=x; coord<x+game.gridSize*(game.gridSize-1)+1; coord+=game.gridSize){
             if(grid.get(coord).myEstate === "full" || grid.get(coord).myEstate === "guess_full") {
                 cpt++
             } else {
@@ -156,7 +156,7 @@ function genIndicColX(list, grid, x){
 function genIndicLine(list, grid){
     list.clear()
 
-    for(var i=0; i<game.dimension; i++){
+    for(var i=0; i<game.gridSize; i++){
         var smallList = Qt.createQmlObject('import QtQuick 2.2; \
                         ListModel {}', parent)
 
@@ -168,7 +168,7 @@ function genIndicLine(list, grid){
 function genIndicCol(list, grid){
     list.clear()
 
-    for(var i=0; i<game.dimension; i++){
+    for(var i=0; i<game.gridSize; i++){
         var smallList = Qt.createQmlObject('import QtQuick 2.2; \
                         ListModel {}', parent)
 
@@ -180,11 +180,11 @@ function genIndicCol(list, grid){
 
 function completeRowX(x, toFill){
     if(!toFill){
-        for(var j=x*game.dimension; j<(x+1)*game.dimension; j++)
+        for(var j=x*game.gridSize; j<(x+1)*game.gridSize; j++)
             if(game.mySolvingGrid.get(j).myEstate === "void")
                 doubleClick(game.mySolvingGrid, j)
     }else{
-        for(var k=x*game.dimension; k<(x+1)*game.dimension; k++)
+        for(var k=x*game.gridSize; k<(x+1)*game.gridSize; k++)
             if(game.mySolvingGrid.get(k).myEstate === "void")
                 click(game.mySolvingGrid, k)
 
@@ -192,11 +192,11 @@ function completeRowX(x, toFill){
 }
 function completeColX(x, toFill){
     if(!toFill){
-        for(var j=x; j<game.dimension*game.dimension; j+=game.dimension)
+        for(var j=x; j<game.cellCount; j+=game.gridSize)
             if(game.mySolvingGrid.get(j).myEstate === "void")
                 doubleClick(game.mySolvingGrid, j)
     }else{
-        for(var k=x; k<game.dimension*game.dimension; k+=game.dimension)
+        for(var k=x; k<game.cellCount; k+=game.gridSize)
             if(game.mySolvingGrid.get(k).myEstate === "void")
                 click(game.mySolvingGrid, k)
 
@@ -221,8 +221,8 @@ function specialCheckColX(x){
     var exit=false
     var lastOk=0
 
-    while(i<game.dimension && game.mySolvingGrid.get(x+game.dimension*i).myEstate !== "void" && !exit){
-        var state=game.mySolvingGrid.get(x+game.dimension*i).myEstate
+    while(i<game.gridSize && game.mySolvingGrid.get(x+game.gridSize*i).myEstate !== "void" && !exit){
+        var state=game.mySolvingGrid.get(x+game.gridSize*i).myEstate
         if(state==="hint" || state==="guess_hint"){
             if(cpt!==0){
                 if(cpt===indics.get(nbIndic).size){
@@ -240,11 +240,11 @@ function specialCheckColX(x){
 
     cpt=0
     nbIndic=indics.count-1
-    i=game.dimension-1
+    i=game.gridSize-1
     exit=false
 
-    while(i>=lastOk && game.mySolvingGrid.get(x+game.dimension*i).myEstate !== "void" && !exit){
-        state=game.mySolvingGrid.get(x+game.dimension*i).myEstate
+    while(i>=lastOk && game.mySolvingGrid.get(x+game.gridSize*i).myEstate !== "void" && !exit){
+        state=game.mySolvingGrid.get(x+game.gridSize*i).myEstate
         if(state==="hint" || state==="guess_hint"){
             if(cpt!==0){
                 if(cpt===indics.get(nbIndic).size){
@@ -271,8 +271,8 @@ function specialCheckLineX(x){
     var exit=false
     var lastOk=0
 
-    while(i<game.dimension && game.mySolvingGrid.get(x*game.dimension+i).myEstate !== "void" && !exit){
-        var state=game.mySolvingGrid.get(x*game.dimension+i).myEstate
+    while(i<game.gridSize && game.mySolvingGrid.get(x*game.gridSize+i).myEstate !== "void" && !exit){
+        var state=game.mySolvingGrid.get(x*game.gridSize+i).myEstate
         if(state==="hint" || state==="guess_hint"){
             if(cpt!==0){
                 if(cpt===indics.get(nbIndic).size){
@@ -292,11 +292,11 @@ function specialCheckLineX(x){
 
     cpt=0
     nbIndic=indics.count-1
-    i=game.dimension-1
+    i=game.gridSize-1
     exit=false
 
-    while(i>=lastOk && game.mySolvingGrid.get(x*game.dimension+i).myEstate !== "void" && !exit){
-        state=game.mySolvingGrid.get(x*game.dimension+i).myEstate
+    while(i>=lastOk && game.mySolvingGrid.get(x*game.gridSize+i).myEstate !== "void" && !exit){
+        state=game.mySolvingGrid.get(x*game.gridSize+i).myEstate
         if(state==="hint" || state==="guess_hint"){
             if(cpt!==0){
                 if(cpt===indics.get(nbIndic).size){
@@ -338,8 +338,8 @@ function checkColX(x){
     //Check if Col is full => error
     if(!completed && !toFill){
         hasError=true
-        for(i=0; i<game.dimension; i++)
-            if(game.mySolvingGrid.get(x+game.dimension*i).myEstate === "void")
+        for(i=0; i<game.gridSize; i++)
+            if(game.mySolvingGrid.get(x+game.gridSize*i).myEstate === "void")
                 hasError=false
     }
 
@@ -377,8 +377,8 @@ function checkLineX(x){
     //Check if Line is full => error
     if(!completed && !toFill){
         hasError=true
-        for(i=0; i<game.dimension; i++)
-            if(game.mySolvingGrid.get(x*game.dimension+i).myEstate === "void")
+        for(i=0; i<game.gridSize; i++)
+            if(game.mySolvingGrid.get(x*game.gridSize+i).myEstate === "void")
                 hasError=false
     }
 
@@ -412,7 +412,7 @@ function clear(){
     for(var i=0; i<game.mySolvingGrid.count; i++)
         game.mySolvingGrid.set(i, {"myEstate":"void"})
 
-    for(i=0; i<game.dimension; i++){
+    for(i=0; i<game.gridSize; i++){
         checkLineX(i)
         checkColX(i)
     }
@@ -425,25 +425,25 @@ function nothingDone(){
     return true
 }
 function noGuessDone(){
-    for(var i=0; i<game.dimension*game.dimension; i++)
+    for(var i=0; i<game.cellCount; i++)
         if(game.mySolvingGrid.get(i).myEstate==="guess_full" || game.mySolvingGrid.get(i).myEstate==="guess_hint")
             return false
     return true
 }
 
 function rejectGuesses(){
-    for(var i=0; i<game.dimension*game.dimension; i++){
+    for(var i=0; i<game.cellCount; i++){
         var state= game.mySolvingGrid.get(i).myEstate
         if(state==="guess_hint" || state==="guess_full")
             game.mySolvingGrid.setProperty(i, "myEstate", "void")
     }
-    for(i=0; i<game.dimension; i++){
+    for(i=0; i<game.gridSize; i++){
         checkLineX(i)
         checkColX(i)
     }
 }
 function acceptGuesses(){
-    for(var i=0; i<game.dimension*game.dimension; i++){
+    for(var i=0; i<game.cellCount; i++){
         var state=game.mySolvingGrid.get(i).myEstate
         if(state==="guess_hint")
             game.mySolvingGrid.setProperty(i, "myEstate", "hint")

@@ -44,7 +44,7 @@ Page {
 
     property string hintTitleCp: game.hintTitle
     onHintTitleCpChanged: {
-        pageHeader.title=qsTr("Dimension")+": "+game.dimension+"x"+game.dimension
+        pageHeader.title=qsTr("Dimension")+": "+game.gridSize+"x"+game.gridSize
         pageHeader.description=qsTr("Good luck!")
         if(!game.hideGrid) resetPageHeader.start()
     }
@@ -123,7 +123,7 @@ Page {
         property real zoomTmp : -1
         anchors.fill: parent
         onPinchStarted: {
-            if(game.dimension!==0)
+            if(game.gridSize!==0)
                 popupZoom.opacity = 1
             initialZoom = game.zoom
             zoomTmp = game.zoom
@@ -133,7 +133,7 @@ Page {
         }
         onPinchFinished:{
             popupZoom.opacity = 0
-            if(game.dimension!==0)
+            if(game.gridSize!==0)
                 game.zoom = zoomTmp
             zoomTmp = -1
         }
@@ -287,7 +287,7 @@ Page {
                 }
             }
             MouseArea{
-                enabled: game.dimension!==0
+                enabled: game.gridSize!==0
                 anchors.fill: parent
                 drag.target: parent
                 drag.axis: Drag.XAxis
@@ -304,7 +304,7 @@ Page {
                 }
                 onClicked:{
                     if(!resetPageHeader.running){
-                        pageHeader.title=qsTr("Dimension")+": "+game.dimension+"x"+game.dimension
+                        pageHeader.title=qsTr("Dimension")+": "+game.gridSize+"x"+game.gridSize
                         pageHeader.description="Elapsed time: "+time===0?"xx:xx:xx":game.time>=60*60*23?"24:00:00+":new Date(null, null, null, null, null, time).toLocaleTimeString(Qt.locale(), "HH:mm:ss");
                         resetPageHeader.start()
                     }else
@@ -348,7 +348,7 @@ Page {
             enabled: game.slideMode===""
             MenuItem {
                 id: menuAbout
-                enabled: game.dimension === 0
+                enabled: game.gridSize === 0
                 visible: enabled
                 text: qsTr("About")
                 onClicked: {
@@ -365,7 +365,7 @@ Page {
             }
             MenuItem {
                 id: menuGuess
-                visible: game.dimension!==0 && !game.guessMode
+                visible: game.gridSize!==0 && !game.guessMode
                 text: qsTr("Guess mode")
                 onClicked: {
                     goOpen.start()
@@ -373,7 +373,7 @@ Page {
             }
             MenuItem {
                 id: menuClear
-                visible: game.dimension!==0 && !game.guessMode
+                visible: game.gridSize!==0 && !game.guessMode
                 text: qsTr("Clear grid")
                 onClicked: remorseMain.execute(qsTr("Clearing the grid"), function(){Source.clear()}, 3000)
             }
@@ -397,7 +397,7 @@ Page {
             }
             // Hint
             ViewPlaceholder {
-                enabled: game.dimension === 0 && !game.hideGrid
+                enabled: game.gridSize === 0 && !game.hideGrid
                 text: game.allLevelsCompleted ? qsTr("Congratulations!") : qsTr("Welcome to Picross")
                 hintText: game.allLevelsCompleted ? qsTr("You solved every level!") : qsTr("Please choose a level from the pulley menu")
             }
@@ -408,13 +408,13 @@ Page {
                 id: wholeGrid
                 width: parent.width
                 height: parent.height
-                visible: !game.hideGrid && game.dimension !== 0
+                visible: !game.hideGrid && game.gridSize !== 0
                 enabled: visible
                 opacity: visible ? 1.0 : 0.0
 
                 // Show the keypad hint, maybe
                 onVisibleChanged: {
-                    if(visible && game.showKeypadHint && game.dimension > 0) {
+                    if(visible && game.showKeypadHint && game.gridSize > 0) {
                         game.disableKeyboardHint()
                         hintLabel.opacity = 1.0
                     }

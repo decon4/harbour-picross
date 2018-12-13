@@ -48,14 +48,14 @@ CoverBackground {
             height: width
             anchors.centerIn: parent
             spacing: 2
-            columns: game.dimension
+            columns: game.gridSize
             Repeater {
                 id: myRepeat
                 model: game.mySolvingGrid
                 Rectangle {
                     property string estate:myEstate
                     id: thisrect
-                    width: (rectGrille.width-(game.dimension-1)*2)/game.dimension
+                    width: (rectGrille.width-(game.gridSize-1)*2)/game.gridSize
                     height: width
                     color: thisrect.estate=="full"?Theme.rgba(Theme.highlightColor, 0.6):Qt.rgba(0, 0, 0, 0.1)
                     radius: width * 0.1
@@ -92,7 +92,7 @@ CoverBackground {
         id: levelInfo
         anchors.horizontalCenter: parent.horizontalCenter
         y: Theme.fontSizeSmall
-        enabled: game.dimension > 0 && game.time > 0
+        enabled: game.gridSize > 0 && game.time > 0
         visible: enabled
         text: "Level " + (game.diff+1) + "-" + (game.level+1)
     }
@@ -100,7 +100,7 @@ CoverBackground {
         id: levelTime
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: levelInfo.bottom
-        enabled: game.dimension > 0 && game.time > 0
+        enabled: game.gridSize > 0 && game.time > 0
         visible: enabled
         text: new Date(null, null, null, null, null, game.time).toLocaleTimeString(Qt.locale(), "HH:mm:ss")
     }

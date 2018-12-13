@@ -6,47 +6,47 @@ Rectangle {
     property int newSpace: calculateGridSize()
 
     function calculateGridSize() {
-        var gridSize = 0
+        var numCells = 0
         // Set spacer size automatically?
         if(game.space === -1) {
-            switch(game.dimension) {
+            switch(game.gridSize) {
             case 12:
             case 17:
-                gridSize = 3
+                numCells = 3
                 break
             case 8:
             case 19:
-                gridSize = 4
+                numCells = 4
                 break
             case 15:
             case 20:
             case 25:
-                gridSize = 5
+                numCells = 5
                 break
             case 14:
-                gridSize= 7
+                numCells= 7
                 break
             case 3:
             case 5:
             default:
-                gridSize = 0
+                numCells = 0
             }
         }
         else {
-            gridSize = game.space
+            numCells = game.space
         }
-        return gridSize
+        return numCells
     }
 
     color: Qt.rgba(255, 255, 255, 0.1)
-    width: game.dimension*unitSize+(game.dimension-1)*insideBorderSize
+    width: game.gridSize*unitSize+(game.gridSize-1)*insideBorderSize
     height: width
 
     Grid {
         id: grille
         anchors.fill: parent
         spacing: insideBorderSize
-        columns: game.dimension
+        columns: game.gridSize
         Repeater {
             id: myRepeat
             model: game.mySolvingGrid
@@ -61,7 +61,7 @@ Rectangle {
     Repeater{
         enabled: newSpace > 0
         visible: enabled
-        model: (game.dimension-1)/newSpace
+        model: (game.gridSize-1)/newSpace
         Rectangle{
             x: (newSpace*(index+1)-1)*insideBorderSize+newSpace*(index+1)*unitSize
             y:0
@@ -75,7 +75,7 @@ Rectangle {
     Repeater{
         enabled: newSpace > 0
         visible: enabled
-        model: (game.dimension-1)/newSpace
+        model: (game.gridSize-1)/newSpace
         Rectangle{
             x: 0
             y: (newSpace*(index+1)-1)*insideBorderSize+newSpace*(index+1)*unitSize

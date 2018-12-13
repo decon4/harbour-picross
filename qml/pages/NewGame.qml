@@ -262,7 +262,7 @@ Dialog{
                         // First row, e.g. "[3x3] Box", with possibly a pen symbol
                         Label{
                             id: levelTitle
-                            text: levelNumber+". ["+dimension+"x"+dimension+"] " + (isCompleted ? title : "")
+                            text: levelNumber+". ["+gridSize+"x"+gridSize+"] " + (isCompleted ? title : "")
                             font.pixelSize: Theme.fontSizeMedium
                             truncationMode: TruncationMode.Fade
                             anchors.left: levelCheckbox.right

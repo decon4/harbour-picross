@@ -55,9 +55,9 @@ Rectangle {
     MouseArea{
         anchors.fill: parent
 
-        property real realX: Math.floor((myID%game.dimension*(unitSize+insideBorderSize)+mouseX)/(unitSize+insideBorderSize))
-        property real realY: Math.floor((Math.floor(myID/game.dimension)*(unitSize+insideBorderSize)+mouseY)/(unitSize+insideBorderSize))
-        property int cellNumber:realX+realY*game.dimension
+        property real realX: Math.floor((myID%game.gridSize*(unitSize+insideBorderSize)+mouseX)/(unitSize+insideBorderSize))
+        property real realY: Math.floor((Math.floor(myID/game.gridSize)*(unitSize+insideBorderSize)+mouseY)/(unitSize+insideBorderSize))
+        property int cellNumber:realX+realY*game.gridSize
 
 
         onPressAndHold: {
@@ -72,8 +72,8 @@ Rectangle {
             }
         }
 
-        onCellNumberChanged: if(!flick.interactive && realX>=0 && realY>=0 && realX<game.dimension && realY<game.dimension){
-                                 game.selectedIndex = cellNumber
+        onCellNumberChanged: if(!flick.interactive && realX>=0 && realY>=0 && realX<game.gridSize && realY<game.gridSize){
+                                 game.currIndex = cellNumber
                                  if(game.mySolvingGrid.get(cellNumber).myEstate!==thisrect.estate){
                                      if(game.vibrate)
                                          game.shortBuzz.start()
@@ -82,7 +82,7 @@ Rectangle {
                              }
 
         onPressed: {
-            game.selectedIndex = myID
+            game.currIndex = myID
         }
 
         onReleased:{

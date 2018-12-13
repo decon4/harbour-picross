@@ -9,13 +9,13 @@ Item{
             anchors.fill: parent
             onClicked: {
                 if(game.zoom===1) {
-                    //                    game.zoom=((page.height-pageHeader.height-maxSizeIndicTop-outsideBorderSize+insideBorderSize)/game.dimension-insideBorderSize)
+                    //                    game.zoom=((page.height-pageHeader.height-maxSizeIndicTop-outsideBorderSize+insideBorderSize)/game.gridSize-insideBorderSize)
                     //                                                                                 /
-                    //                            ((page.width-maxSizeIndicLeft-outsideBorderSize+insideBorderSize)/game.dimension-insideBorderSize)
+                    //                            ((page.width-maxSizeIndicLeft-outsideBorderSize+insideBorderSize)/game.gridSize-insideBorderSize)
                     //game.zoom=3
-                    if(game.dimension < 6)
+                    if(game.gridSize < 6)
                         zoom = 2
-                    else if(game.dimension < 16)
+                    else if(game.gridSize < 16)
                         zoom = 3
                     else
                         zoom = 4

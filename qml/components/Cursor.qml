@@ -2,13 +2,13 @@ import QtQuick 2.0
 
 Rectangle {
     id: cursor
-    property int index: game.selectedIndex
+    property int index: game.currIndex
     property int space
     property int offset
     property int origX
     property int origY
-    property int gridX: Math.floor(index % game.dimension)
-    property int gridY: Math.floor(index / game.dimension)
+    property int gridX: Math.floor(index % game.gridSize)
+    property int gridY: Math.floor(index / game.gridSize)
 
     radius: width * 0.1
     color: 'transparent'
@@ -17,7 +17,6 @@ Rectangle {
 
     x: gridX * width + (gridX-1) * space + offset
     y: gridY * height + (gridY-1) * space + offset
-
 
     Behavior on anchors.leftMargin{
         id: animX

@@ -36,7 +36,7 @@ Page {
         else {
             gLevel     = game.level
             gDiff      = game.diff
-            gDimension = game.dimension
+            gDimension = game.gridSize
             gTitle     = game.title
             gTime      = game.time
             bTime      = DB.getTime(game.diff, game.level)
@@ -54,7 +54,7 @@ Page {
                 game.level=nextLevel
                 game.save=DB.getSave(game.diff, game.level)
                 if(nextDiff == -1 && nextLevel == -1)
-                    game.dimension = 0
+                    game.gridSize = 0
                 game.pause = true
                 game.time = 0
             }
