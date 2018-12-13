@@ -154,6 +154,9 @@ ApplicationWindow{
         zoomIndic = DB.getParameter("zoomindic")
         showKeypad = DB.getParameter("showKeypad") === 1
         showKeypadHint = DB.getParameter("showKeypadHint") !== 0
+
+        if(showKeypad && showKeypadHint)
+            disableKeyboardHint()
     }
 
     function loadLevel() {
