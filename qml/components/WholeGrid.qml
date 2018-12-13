@@ -391,6 +391,14 @@ Item{
                                     }                                                                }
                             }
                             Rectangle{
+                                MouseArea{
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        if(completed||toFill)
+                                            game.completeRowX(index, toFill)
+                                    }
+                                    onPressAndHold: foldTopMode=!foldTopMode
+                                }
                                 height: insideBorderSize
                                 width: indicLeftFlick.width-2*outsideBorderSize
                                 x: outsideBorderSize
