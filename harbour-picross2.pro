@@ -22,7 +22,6 @@ DISTFILES += \
     qml/components/Grille.qml \
     qml/components/Key.qml \
     qml/components/KeyPad.qml \
-    qml/components/Rules.qml \
     qml/components/SolvedGrid.qml \
     qml/components/UnZoomButton.qml \
     qml/components/WholeGrid.qml \
