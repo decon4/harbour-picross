@@ -45,7 +45,7 @@ Item{
             x:gridPartRectangle.width-10
             width:10
             height: Math.min(gridPartRectangle.height-outsideBorderSize, indicUp.height+flick.contentHeight)
-            color: "red"
+            color: Theme.highlightColor
             opacity:0.3
         }
     }
@@ -448,15 +448,6 @@ Item{
         anchors.top: grid.bottom
         width: parent.width
         height: 10
-        color: Theme.highlightColor
-        opacity:0.3
-    }
-    Rectangle {
-        id: rightRect
-        anchors.bottom: bottomRect.top
-        anchors.top: gridPartRectangle.top
-        anchors.right: bottomRect.right
-        width: 10
         color: Theme.highlightColor
         opacity:0.3
     }
