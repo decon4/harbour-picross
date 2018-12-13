@@ -14,7 +14,7 @@ Page {
                 // Update title immediatelly
                 titleAnimation.enabled = false
                 descriptionAnimation.enabled = false
-                pageHeader.title = qsTr("Picross")
+                pageHeader.title = "Picross"
                 pageHeader.description = "";
                 titleAnimation.enabled = true
                 descriptionAnimation.enabled = true
@@ -314,7 +314,7 @@ Page {
 
             PageHeader {
                 id: pageHeader
-                title: qsTr("Picross")
+                title: "Picross"
                 description: " "
                 Behavior on title{
                     id: titleAnimation
@@ -336,7 +336,7 @@ Page {
                     id: resetPageHeader
                     interval: 2000
                     onTriggered: {
-                        pageHeader.title = qsTr("Picross") + (game.hintTitle==="" ? "" : ": "+difficulties[game.diff]+" "+qsTr("Level")+" "+(game.level+1))
+                        pageHeader.title = "Picross" + (game.hintTitle==="" ? "" : ": "+difficulties[game.diff]+" "+qsTr("Level")+" "+(game.level+1))
                         pageHeader.description = (game.hintTitle==="" ? " " : game.hintTitle)
                     }
                 }
