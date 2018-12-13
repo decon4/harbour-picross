@@ -192,6 +192,27 @@ ApplicationWindow{
         allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
     }
 
+    function clickSelectedCell() {
+        Source.click(mySolvingGrid, selectedIndex)
+    }
+
+    function setSelectedCell(newEstate) {
+        Source.slideClick(mySolvingGrid, selectedIndex, newEstate)
+    }
+
+    function completeRowX(index, toFill) {
+        Source.completeRowX(index, toFill)
+    }
+
+    function completeColX(index, toFill) {
+        Source.completeColX(index, toFill)
+    }
+
+    function disableKeyboardHint() {
+        DB.setParameter("showKeypadHint", 0)
+        showKeypadHint = false
+    }
+
     function updateIndex(change) {
         var currentIndex = selectedIndex
         currentIndex += change

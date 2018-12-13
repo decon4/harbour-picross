@@ -1,8 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-import "../Source.js" as Source
-
 Item{
     id: gridPartRectangle
 
@@ -110,7 +108,7 @@ Item{
                                     anchors.fill: parent
                                     onClicked: {
                                         if(completed||toFill)
-                                            Source.completeColX(index, toFill)
+                                            game.completeColX(index, toFill)
                                     }
                                     onPressAndHold: foldTopMode=!foldTopMode
                                 }
@@ -127,7 +125,7 @@ Item{
                                         anchors.fill: parent
                                         onClicked: {
                                             if(completed||toFill)
-                                                Source.completeColX(index, toFill)
+                                                game.completeColX(index, toFill)
                                         }
                                         //                                                                                onPressAndHold: if(game.zoom!==1)foldTopMode=!foldTopMode
                                         onPressAndHold: foldTopMode=!foldTopMode
@@ -219,7 +217,7 @@ Item{
                                     anchors.fill: parent
                                     onClicked: {
                                         if(completed||toFill)
-                                            Source.completeColX(index, toFill)
+                                            game.completeColX(index, toFill)
                                     }
                                     onPressAndHold: foldTopMode=!foldTopMode
                                 }
@@ -299,7 +297,7 @@ Item{
                                     anchors.fill: parent
                                     onClicked:{
                                         if(completed||toFill)
-                                            Source.completeLineX(index, toFill)
+                                            game.completeRowX(index, toFill)
                                     }
                                 }
                                 SilicaFlickable{
@@ -314,7 +312,7 @@ Item{
                                         anchors.fill: parent
                                         onClicked:{
                                             if(completed||toFill)
-                                                Source.completeLineX(index, toFill)
+                                                game.completeRowX(index, toFill)
                                         }
                                     }
                                     Row{

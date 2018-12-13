@@ -2,7 +2,6 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../components"
 import "../Source.js" as Source
-import "../DB.js" as DB
 
 Page {
     RemorsePopup{ id: remorseMain }
@@ -416,8 +415,7 @@ Page {
                 // Show the keypad hint, maybe
                 onVisibleChanged: {
                     if(visible && game.showKeypadHint && game.dimension > 0) {
-                        game.showKeypadHint = false
-                        DB.setParameter("showKeypadHint", 0)
+                        game.disableKeyboardHint()
                         hintLabel.opacity = 1.0
                     }
                 }

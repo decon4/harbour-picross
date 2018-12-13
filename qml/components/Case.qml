@@ -1,6 +1,5 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import "../Source.js" as Source
 
 Rectangle {
     property string estate
@@ -74,12 +73,12 @@ Rectangle {
         }
 
         onCellNumberChanged: if(!flick.interactive && realX>=0 && realY>=0 && realX<game.dimension && realY<game.dimension){
+                                 game.selectedIndex = cellNumber
                                  if(game.mySolvingGrid.get(cellNumber).myEstate!==thisrect.estate){
                                      if(game.vibrate)
                                          game.shortBuzz.start()
-                                     Source.slideClick(game.mySolvingGrid, cellNumber, thisrect.estate)
+                                     game.setSelectedCell(thisrect.estate)
                                  }
-                                 game.selectedIndex = cellNumber
                              }
 
         onPressed: {
@@ -94,7 +93,7 @@ Rectangle {
 
         onClicked: {
             if(!game.won)
-                Source.click(game.mySolvingGrid, myID)
+                game.clickSelectedCell()
         }
     }
 }

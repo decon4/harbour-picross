@@ -1,6 +1,5 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import "../Source.js" as Source
 
 Item {
     property int currentIndex: game.selectedIndex
@@ -53,7 +52,7 @@ Item {
         y: parent.height/2 - height/2
         source: "image://theme/icon-m-dot"
         function onPressed() {
-            Source.click(game.mySolvingGrid, game.selectedIndex)
+            game.clickSelectedCell()
         }
         function onReleased() {}
     }
