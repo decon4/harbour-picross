@@ -218,12 +218,7 @@ Dialog{
                         property bool hasSavedState: DB.getSave(difficultyIndex, levelIndex) !== ""
                         property bool isCompleted: DB.isCompleted(difficultyIndex, levelIndex)
 
-                        Rectangle {
-                            anchors.fill: parent
-                            visible: (levelItem.highlighted || (levelIndex==levelSelected && difficultyIndex==diffSelected))
-                            color: Theme.highlightBackgroundColor
-                            opacity: Theme.highlightBackgroundOpacity
-                        }
+                        highlighted: levelIndex==levelSelected && difficultyIndex==diffSelected
 
                         // Draw empty level completex checkbox
                         Image {
