@@ -278,24 +278,18 @@ Dialog{
                         }
                         onClicked: {
                             if(cheatMode && !isCompleted) {
-                                    DB.setIsCompleted(difficultyIndex, levelIndex, 'true')
-                                    currentLevelList.completedLevels++
-                                    isCompleted = true
-                                    levelCheckboxTick.visible = true
-                                }
+                                DB.setIsCompleted(difficultyIndex, levelIndex, 'true')
+                                currentLevelList.completedLevels++
+                                isCompleted = true
+                                levelCheckboxTick.visible = true
                             }
+                        }
 
                         onPressed: {
-                            if(!cheatMode) {
-                                if(diffSelected !== difficultyIndex || levelSelected !== levelIndex){
-                                    diffSelected=difficultyIndex
-                                    levelSelected=levelIndex
-                                    save = (autoLoadSaves && levelItem.hasSavedState) ? DB.getSave(difficultyIndex, levelIndex) : ""
-                                } else {
-                                    diffSelected=-1
-                                    levelSelected=-1
-                                    save = ""
-                                }
+                            if(!cheatMode && (diffSelected !== difficultyIndex || levelSelected !== levelIndex)) {
+                                diffSelected=difficultyIndex
+                                levelSelected=levelIndex
+                                save = (autoLoadSaves && levelItem.hasSavedState) ? DB.getSave(difficultyIndex, levelIndex) : ""
                             }
                         }
 
