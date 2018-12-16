@@ -1346,7 +1346,7 @@ guesses</source>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="53"/>
-        <source>Use on-screen arrows, action button and cursor.</source>
+        <source>Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

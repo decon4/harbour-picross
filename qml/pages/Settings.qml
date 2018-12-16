@@ -50,7 +50,7 @@ Page{
             TextSwitch {
                 checked: DB.getParameter("showKeypad")===1
                 text: qsTr("Show gamepad")
-                description: qsTr("Use on-screen arrows, action button and cursor.")
+                description: qsTr("Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!")
                 onClicked: {
                     DB.setParameter("showKeypad", checked ? 1 : 0)
                     game.showKeypad = checked ? 1 : 0

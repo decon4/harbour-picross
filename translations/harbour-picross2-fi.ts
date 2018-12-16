@@ -1350,8 +1350,8 @@ arvaukset</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="53"/>
-        <source>Use on-screen arrows, action button and cursor.</source>
-        <translation>Ota käyttöön nuolipainikkeet, valintapainike ja kursori.</translation>
+        <source>Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!</source>
+        <translation>Ota käyttöön nuolipainikkeet, valintapainike ja kursori. Tukee myös Bluetooth-näppäimistöjä!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="63"/>

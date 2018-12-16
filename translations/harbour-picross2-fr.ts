@@ -1102,7 +1102,7 @@ temporaires</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use on-screen arrows, action button and cursor.</source>
+        <source>Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
