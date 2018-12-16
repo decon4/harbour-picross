@@ -92,7 +92,7 @@ CoverBackground {
         id: levelInfo
         anchors.horizontalCenter: parent.horizontalCenter
         y: Theme.fontSizeSmall
-        enabled: game.gridSize > 0 && game.time > 0
+        enabled: game.gStatus === "playing"
         visible: enabled
         text: "Level " + (game.diff+1) + "-" + (game.level+1)
     }
@@ -100,7 +100,7 @@ CoverBackground {
         id: levelTime
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: levelInfo.bottom
-        enabled: game.gridSize > 0 && game.time > 0
+        enabled: game.gStatus === "playing"
         visible: enabled
         text: new Date(null, null, null, null, null, game.time).toLocaleTimeString(Qt.locale(), "HH:mm:ss")
     }
@@ -112,7 +112,7 @@ CoverBackground {
     }
     CoverActionList {
         id: coverAction
-        enabled: !game.inLevelSelect
+        enabled: game.gState === "welcome" || game.gState === "playing"
         CoverAction {
             iconSource: "image://theme/icon-cover-new"
             onTriggered: {
@@ -121,6 +121,7 @@ CoverBackground {
                 }
                 pageStack.push(Qt.resolvedUrl("../pages/NewGame.qml"))
                 game.pause=true
+                game.gState = "levelSelect"
             }
         }
     }

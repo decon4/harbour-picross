@@ -11,29 +11,36 @@ Dialog{
     property string save: ""
     property bool autoLoadSaves: DB.getParameter("autoLoadSave") === 1
     property bool cheatMode: false
+    property string previousState
 
     id: newGameDialog
     canAccept: diffSelected != -1 && levelSelected != -1
 
     // Load last diff
-    Component.onCompleted:{
-        game.inLevelSelect = true
-        Source.save()
-        if(!cheatMode)
+    Component.onCompleted: {
+        if(game.gState !== "levelSelect" && !cheatMode) {
             mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
+        }
+        previousState = game.gState
+    }
+
+    onStatusChanged: {
+        if(status === PageStatus.Active && game.gState !== "levelSelect") {
+            game.gState = "levelSelect"
+            Source.save()
+        }
     }
 
     onAccepted: {
-        game.hideGrid = true
+        game.gState = "loading"
         game.diff=diffSelected
         game.level=levelSelected
         game.save=save
-        game.inLevelSelect = false
     }
 
     onRejected: {
         game.pause=false
-        game.inLevelSelect = false
+        game.gState = previousState
     }
 
     // Title: New game

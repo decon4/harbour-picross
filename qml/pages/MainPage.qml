@@ -10,7 +10,7 @@ Page {
         // Prepare the next level
         if(status == PageStatus.Active) {
             pageStack.pop(Qt.resolvedUrl("pages/ScorePage.qml"))
-            if(game.hideGrid) {
+            if(game.gState === "loading") {
                 // Update title immediatelly
                 titleAnimation.enabled = false
                 descriptionAnimation.enabled = false
@@ -22,11 +22,11 @@ Page {
                 game.loadLevel()
                 Source.save()
 
-                game.hideGrid = false
                 game.pause = false
 
                 // Animate title
                 resetPageHeader.start()
+                game.gState = "playing"
             }
         }
     }
@@ -46,7 +46,7 @@ Page {
     onHintTitleCpChanged: {
         pageHeader.title=qsTr("Dimension")+": "+game.gridSize+"x"+game.gridSize
         pageHeader.description=qsTr("Good luck!")
-        if(!game.hideGrid) resetPageHeader.start()
+        if(!game.loading) resetPageHeader.start()
     }
 
     id: page
@@ -397,7 +397,7 @@ Page {
             }
             // Hint
             ViewPlaceholder {
-                enabled: game.gridSize === 0 && !game.hideGrid
+                enabled: game.gState === "welcome"
                 text: game.allLevelsCompleted ? qsTr("Congratulations!") : qsTr("Welcome to Picross")
                 hintText: game.allLevelsCompleted ? qsTr("You solved every level!") : qsTr("Please choose a level from the pulley menu")
             }
@@ -408,13 +408,13 @@ Page {
                 id: wholeGrid
                 width: parent.width
                 height: parent.height
-                visible: !game.hideGrid && game.gridSize !== 0
+                visible: game.gState === "playing"
                 enabled: visible
                 opacity: visible ? 1.0 : 0.0
 
                 // Show the keypad hint, maybe
                 onVisibleChanged: {
-                    if(visible && game.showKeypadHint && game.gridSize > 0) {
+                    if(visible && game.showKeypadHint) {
                         game.disableKeyboardHint()
                         hintLabel.opacity = 1.0
                     }
@@ -424,7 +424,7 @@ Page {
             BusyIndicator {
                 size: BusyIndicatorSize.Large
                 anchors.centerIn: parent
-                running: game.hideGrid
+                running: game.gState === "loading" || game.gState === "levelSelect"
             }
         }
     }
@@ -441,7 +441,7 @@ Page {
                 FadeAnimation { duration: 500 }
             }
         }
-        text: qsTr("Try the new on-screen keypad in settings")
+        text: qsTr("Try the new on-screen keypad in Settings")
     }
     TouchInteractionHint {
         id: hint

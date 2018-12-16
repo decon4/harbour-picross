@@ -49,7 +49,7 @@ Page {
 
             // Prepare the next level
             if(!game.allLevelsCompleted) {
-                game.hideGrid = true
+                game.gState = "loading"
                 game.diff=nextDiff
                 game.level=nextLevel
                 game.save=DB.getSave(game.diff, game.level)

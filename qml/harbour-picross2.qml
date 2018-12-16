@@ -55,7 +55,6 @@ ApplicationWindow{
     signal win
 
     property bool allLevelsCompleted: false
-    property bool inLevelSelect: false
 
     property QtObject longBuzz
     property QtObject shortBuzz
@@ -77,7 +76,8 @@ ApplicationWindow{
     property bool vibrate
     property bool zoomIndic
     property bool showKeypad
-    property bool hideGrid: false
+
+    property string gState: "welcome"
 
     property int gridSize: 0
     property int cellCount: gridSize * gridSize

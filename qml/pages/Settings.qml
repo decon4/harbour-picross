@@ -77,6 +77,7 @@ Page{
 
                 onClicked:{
                     remorseSettings.execute(qsTr("Clearing ALL Databases"), function(){
+                        game.gState = "welcome"
                         game.clearData()
                         game.allLevelsCompleted = false
                         DB.destroyData()
