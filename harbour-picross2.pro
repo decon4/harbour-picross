@@ -30,6 +30,7 @@ DISTFILES += \
     qml/pages/NewGame.qml \
     qml/pages/ScorePage.qml \
     qml/pages/Settings.qml \
+    qml/pages/WhatsNew.qml \
     qml/DB.js \
     qml/Levels.js \
     qml/Source.js \
@@ -39,8 +40,7 @@ DISTFILES += \
     rpm/harbour-picross2.spec \
     rpm/harbour-picross2.changes \
     scripts/genPicross.sh \
-    harbour-picross2.desktop \
-    qml/pages/WhatsNew.qml
+    harbour-picross2.desktop
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

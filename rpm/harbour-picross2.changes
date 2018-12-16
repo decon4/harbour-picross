@@ -8,7 +8,7 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Sun Dec 17 2018 Matti Viljanen <matti.viljanen@kapsi.fi> 2.3-1
+* Mon Dec 17 2018 Matti Viljanen <matti.viljanen@kapsi.fi> 2.3-1
 - What's new page added in About page
 - Keypad hint added
 - Dragging difficulty bar handled correctly
