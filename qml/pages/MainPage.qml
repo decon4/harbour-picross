@@ -388,7 +388,7 @@ Page {
         }
 
         // Grid part
-        Column{
+        Item {
             anchors {
                 top: rectPageHeader.bottom
                 bottom: parent.bottom
@@ -419,12 +419,12 @@ Page {
                         hintLabel.opacity = 1.0
                     }
                 }
+            }
 
-                BusyIndicator {
-                    size: BusyIndicatorSize.Large
-                    anchors.centerIn: parent
-                    running: game.hideGrid
-                }
+            BusyIndicator {
+                size: BusyIndicatorSize.Large
+                anchors.centerIn: parent
+                running: game.hideGrid
             }
         }
     }
