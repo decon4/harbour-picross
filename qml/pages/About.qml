@@ -39,6 +39,16 @@ Page {
                 font.pixelSize: Theme.fontSizeExtraLarge
             }
             Label {
+                text: "17.12.2018"
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: Theme.fontSizeSmall
+            }
+            Button{
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("What's new?")
+                onClicked: pageStack.push(Qt.resolvedUrl("WhatsNew.qml"))
+            }
+            Label {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Developed by")
                 font.pixelSize: Theme.fontSizeLarge

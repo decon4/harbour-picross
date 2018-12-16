@@ -39,7 +39,8 @@ DISTFILES += \
     rpm/harbour-picross2.spec \
     rpm/harbour-picross2.changes \
     scripts/genPicross.sh \
-    harbour-picross2.desktop
+    harbour-picross2.desktop \
+    qml/pages/WhatsNew.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 

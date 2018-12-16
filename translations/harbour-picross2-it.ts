@@ -11,6 +11,10 @@
         <source>Maintainer</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>What&apos;s new?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
