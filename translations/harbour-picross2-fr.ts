@@ -949,7 +949,7 @@ temporaires</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Try the new on-screen keypad in settings</source>
+        <source>Try the new on-screen keypad in Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

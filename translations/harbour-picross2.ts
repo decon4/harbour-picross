@@ -1135,7 +1135,7 @@ guesses</source>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="444"/>
-        <source>Try the new on-screen keypad in settings</source>
+        <source>Try the new on-screen keypad in Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1197,52 +1197,52 @@ guesses</source>
 <context>
     <name>NewGame</name>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="42"/>
+        <location filename="../qml/pages/NewGame.qml" line="49"/>
         <source>Cheat...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="42"/>
+        <location filename="../qml/pages/NewGame.qml" line="49"/>
         <source>Level select</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="43"/>
+        <location filename="../qml/pages/NewGame.qml" line="50"/>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="44"/>
+        <location filename="../qml/pages/NewGame.qml" line="51"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="197"/>
+        <location filename="../qml/pages/NewGame.qml" line="204"/>
         <source>Locked</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="198"/>
+        <location filename="../qml/pages/NewGame.qml" line="205"/>
         <source>Complete all previous levels to unlock this difficulty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="311"/>
+        <location filename="../qml/pages/NewGame.qml" line="307"/>
         <source>Play from scratch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="321"/>
+        <location filename="../qml/pages/NewGame.qml" line="317"/>
         <source>Restore save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="332"/>
+        <location filename="../qml/pages/NewGame.qml" line="328"/>
         <source>Erase save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="340"/>
+        <location filename="../qml/pages/NewGame.qml" line="336"/>
         <source>Details</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1365,22 +1365,22 @@ guesses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="88"/>
+        <location filename="../qml/pages/Settings.qml" line="90"/>
         <source>Clear only saves database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="90"/>
+        <location filename="../qml/pages/Settings.qml" line="92"/>
         <source>Clearing only saves database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="98"/>
+        <location filename="../qml/pages/Settings.qml" line="100"/>
         <source>Reset settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="100"/>
+        <location filename="../qml/pages/Settings.qml" line="102"/>
         <source>Resetting settings</source>
         <translation type="unfinished"></translation>
     </message>
