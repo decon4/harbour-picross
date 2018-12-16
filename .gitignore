@@ -1,8 +1,6 @@
-harbour-picross
-harbour-picross.o
-RPMS/
-qml/Levels.js.old
-*user*
+*.old
+*.bak
+*.pro.user
 *.qm
 *.spec.*
 *.autosave
