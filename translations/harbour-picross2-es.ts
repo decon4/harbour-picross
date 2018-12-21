@@ -4,12 +4,17 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="44"/>
+        <location filename="../qml/pages/About.qml" line="48"/>
+        <source>What&apos;s new?</source>
+        <translation>Novedades</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="53"/>
         <source>Developed by</source>
         <translation>Desarrollado por</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="60"/>
+        <location filename="../qml/pages/About.qml" line="69"/>
         <source>Maintainer</source>
         <translation>Mantenimiento</translation>
     </message>
@@ -1064,135 +1069,134 @@
 <context>
     <name>MainPage</name>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="19"/>
+        <location filename="../qml/pages/MainPage.qml" line="37"/>
         <source>Tutorial</source>
         <translation>Tutorial</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="20"/>
+        <location filename="../qml/pages/MainPage.qml" line="38"/>
         <source>Easy</source>
         <translation>Fácil</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="21"/>
+        <location filename="../qml/pages/MainPage.qml" line="39"/>
         <source>Medium</source>
         <translation>Medio</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="22"/>
+        <location filename="../qml/pages/MainPage.qml" line="40"/>
         <source>Hard</source>
         <translation>Duro</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="23"/>
+        <location filename="../qml/pages/MainPage.qml" line="41"/>
         <source>Expert</source>
         <translation>Experto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="24"/>
+        <location filename="../qml/pages/MainPage.qml" line="42"/>
         <source>Insane</source>
         <translation>De locos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="28"/>
-        <location filename="../qml/pages/MainPage.qml" line="288"/>
+        <location filename="../qml/pages/MainPage.qml" line="47"/>
+        <location filename="../qml/pages/MainPage.qml" line="307"/>
         <source>Dimension</source>
         <translation>Dimensión</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="29"/>
+        <location filename="../qml/pages/MainPage.qml" line="48"/>
         <source>Good luck!</source>
         <translation>¡Buena suerte!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="51"/>
+        <location filename="../qml/pages/MainPage.qml" line="70"/>
         <source>Zoom</source>
         <translation>Zoom</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="151"/>
-        <location filename="../qml/pages/MainPage.qml" line="194"/>
+        <location filename="../qml/pages/MainPage.qml" line="170"/>
+        <location filename="../qml/pages/MainPage.qml" line="213"/>
         <source>Accepting guesses</source>
         <translation>Aceptando pistas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="167"/>
-        <location filename="../qml/pages/MainPage.qml" line="208"/>
+        <location filename="../qml/pages/MainPage.qml" line="186"/>
+        <location filename="../qml/pages/MainPage.qml" line="227"/>
         <source>Rejecting guesses</source>
         <translation>Rechazando pistas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="183"/>
+        <location filename="../qml/pages/MainPage.qml" line="202"/>
         <source>Accept
 guesses</source>
         <translation>Aceptar
 pistas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="215"/>
+        <location filename="../qml/pages/MainPage.qml" line="234"/>
         <source>Reject
 guesses</source>
         <translation>Rechazar
 pistas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="298"/>
-        <location filename="../qml/pages/MainPage.qml" line="318"/>
-        <source>Picross</source>
-        <translation>Picross</translation>
+        <location filename="../qml/pages/MainPage.qml" line="444"/>
+        <source>Try the new on-screen keypad in Settings</source>
+        <translation>Prueba el nuevo teclado-juego en Ajustes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="318"/>
+        <location filename="../qml/pages/MainPage.qml" line="339"/>
         <source>Level</source>
         <translation>Nivel</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="332"/>
+        <location filename="../qml/pages/MainPage.qml" line="353"/>
         <source>About</source>
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="339"/>
+        <location filename="../qml/pages/MainPage.qml" line="360"/>
         <source>Settings</source>
         <translation>Ajustes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="348"/>
+        <location filename="../qml/pages/MainPage.qml" line="369"/>
         <source>Guess mode</source>
         <translation>Modo predictivo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="356"/>
+        <location filename="../qml/pages/MainPage.qml" line="377"/>
         <source>Clear grid</source>
         <translation>Limpiar rejilla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="357"/>
+        <location filename="../qml/pages/MainPage.qml" line="378"/>
         <source>Clearing the grid</source>
         <translation>Limpiando rejilla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="361"/>
+        <location filename="../qml/pages/MainPage.qml" line="382"/>
         <source>Level select</source>
         <translation>Seccionar nivel</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="378"/>
+        <location filename="../qml/pages/MainPage.qml" line="401"/>
         <source>Congratulations!</source>
         <translation>¡Enhorabuena!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="378"/>
+        <location filename="../qml/pages/MainPage.qml" line="401"/>
         <source>Welcome to Picross</source>
         <translation>Bienvenido a Picross</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="379"/>
+        <location filename="../qml/pages/MainPage.qml" line="402"/>
         <source>You solved every level!</source>
         <translation>¡Has resuelto todos los niveles!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="379"/>
+        <location filename="../qml/pages/MainPage.qml" line="402"/>
         <source>Please choose a level from the pulley menu</source>
         <translation>Elige un nivel desde el menú deslizante</translation>
     </message>
@@ -1200,52 +1204,52 @@ pistas</translation>
 <context>
     <name>NewGame</name>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="19"/>
+        <location filename="../qml/pages/NewGame.qml" line="49"/>
         <source>Cheat...</source>
         <translation>Tramposo...</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="19"/>
+        <location filename="../qml/pages/NewGame.qml" line="49"/>
         <source>Level select</source>
         <translation>Seleccionar nivel</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="20"/>
+        <location filename="../qml/pages/NewGame.qml" line="50"/>
         <source>Play</source>
         <translation>Jugar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="21"/>
+        <location filename="../qml/pages/NewGame.qml" line="51"/>
         <source>Back</source>
         <translation>Volver</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="143"/>
+        <location filename="../qml/pages/NewGame.qml" line="204"/>
         <source>Locked</source>
         <translation>Bloqueado</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="144"/>
+        <location filename="../qml/pages/NewGame.qml" line="205"/>
         <source>Complete all previous levels to unlock this difficulty</source>
         <translation>Completa los niveles anteriores para desbloquear esta dificultad</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="235"/>
+        <location filename="../qml/pages/NewGame.qml" line="307"/>
         <source>Play from scratch</source>
         <translation>Jugar desde cero</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="244"/>
+        <location filename="../qml/pages/NewGame.qml" line="317"/>
         <source>Restore save</source>
         <translation>Restaurar partidas guardadas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="253"/>
+        <location filename="../qml/pages/NewGame.qml" line="328"/>
         <source>Erase save</source>
         <translation>Borrar partidas guardadas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NewGame.qml" line="260"/>
+        <location filename="../qml/pages/NewGame.qml" line="336"/>
         <source>Details</source>
         <translation>Detalles</translation>
     </message>
@@ -1253,32 +1257,32 @@ pistas</translation>
 <context>
     <name>ScorePage</name>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="78"/>
+        <location filename="../qml/pages/ScorePage.qml" line="80"/>
         <source>Next level</source>
         <translation>Siguiente nivel</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="88"/>
+        <location filename="../qml/pages/ScorePage.qml" line="90"/>
         <source>Level details</source>
         <translation>Detalles del nivel</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="88"/>
+        <location filename="../qml/pages/ScorePage.qml" line="90"/>
         <source>Level completed!</source>
         <translation>¡Nivel completado!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="94"/>
+        <location filename="../qml/pages/ScorePage.qml" line="96"/>
         <source>Level</source>
         <translation>Nivel</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="145"/>
+        <location filename="../qml/pages/ScorePage.qml" line="147"/>
         <source>Your time</source>
         <translation>Tu tiempo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ScorePage.qml" line="161"/>
+        <location filename="../qml/pages/ScorePage.qml" line="163"/>
         <source>Best time</source>
         <translation>Mejor tiempo</translation>
     </message>
@@ -1297,83 +1301,93 @@ pistas</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="23"/>
-        <location filename="../qml/pages/Settings.qml" line="35"/>
+        <location filename="../qml/pages/Settings.qml" line="32"/>
         <source>Enabled</source>
         <translation>Activado</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="23"/>
-        <location filename="../qml/pages/Settings.qml" line="35"/>
+        <location filename="../qml/pages/Settings.qml" line="32"/>
         <source>Disabled</source>
         <translation>Desactivado</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="34"/>
+        <location filename="../qml/pages/Settings.qml" line="31"/>
         <source>Zoom on indicators</source>
         <translation>Zoom en indicadores</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="46"/>
+        <location filename="../qml/pages/Settings.qml" line="40"/>
         <source>Load saves by default</source>
-        <translation>Cargar partidas guardadas por defecto</translation>
+        <translation>Cargar partidas guardadas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="47"/>
+        <location filename="../qml/pages/Settings.qml" line="41"/>
         <source>Saves will be loaded by default</source>
         <translation>Las partidas guardadas se cargarán por defecto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="47"/>
+        <location filename="../qml/pages/Settings.qml" line="41"/>
         <source>Load them by a long press</source>
         <translation>Cargar con una pulsación larga</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="57"/>
+        <location filename="../qml/pages/Settings.qml" line="46"/>
         <source>Swipe throught difficulty</source>
         <translation>Deslizar para cambiar dificultad</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="58"/>
+        <location filename="../qml/pages/Settings.qml" line="47"/>
         <source>Swipe is enabled</source>
         <translation>Acción de deslizar activada</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="58"/>
+        <location filename="../qml/pages/Settings.qml" line="47"/>
         <source>Swipe disable. Click on a difficulty name to load it</source>
         <translation>Acción de deslizar desactivada. Haz clic en un nombre de dificultad para cargarla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="69"/>
+        <location filename="../qml/pages/Settings.qml" line="52"/>
+        <source>Show gamepad</source>
+        <translation>Mostrar teclado-juego</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="53"/>
+        <source>Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!</source>
+        <translation>Usar flechas, botón acción y cursor en pantalla. ¡También soporta teclados Bluetooth!</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="63"/>
         <source>Space between separators</source>
         <translation>Espacio entre separadores</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="82"/>
+        <location filename="../qml/pages/Settings.qml" line="76"/>
         <source>Clear ALL databases (saves &amp; progress)</source>
         <translation>Borrar TODO (partidas guardadas y en curso)</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="85"/>
+        <location filename="../qml/pages/Settings.qml" line="79"/>
         <source>Clearing ALL Databases</source>
         <translation>Borrando TODO</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="94"/>
+        <location filename="../qml/pages/Settings.qml" line="90"/>
         <source>Clear only saves database</source>
         <translation>Borrar sólo partidas guardadas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="96"/>
+        <location filename="../qml/pages/Settings.qml" line="92"/>
         <source>Clearing only saves database</source>
         <translation>Borrando sólo partidas guardadas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="104"/>
+        <location filename="../qml/pages/Settings.qml" line="100"/>
         <source>Reset settings</source>
         <translation>Reiniciar ajustes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="106"/>
+        <location filename="../qml/pages/Settings.qml" line="102"/>
         <source>Resetting settings</source>
         <translation>Reiniciando ajustes</translation>
     </message>
