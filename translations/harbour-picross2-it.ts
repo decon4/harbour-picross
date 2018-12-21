@@ -11,6 +11,10 @@
         <source>Maintainer</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>What&apos;s new?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -901,10 +905,6 @@ guesses</source>
 guesses</translation>
     </message>
     <message>
-        <source>Picross</source>
-        <translation>Picross</translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation>Impostazioni</translation>
     </message>
@@ -950,6 +950,10 @@ guesses</translation>
     </message>
     <message>
         <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try the new on-screen keypad in Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1095,6 +1099,14 @@ guesses</translation>
     </message>
     <message>
         <source>Zoom on indicators</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show gamepad</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

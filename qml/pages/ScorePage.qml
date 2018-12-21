@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../DB.js" as DB
 import "../Levels.js" as Levels
+import "../components"
 
 
 Page {
@@ -35,7 +36,7 @@ Page {
         else {
             gLevel     = game.level
             gDiff      = game.diff
-            gDimension = game.dimension
+            gDimension = game.gridSize
             gTitle     = game.title
             gTime      = game.time
             bTime      = DB.getTime(game.diff, game.level)
@@ -48,13 +49,14 @@ Page {
 
             // Prepare the next level
             if(!game.allLevelsCompleted) {
+                game.gState = "loading"
                 game.diff=nextDiff
                 game.level=nextLevel
                 game.save=DB.getSave(game.diff, game.level)
-                Levels.initSolvedGrid(game.solvedGrid, game.diff, game.level)
-                game.gridUpdated()
                 if(nextDiff == -1 && nextLevel == -1)
-                    game.dimension = 0
+                    game.gridSize = 0
+                game.pause = true
+                game.time = 0
             }
 
             // Clear loaded level

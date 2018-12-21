@@ -6,7 +6,6 @@ Page {
 
     PageHeader {
         id: aboutTitle
-        //title: qsTr("About Picross")
     }
 
     SilicaFlickable {
@@ -35,9 +34,19 @@ Page {
                 source: "/usr/share/icons/hicolor/172x172/apps/harbour-picross2.png"
             }
             Label {
-                text: "Picross"
+                text: "Picross v2.3"
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeExtraLarge
+            }
+            Label {
+                text: "17.12.2018"
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: Theme.fontSizeSmall
+            }
+            Button{
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("What's new?")
+                onClicked: pageStack.push(Qt.resolvedUrl("WhatsNew.qml"))
             }
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter

@@ -1,23 +1,18 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-import "../Source.js" as Source
-import "../DB.js" as DB
-
 Item{
-    visible: game.dimension !== 0
-    enabled: game.dimension !== 0
     id: gridPartRectangle
 
     property int sizeIndicLeft: maxSizeIndicLeft
     property int sizeIndicTop: foldTopMode?maxSizeIndicTop:Math.max(maxSizeIndicTop, (maxHeight+1)*insideBorderSize + (maxHeight+1)*Math.min(
-                                                                        0.9*(flick.contentWidth-(game.dimension-1)*insideBorderSize) / game.dimension
+                                                                        0.9*(flick.contentWidth-(game.gridSize-1)*insideBorderSize) / game.gridSize
                                                                         ,
                                                                         maxSizeIndicTop/5))
     property int maxSizeIndicLeft: width/4
     property int maxSizeIndicTop: width/4
 
-    property real unitSize: game.zoom*(width-maxSizeIndicLeft-(game.dimension-1)*insideBorderSize-outsideBorderSize)/game.dimension
+    property real unitSize: game.zoom*(width-maxSizeIndicLeft-(game.gridSize-1)*insideBorderSize-outsideBorderSize)/game.gridSize
 
 
     Behavior on sizeIndicLeft {NumberAnimation{duration: 100}}
@@ -48,13 +43,13 @@ Item{
             x:gridPartRectangle.width-10
             width:10
             height: Math.min(gridPartRectangle.height-outsideBorderSize, indicUp.height+flick.contentHeight)
-            color: "red"
+            color: Theme.highlightColor
             opacity:0.3
         }
     }
 
     // Un-zoom button
-    UnZoomButton{}
+    UnZoomButton { }
 
     // Top indicator
     Item{
@@ -113,7 +108,7 @@ Item{
                                     anchors.fill: parent
                                     onClicked: {
                                         if(completed||toFill)
-                                            Source.completeColX(index, toFill)
+                                            game.completeColX(index, toFill)
                                     }
                                     onPressAndHold: foldTopMode=!foldTopMode
                                 }
@@ -130,7 +125,7 @@ Item{
                                         anchors.fill: parent
                                         onClicked: {
                                             if(completed||toFill)
-                                                Source.completeColX(index, toFill)
+                                                game.completeColX(index, toFill)
                                         }
                                         //                                                                                onPressAndHold: if(game.zoom!==1)foldTopMode=!foldTopMode
                                         onPressAndHold: foldTopMode=!foldTopMode
@@ -222,7 +217,7 @@ Item{
                                     anchors.fill: parent
                                     onClicked: {
                                         if(completed||toFill)
-                                            Source.completeColX(index, toFill)
+                                            game.completeColX(index, toFill)
                                     }
                                     onPressAndHold: foldTopMode=!foldTopMode
                                 }
@@ -253,7 +248,7 @@ Item{
             id: leftLineIndicLeft
             x:0
             y:sizeIndicTop
-            height: Math.min(game.dimension*unitSize+(game.dimension-1)*insideBorderSize, page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)
+            height: Math.min(game.gridSize*unitSize+(game.gridSize-1)*insideBorderSize, page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)
 
             width: 10
             color: Theme.highlightColor
@@ -261,7 +256,7 @@ Item{
         }
         Item{
             id: indicLeft
-            height: Math.min(game.dimension*unitSize+(game.dimension-1)*insideBorderSize, page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)
+            height: Math.min(game.gridSize*unitSize+(game.gridSize-1)*insideBorderSize, page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)
             width: sizeIndicLeft
             y:sizeIndicTop
             //Slider part
@@ -294,7 +289,7 @@ Item{
                             //Vertical part
                             Rectangle{
                                 id: indicRectangleLeft
-                                height: game.zoomIndic?unitSize:(indicLeftFlick.height+insideBorderSize)/game.dimension-insideBorderSize
+                                height: game.zoomIndic?unitSize:(indicLeftFlick.height+insideBorderSize)/game.gridSize-insideBorderSize
                                 width: indicLeftFlick.width
                                 color:"transparent"
 
@@ -302,7 +297,7 @@ Item{
                                     anchors.fill: parent
                                     onClicked:{
                                         if(completed||toFill)
-                                            Source.completeLineX(index, toFill)
+                                            game.completeRowX(index, toFill)
                                     }
                                 }
                                 SilicaFlickable{
@@ -317,7 +312,7 @@ Item{
                                         anchors.fill: parent
                                         onClicked:{
                                             if(completed||toFill)
-                                                Source.completeLineX(index, toFill)
+                                                game.completeRowX(index, toFill)
                                         }
                                     }
                                     Row{
@@ -396,6 +391,14 @@ Item{
                                     }                                                                }
                             }
                             Rectangle{
+                                MouseArea{
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        if(completed||toFill)
+                                            game.completeRowX(index, toFill)
+                                    }
+                                    onPressAndHold: foldTopMode=!foldTopMode
+                                }
                                 height: insideBorderSize
                                 width: indicLeftFlick.width-2*outsideBorderSize
                                 x: outsideBorderSize
@@ -411,7 +414,7 @@ Item{
             id: rightLineIndicLeft
             x:sizeIndicLeft-10
             y:sizeIndicTop
-            height: Math.min(game.dimension*unitSize+(game.dimension-1)*insideBorderSize, page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)
+            height: Math.min(game.gridSize*unitSize+(game.gridSize-1)*insideBorderSize, page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)
             width: 10
             color: Theme.highlightColor
             opacity:0.3
@@ -424,14 +427,14 @@ Item{
         y:sizeIndicTop
         x:sizeIndicLeft
         width: gridPartRectangle.width-sizeIndicLeft-outsideBorderSize
-        height: Math.min(game.dimension*unitSize+(game.dimension-1)*insideBorderSize, page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)
+        height: Math.min(game.gridSize*unitSize+(game.gridSize-1)*insideBorderSize, page.height-pageHeader.height-sizeIndicTop-outsideBorderSize)
 
         SilicaFlickable {
             clip:true
             anchors.fill:parent
             pressDelay: 0
             id: flick
-            contentWidth: game.dimension*unitSize+(game.dimension-1)*insideBorderSize
+            contentWidth: game.gridSize*unitSize+(game.gridSize-1)*insideBorderSize
             contentHeight: column.height
             contentX: game.zoomIndic?indicUpFlick.contentX:0
             contentY: game.zoomIndic?indicLeftFlick.contentX:0
@@ -454,13 +457,11 @@ Item{
         color: Theme.highlightColor
         opacity:0.3
     }
-    Rectangle {
-        id: rightRect
-        anchors.bottom: bottomRect.top
-        anchors.top: gridPartRectangle.top
-        anchors.right: bottomRect.right
-        width: 10
-        color: Theme.highlightColor
-        opacity:0.3
+    KeyPad {
+        visible: game.showKeypad && game.zoom === 1
+        enabled: visible
+        anchors.top: bottomRect.bottom
+        width: parent.width
+        anchors.bottom: parent.bottom
     }
 }

@@ -3,121 +3,183 @@ import Sailfish.Silica 1.0
 import "../Source.js" as Source
 import "../Levels.js" as Levels
 import "../DB.js" as DB
+import "../components"
 
 Dialog{
     property int diffSelected: -1
     property int levelSelected: -1
     property string save: ""
+    property bool autoLoadSaves: DB.getParameter("autoLoadSave") === 1
     property bool cheatMode: false
+    property string previousState
 
-    id: dialog
+    id: newGameDialog
     canAccept: diffSelected != -1 && levelSelected != -1
 
+    // Load last diff
+    Component.onCompleted: {
+        if(game.gState !== "levelSelect" && !cheatMode) {
+            mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
+        }
+        previousState = game.gState
+    }
+
+    onStatusChanged: {
+        if(status === PageStatus.Active && game.gState !== "levelSelect") {
+            game.gState = "levelSelect"
+            Source.save()
+        }
+    }
+
+    onAccepted: {
+        game.gState = "loading"
+        game.diff=diffSelected
+        game.level=levelSelected
+        game.save=save
+    }
+
+    onRejected: {
+        game.pause=false
+        game.gState = previousState
+    }
+
     // Title: New game
-    DialogHeader{
-        id: pageTitle
+    DialogHeader {
+        id: header
         title: cheatMode?qsTr("Cheat..."):qsTr("Level select")
-        acceptText: qsTr("Play");
-        cancelText: qsTr("Back");
+        acceptText: qsTr("Play")
+        cancelText: qsTr("Back")
     }
 
     // Difficulty list
-    Column{
-        id: decoratorTop
-        anchors.top: pageTitle.bottom
-        width: dialog.width
-        anchors.horizontalCenter: dialog.horizontalCenter
-        SilicaListView{
-            id: silicaDiffList
-            height: Theme.fontSizeHuge
-            orientation: ListView.Horizontal
+    Item {
+        id: diffSelector
+        anchors.top: header.bottom
+        width: parent.width
+        height: Theme.paddingSmall + Theme.fontSizeHuge + Theme.paddingSmall
+
+        // Indicator bar background
+        Rectangle {
             width: parent.width
-            model:ListModel{
-                id: diffList
-                Component.onCompleted: Levels.getDifficultiesAndLevels(diffList)
+            height: Theme.paddingSmall
+            color: Theme.highlightColor
+            opacity: Theme.highlightBackgroundOpacity
+        }
+
+        // Indicator bar highlight
+        Rectangle{
+            width: parent.width / diffListModel.count
+            height: Theme.paddingSmall
+            x: parent.width / diffListModel.count * mySlideShowView.currentIndex
+            color: Theme.secondaryHighlightColor
+            opacity: 1 - Theme.highlightBackgroundOpacity / 3
+            Behavior on x { NumberAnimation { duration: 100 } }
+        }
+
+        // The clickable difficulty items
+        SilicaListView {
+            id: diffSelectorItems
+            y: Theme.paddingSmall
+            width: parent.width
+            height: Theme.fontSizeHuge
+
+            orientation: ListView.Horizontal
+
+            // Model: difficulty levels
+            model: ListModel {
+                id: diffListModel
+                Component.onCompleted: Levels.getDifficultiesAndLevels(diffListModel)
             }
-            // Difficulty item (bounding box)
-            delegate : Rectangle{
-                color: Theme.highlightDimmerColor
+
+            // Delegate: each difficulty
+            delegate: Item {
                 height: parent.height
-                width: decoratorTop.width/diffList.count
-                // Difficulty text
-                Label{
-                    anchors.centerIn: parent
-                    color: (Levels.isLocked(index))?"grey":"white"
-                    text:name
+                width: diffSelector.width / diffListModel.count
+
+                // "Text background" for item
+                Rectangle {
+                    id: diffItemBack
+                    anchors.fill: parent
+                    color: Theme.highlightColor
+                    opacity: Theme.highlightBackgroundOpacity / 3
+                    Behavior on opacity { NumberAnimation { duration: 100 } }
+                }
+
+                // Difficulty text for item
+                Label {
+                    anchors.centerIn: diffItemBack
+                    property bool locked: Levels.isLocked(index)
+                    color: locked ? Theme.highlightColor : Theme.primaryColor
+                    opacity: locked ? 0.5 : 1
+                    text : name
                     font.pixelSize: Theme.fontSizeTiny
                     font.bold: true
                 }
-                MouseArea{
+
+                MouseArea {
                     anchors.fill: parent
+                    onContainsMouseChanged: {
+                        if(containsMouse) {
+                            diffItemBack.opacity = Theme.highlightBackgroundOpacity
+                        }
+                        else {
+                            diffItemBack.opacity = Theme.highlightBackgroundOpacity / 3
+                        }
+                    }
                     onClicked: {
+                        diffItemBack.opacity = Theme.highlightBackgroundOpacity
                         mySlideShowView.currentIndex = index
+                        Theme.highlightDimmerColor
                         levelSelected = -1
                     }
-                    onPressed: parent.color = Theme.highlightColor
-                    onReleased: parent.color = Theme.highlightDimmerColor
                 }
-            }
-        }
-        Item{
-            width: parent.width
-            // Difficulty highlight rectangle...
-            Rectangle{
-                x: parent.width/diffList.count*mySlideShowView.currentIndex-silicaDiffList.contentY
-                height: Theme.paddingSmall
-                color: Theme.highlightColor
-                width: parent.width/diffList.count
-                Behavior on x {NumberAnimation{duration: 100}}
-            }
-            /// ...and its background
-            Rectangle{
-                width: parent.width
-                height: Theme.paddingSmall
-                color: Theme.rgba(Theme.highlightColor, 0.2)
             }
         }
     }
 
     // Level list
-    SlideshowView{
-        interactive: DB.getParameter("slideInteractive")===1 && diffSelected===-1
+    SlideshowView {
         id: mySlideShowView
+        interactive: DB.getParameter("slideInteractive")===1 && diffSelected===-1
         clip: true
         width: parent.width
-        anchors.top: decoratorTop.bottom
+        anchors.top: diffSelector.bottom
         anchors.bottom: parent.bottom
+
         model: ListModel{
             id: difficultyList
             Component.onCompleted: Levels.getDifficultiesAndLevels(difficultyList)
         }
-        delegate : Rectangle{
-            property int myDiff: index
+
+        delegate : Item {
+            id: currentLevelList
+            property int difficultyIndex: index
+            property int completedLevels: DB.getNbCompletedLevel(difficultyIndex)
             width: parent.width
             height: parent.height
-            color: "transparent"
             Column{
                 anchors.topMargin: Theme.paddingSmall
                 anchors.fill: parent
                 spacing: Theme.paddingSmall
+
                 // Diff details
-                Item{
-                    height: diffHeader.height
+                Label{
+                    id: diffLabel
                     width: parent.width
-                    Label{
-                        id: diffHeader
-                        anchors.centerIn: parent
-                        text: name+" ["+DB.getNbCompletedLevel(myDiff)+"/"+levelList.count+"]"
-                        color: Theme.highlightColor
-                        Component.onCompleted: {
-                            if(Levels.isLocked(myDiff))
-                                text = name+" [?/?]"
-                        }
-                        MouseArea{
-                            anchors.fill: parent
-                            //onPressAndHold: cheatMode = !cheatMode
-                        }
+                    horizontalAlignment: Text.AlignHCenter
+                    color: Theme.highlightColor
+                    text: name+" ["+completedLevels+"/"+levelList.count+"]"
+                    Component.onCompleted: {
+                        if(Levels.isLocked(difficultyIndex))
+                            text = name+" [?/?]"
                     }
+                    //MouseArea{
+                    //    anchors.fill: parent
+                    //    onPressAndHold: {
+                    //        cheatMode = !cheatMode
+                    //        header.acceptText = cheatMode ? "" : qsTr("Play")
+                    //    }
+                    //}
                 }
 
                 // Separator
@@ -130,16 +192,15 @@ Dialog{
 
                 // Level list
                 SilicaListView{
+                    id: levelView
                     clip: true
                     VerticalScrollDecorator{}
-                    id: levelView
-                    height: parent.height - separatorRect.height - diffHeader.height - Theme.paddingMedium
+                    height: parent.height - separatorRect.height - diffLabel.height - Theme.paddingMedium
                     width: parent.width
 
                     ViewPlaceholder{
-                        verticalOffset: -pageTitle.height
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        enabled : Levels.isLocked(myDiff)
+                        verticalOffset: -(mySlideShowView.y + separatorRect.y) / 2
+                        enabled: Levels.isLocked(difficultyIndex)
                         text: qsTr("Locked")
                         hintText: qsTr("Complete all previous levels to unlock this difficulty")
                     }
@@ -147,23 +208,24 @@ Dialog{
                     model: ListModel{
                         id: levelList
                         Component.onCompleted: {
-                            if(!Levels.isLocked(myDiff))
-                                Levels.arrayToList(myDiff, levelList)
+                            if(!Levels.isLocked(difficultyIndex))
+                                Levels.arrayToList(difficultyIndex, levelList)
                             else
                                 levelList.clear()
                         }
                     }
                     delegate: ListItem{
-                        property int myLevel: index
-                        id: listItem
+                        id: levelItem
                         menu: contextMenu
                         contentHeight: levelTitle.height + levelDescription.height + Theme.paddingSmall
-                        Rectangle{
-                            anchors.fill: parent
-                            visible: (listItem.highlighted || (myLevel==levelSelected && myDiff==diffSelected))
-                            color: Theme.highlightBackgroundColor
-                            opacity: Theme.highlightBackgroundOpacity
-                        }
+
+                        property int levelIndex:  index   // 0-based index
+                        property int levelNumber: index+1 // 1-based index
+
+                        property bool hasSavedState: DB.getSave(difficultyIndex, levelIndex) !== ""
+                        property bool isCompleted: DB.isCompleted(difficultyIndex, levelIndex)
+
+                        highlighted: levelIndex==levelSelected && difficultyIndex==diffSelected
 
                         // Draw empty level completex checkbox
                         Image {
@@ -178,7 +240,7 @@ Dialog{
                         // If the level is completed, draw the tick in the box
                         Image {
                             id: levelCheckboxTick
-                            visible: DB.isCompleted(myDiff, myLevel)
+                            visible: isCompleted
                             source: "image://theme/icon-m-dismiss"
                             width: Theme.fontSizeExtraSmall*1.6
                             height: Theme.fontSizeExtraSmall*1.6
@@ -186,121 +248,103 @@ Dialog{
                             anchors.verticalCenter: parent.verticalCenter
                         }
 
-                        // First row, e.g. "[3x3] Box"
+                        // If the level has a saved state, draw the pen on the right
+                        Image {
+                            id: levelSavedIndicator
+                            source: "image://theme/icon-m-edit"
+                            width: levelItem.hasSavedState ? 2*Theme.fontSizeExtraSmall : 0
+                            height: 2*Theme.fontSizeExtraSmall
+                            anchors {
+                                verticalCenter: parent.verticalCenter
+                                right: parent.right
+                                rightMargin: levelItem.hasSavedState ? Theme.paddingMedium : 0
+                            }
+                        }
+
+                        // First row, e.g. "[3x3] Box", with possibly a pen symbol
                         Label{
                             id: levelTitle
-                            text: (myLevel+1)+". ["+dimension+"x"+dimension+"] " + (DB.isCompleted(myDiff, myLevel)?title:"?????")
+                            text: levelNumber+". ["+gridSize+"x"+gridSize+"] " + (isCompleted ? title : "")
                             font.pixelSize: Theme.fontSizeMedium
+                            truncationMode: TruncationMode.Fade
                             anchors.left: levelCheckbox.right
                             anchors.leftMargin: Theme.paddingMedium
                             anchors.topMargin: Theme.paddingSmall
-                            anchors.right: parent.right
+                            anchors.right: levelSavedIndicator.left
                         }
                         // Second row, e.g. "Numbers = size of the groups"
                         Label{
                             id: levelDescription
+                            text: hintTitle
+                            font.pixelSize: Theme.fontSizeSmall
+                            truncationMode: TruncationMode.Fade
                             anchors.top: levelTitle.bottom
                             anchors.left: levelCheckbox.right
                             anchors.leftMargin: Theme.paddingMedium
-                            anchors.right: parent.right
-                            text: hintTitle
-                            font.pixelSize: Theme.fontSizeSmall
+                            anchors.right: levelSavedIndicator.left
                         }
-                        onClicked:{
-                            if(cheatMode){
-                                DB.setIsCompleted(myDiff, myLevel, 'true')
+                        onClicked: {
+                            if(cheatMode && !isCompleted) {
+                                DB.setIsCompleted(difficultyIndex, levelIndex, 'true')
+                                currentLevelList.completedLevels++
+                                isCompleted = true
                                 levelCheckboxTick.visible = true
-                                levelTitle.text= (myLevel+1)+". ["+dimension+"x"+dimension+"] " + (DB.isCompleted(myDiff, myLevel)?title:"?????")
-                                levelTitle.color= listItem.highlighted || (myLevel == levelSelected && myDiff == diffSelected)
-                                        ? Theme.highlightColor
-                                        : DB.isCompleted(myDiff, myLevel)? Theme.primaryColor:"grey"
-                            }else{
-                                if(diffSelected !== myDiff || levelSelected !== myLevel){
-                                    diffSelected=myDiff
-                                    levelSelected=myLevel
-                                    save=DB.getParameter("autoLoadSave")===0?"":DB.getSave(myDiff, myLevel)
-                                    prepareLevelTimer.start()
-                                } else {
-                                    diffSelected=-1
-                                    levelSelected=-1
-                                }
                             }
                         }
 
-                        // Context menu
-                        Component {
+                        onPressed: {
+                            if(!cheatMode && (diffSelected !== difficultyIndex || levelSelected !== levelIndex)) {
+                                diffSelected=difficultyIndex
+                                levelSelected=levelIndex
+                                save = (autoLoadSaves && levelItem.hasSavedState) ? DB.getSave(difficultyIndex, levelIndex) : ""
+                            }
+                        }
+
+                        ContextMenu {
                             id: contextMenu
-                            ContextMenu {
-                                MenuItem {
-                                    text: qsTr("Play from scratch")
-                                    onClicked: {
-                                        diffSelected=myDiff
-                                        levelSelected=myLevel
-                                        save=""
-                                    }
+                            hasContent: !cheatMode
+                            MenuItem {
+                                text: qsTr("Play from scratch")
+                                onClicked: {
+                                    diffSelected=difficultyIndex
+                                    levelSelected=levelIndex
+                                    save=""
+                                    accept()
                                 }
-                                MenuItem {
-                                    visible: DB.getSave(myDiff, myLevel)!==""
-                                    text: qsTr("Restore save")
-                                    onClicked: {
-                                        diffSelected=myDiff
-                                        levelSelected=myLevel
-                                        save=DB.getSave(myDiff, myLevel)
-                                    }
+                            }
+                            MenuItem {
+                                visible: levelItem.hasSavedState
+                                text: qsTr("Restore save")
+                                onClicked: {
+                                    diffSelected=difficultyIndex
+                                    levelSelected=levelIndex
+                                    save=DB.getSave(difficultyIndex, levelIndex)
+                                    accept()
                                 }
-                                MenuItem {
-                                    visible: DB.getSave(myDiff, myLevel)!==""
-                                    text: qsTr("Erase save")
-                                    onClicked: {
-                                        DB.eraseSave(myDiff, myLevel)
-                                    }
+                            }
+                            MenuItem {
+                                id: eraseSave
+                                visible: levelItem.hasSavedState
+                                text: qsTr("Erase save")
+                                onClicked: {
+                                    DB.eraseSave(difficultyIndex, levelIndex)
+                                    levelItem.hasSavedState = false
                                 }
-                                MenuItem {
-                                    visible: DB.isCompleted(myDiff, myLevel)
-                                    text: qsTr("Details")
-                                    onClicked: {
-                                        pageStack.push(Qt.resolvedUrl("ScorePage.qml"), {"gDiff": myDiff, "gLevel": myLevel, "highScorePage": true})
-                                    }
+                            }
+                            MenuItem {
+                                visible: isCompleted
+                                text: qsTr("Details")
+                                onClicked: {
+                                    pageStack.push(Qt.resolvedUrl("ScorePage.qml"), {
+                                                       "gDiff": difficultyIndex,
+                                                       "gLevel": levelIndex,
+                                                       "highScorePage": true})
                                 }
                             }
                         }
                     }
-
                 }
             }
         }
-    }
-
-
-    // Load last diff
-    Component.onCompleted:{
-        if(!cheatMode)
-            mySlideShowView.positionViewAtIndex(Levels.getCurrentDiff(), PathView.SnapPosition)
-    }
-
-    Timer{
-        id: prepareLevelTimer
-        interval: 0
-        onTriggered: prepareLevel()
-    }
-
-    function prepareLevel() {
-        game.diff=diffSelected
-        game.level=levelSelected
-        game.save=save
-        Levels.initSolvedGrid(game.solvedGrid, diffSelected, levelSelected)
-        game.gridUpdated()
-        game.pause = true
-
-    }
-
-    onAccepted: {
-        prepareLevel()
-        Source.save()
-        game.pause = false
-    }
-
-    onRejected: {
-        game.pause=false
     }
 }

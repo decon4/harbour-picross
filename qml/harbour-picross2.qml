@@ -31,6 +31,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "pages"
+import "components"
 import "Source.js" as Source
 import "Levels.js" as Levels
 import "DB.js" as DB
@@ -41,7 +42,7 @@ ApplicationWindow{
     Timer{
         id: myTimer
         repeat: true
-        onTriggered: if(!won && !pause)game.time++
+        onTriggered: if(!won && !pause) time++
 
         Component.onCompleted: myTimer.start()
     }
@@ -50,7 +51,6 @@ ApplicationWindow{
     initialPage: Qt.resolvedUrl("pages/MainPage.qml")
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
-    signal gridUpdated
     signal checkWin
     signal win
 
@@ -71,11 +71,17 @@ ApplicationWindow{
 
     property bool foldTopMode: true
     property bool foldLeftMode: true
+    property bool showKeypadHint: false
 
-    property int vibrate
+    property bool vibrate
     property bool zoomIndic
+    property bool showKeypad
 
-    property int dimension: 0
+    property string gState: "welcome"
+
+    property int gridSize: 0
+    property int cellCount: gridSize * gridSize
+    property int currIndex: 0
     property real zoom: 1
     property string hintTitle: ""
     property string title: ""
@@ -94,11 +100,21 @@ ApplicationWindow{
     property int maxHeight:0
     property int maxWidth:0
 
+    /*
+    // 0.5fps on 15x15 grid...
+    Behavior on zoom {
+        NumberAnimation {
+                easing.type: Easing.OutQuint
+                duration: 100
+        }
+    }
+    */
+
     function clearData() {
         level = -1
         diff = -1
         time = 0
-        dimension = 0
+        gridSize = 0
         hintTitle = ""
         title = ""
         mySolvingGrid.clear()
@@ -111,9 +127,7 @@ ApplicationWindow{
         DB.initialize()
 
         //Parameters
-        space = DB.getParameter("space")
-        vibrate = DB.getParameter("vibrate")
-        zoomIndic = DB.getParameter("zoomindic")
+        loadSettings()
 
         // Are all levels completed?
         allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
@@ -128,30 +142,45 @@ ApplicationWindow{
     onApplicationActiveChanged:{
         if(!applicationActive){
             Source.save()
-            game.pause=true
+            pause=true
         } else {
             if(pageStack.depth === 1)
-                game.pause=false
+                pause=false
         }
     }
 
-    onGridUpdated: {
+    function loadSettings() {
+        space = DB.getParameter("space")
+        vibrate = DB.getParameter("vibrate") === 1
+        zoomIndic = DB.getParameter("zoomindic")
+        showKeypad = DB.getParameter("showKeypad") === 1
+
+        // The odd one out: -1 (unset) is evaluated as true
+        showKeypadHint = DB.getParameter("showKeypadHint") !== 0
+
+        if(showKeypad && showKeypadHint)
+            disableKeyboardHint()
+    }
+
+    function loadLevel() {
+        Levels.initSolvedGrid(solvedGrid, diff, level)
         maxWidth=0
         maxHeight=0
         foldTopMode=true
         won=false
-        Source.genIndicCol(game.indicUp, game.solvedGrid)
-        Source.genIndicLine(game.indicLeft, game.solvedGrid)
+        Source.genIndicCol(indicUp, solvedGrid)
+        Source.genIndicLine(indicLeft, solvedGrid)
         if(save!==""){
             Source.loadSave(save)
-            game.time=DB.getSavedTime(diff, level)
+            time=DB.getSavedTime(diff, level)
         } else {
-            Source.initVoid(game.mySolvingGrid)
-            game.time=0
+            Source.initVoid(mySolvingGrid)
+            time=0
         }
         pause=false
         slideMode=""
-        game.zoom=1
+        zoom=1
+        currIndex = (gridSize+(gridSize % 2 === 0 ? 1 : 0)) * (gridSize / 2)
     }
 
     onCheckWin: {
@@ -160,12 +189,66 @@ ApplicationWindow{
     }
 
     onWin: {
-        game.won=true
+        won=true
         DB.setIsCompleted(diff, level, 'true')
         DB.eraseSave(diff, level)
-        if(DB.getTime(diff, level) === 0 || DB.getTime(diff, level) > game.time)
-            DB.setTime(diff, level, game.time)
+        if(DB.getTime(diff, level) === 0 || DB.getTime(diff, level) > time)
+            DB.setTime(diff, level, time)
         pageStack.replace(Qt.resolvedUrl("pages/ScorePage.qml"))
         allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
     }
+
+    function clickSelectedCell() {
+        Source.click(mySolvingGrid, currIndex)
+    }
+
+    function setSelectedCell(newEstate) {
+        Source.slideClick(mySolvingGrid, currIndex, newEstate)
+    }
+
+    function completeRowX(index, toFill) {
+        Source.completeRowX(index, toFill)
+    }
+
+    function completeColX(index, toFill) {
+        Source.completeColX(index, toFill)
+    }
+
+    function disableKeyboardHint() {
+        DB.setParameter("showKeypadHint", 0)
+        showKeypadHint = false
+    }
+
+    function updateIndex(change) {
+        var currRow = Math.floor(currIndex / gridSize)
+        var currColumn = currIndex % gridSize
+        // Left / Right
+        if(change === 1 || change === -1) {
+            var newColumn = currColumn + change
+            if(newColumn < 0)
+                newColumn = newColumn + gridSize
+            else if(newColumn >= gridSize)
+                newColumn = newColumn - gridSize
+            //console.log("("+currColumn+","+currRow+") -> ("+newColumn+","+currRow+")")
+            currIndex = gridSize * currRow + newColumn
+        }
+
+        // Left / Right
+        if(change === -gridSize || change === gridSize) {
+            var newRow = currRow + (change > 0 ? 1 : -1)
+            if(newRow < 0)
+                newRow = newRow + gridSize
+            else if(newRow >= gridSize)
+                newRow = newRow - gridSize
+            //console.log("("+currColumn+","+currRow+") -> ("+currColumn+","+newRow+")")
+            currIndex = gridSize * newRow + currColumn
+        }
+    }
+
+    Keys.onLeftPressed: updateIndex(-1)
+    Keys.onRightPressed: updateIndex(1)
+    Keys.onUpPressed: updateIndex(-gridSize)
+    Keys.onDownPressed: updateIndex(gridSize)
+
+    Keys.onSpacePressed: Source.click(mySolvingGrid, currIndex)
 }

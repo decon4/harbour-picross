@@ -1,7 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../components"
 import "../Source.js" as Source
-import "../DB.js" as DB
 
 Page {
     RemorsePopup{ id: remorseMain }
@@ -10,6 +10,24 @@ Page {
         // Prepare the next level
         if(status == PageStatus.Active) {
             pageStack.pop(Qt.resolvedUrl("pages/ScorePage.qml"))
+            if(game.gState === "loading") {
+                // Update title immediatelly
+                titleAnimation.enabled = false
+                descriptionAnimation.enabled = false
+                pageHeader.title = "Picross"
+                pageHeader.description = "";
+                titleAnimation.enabled = true
+                descriptionAnimation.enabled = true
+
+                game.loadLevel()
+                Source.save()
+
+                game.pause = false
+
+                // Animate title
+                resetPageHeader.start()
+                game.gState = "playing"
+            }
         }
     }
 
@@ -23,11 +41,12 @@ Page {
         qsTr("Expert"),
         qsTr("Insane")
     ]
+
     property string hintTitleCp: game.hintTitle
     onHintTitleCpChanged: {
-        pageHeader.title=qsTr("Dimension")+": "+game.dimension+"x"+game.dimension
+        pageHeader.title=qsTr("Dimension")+": "+game.gridSize+"x"+game.gridSize
         pageHeader.description=qsTr("Good luck!")
-        resetPageHeader.start()
+        if(!game.loading) resetPageHeader.start()
     }
 
     id: page
@@ -60,8 +79,8 @@ Page {
                 ProgressBar{
                     anchors.horizontalCenter: parent.horizontalCenter
                     width: page.width/2
-                    maximumValue: 3
-                    minimumValue: 1
+                    maximumValue: 3.0
+                    minimumValue: 0.9
                     value:Math.floor(pinchArea.zoomTmp===-1?10*game.zoom:10*pinchArea.zoomTmp)/10
                 }
             }
@@ -85,14 +104,14 @@ Page {
             NumberAnimation {
                 target: flash
                 property: "opacity"
-                to: 0.5
+                to: 0.25
                 duration: 0
             }
             NumberAnimation {
                 target: flash
                 property: "opacity"
                 to: 0
-                duration: 500
+                duration: 250
             }
         }
     }
@@ -104,7 +123,7 @@ Page {
         property real zoomTmp : -1
         anchors.fill: parent
         onPinchStarted: {
-            if(game.dimension!==0)
+            if(game.gridSize!==0)
                 popupZoom.opacity = 1
             initialZoom = game.zoom
             zoomTmp = game.zoom
@@ -114,7 +133,7 @@ Page {
         }
         onPinchFinished:{
             popupZoom.opacity = 0
-            if(game.dimension!==0)
+            if(game.gridSize!==0)
                 game.zoom = zoomTmp
             zoomTmp = -1
         }
@@ -268,7 +287,7 @@ Page {
                 }
             }
             MouseArea{
-                enabled: game.dimension!==0
+                enabled: game.gridSize!==0
                 anchors.fill: parent
                 drag.target: parent
                 drag.axis: Drag.XAxis
@@ -285,7 +304,7 @@ Page {
                 }
                 onClicked:{
                     if(!resetPageHeader.running){
-                        pageHeader.title=qsTr("Dimension")+": "+game.dimension+"x"+game.dimension
+                        pageHeader.title=qsTr("Dimension")+": "+game.gridSize+"x"+game.gridSize
                         pageHeader.description="Elapsed time: "+time===0?"xx:xx:xx":game.time>=60*60*23?"24:00:00+":new Date(null, null, null, null, null, time).toLocaleTimeString(Qt.locale(), "HH:mm:ss");
                         resetPageHeader.start()
                     }else
@@ -295,9 +314,10 @@ Page {
 
             PageHeader {
                 id: pageHeader
-                title: qsTr("Picross")
+                title: "Picross"
                 description: " "
                 Behavior on title{
+                    id: titleAnimation
                     SequentialAnimation {
                         NumberAnimation { target: pageHeader; property: "opacity"; to: 0 }
                         PropertyAction {}
@@ -305,6 +325,7 @@ Page {
                     }
                 }
                 Behavior on description{
+                    id: descriptionAnimation
                     SequentialAnimation {
                         NumberAnimation { target: pageHeader; property: "opacity"; to: 0 }
                         PropertyAction {}
@@ -315,7 +336,7 @@ Page {
                     id: resetPageHeader
                     interval: 2000
                     onTriggered: {
-                        pageHeader.title = qsTr("Picross") + (game.hintTitle==="" ? "" : ": "+difficulties[game.diff]+" "+qsTr("Level")+" "+(game.level+1))
+                        pageHeader.title = "Picross" + (game.hintTitle==="" ? "" : ": "+difficulties[game.diff]+" "+qsTr("Level")+" "+(game.level+1))
                         pageHeader.description = (game.hintTitle==="" ? " " : game.hintTitle)
                     }
                 }
@@ -327,7 +348,7 @@ Page {
             enabled: game.slideMode===""
             MenuItem {
                 id: menuAbout
-                enabled: game.dimension === 0
+                enabled: game.gridSize === 0
                 visible: enabled
                 text: qsTr("About")
                 onClicked: {
@@ -344,7 +365,7 @@ Page {
             }
             MenuItem {
                 id: menuGuess
-                visible: game.dimension!==0 && !game.guessMode
+                visible: game.gridSize!==0 && !game.guessMode
                 text: qsTr("Guess mode")
                 onClicked: {
                     goOpen.start()
@@ -352,7 +373,7 @@ Page {
             }
             MenuItem {
                 id: menuClear
-                visible: game.dimension!==0 && !game.guessMode
+                visible: game.gridSize!==0 && !game.guessMode
                 text: qsTr("Clear grid")
                 onClicked: remorseMain.execute(qsTr("Clearing the grid"), function(){Source.clear()}, 3000)
             }
@@ -367,22 +388,73 @@ Page {
         }
 
         // Grid part
-        Column{
-            anchors.top: rectPageHeader.bottom
-            anchors.bottom: parent.bottom
-            width: parent.width
-
+        Item {
+            anchors {
+                top: rectPageHeader.bottom
+                bottom: parent.bottom
+                left: parent.left
+                right: parent.right
+            }
             // Hint
             ViewPlaceholder {
-                enabled: game.dimension === 0
+                enabled: game.gState === "welcome"
                 text: game.allLevelsCompleted ? qsTr("Congratulations!") : qsTr("Welcome to Picross")
                 hintText: game.allLevelsCompleted ? qsTr("You solved every level!") : qsTr("Please choose a level from the pulley menu")
             }
 
+
             // Whole grid
             WholeGrid{
+                id: wholeGrid
                 width: parent.width
+                height: parent.height
+                visible: game.gState === "playing"
+                enabled: visible
+                opacity: visible ? 1.0 : 0.0
+
+                // Show the keypad hint, maybe
+                onVisibleChanged: {
+                    if(visible && game.showKeypadHint) {
+                        game.disableKeyboardHint()
+                        hintLabel.opacity = 1.0
+                    }
+                }
             }
+
+            BusyIndicator {
+                size: BusyIndicatorSize.Large
+                anchors.centerIn: parent
+                running: game.gState === "loading" || game.gState === "levelSelect"
+            }
+        }
+    }
+
+    InteractionHintLabel {
+        id: hintLabel
+        opacity: 0.0
+        enabled: opacity > 0.0
+        visible: opacity > 0.0
+        anchors.bottom: parent.bottom
+        Behavior on opacity {
+            SequentialAnimation {
+                PauseAnimation { duration: 500 }
+                FadeAnimation { duration: 500 }
+            }
+        }
+        text: qsTr("Try the new on-screen keypad in Settings")
+    }
+    TouchInteractionHint {
+        id: hint
+        running: hintLabel.opacity === 1.0
+        opacity: running ? 1.0 : 0.0
+        enabled: opacity > 0.0
+        visible: opacity > 0.0
+        direction: TouchInteraction.Down
+        interactionMode: TouchInteraction.Pull
+        loops: 3
+        onRunningChanged: {
+            if(running === false)
+                hintLabel.opacity = 0.0
         }
     }
 }
