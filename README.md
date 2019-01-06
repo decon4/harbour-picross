@@ -5,7 +5,7 @@ Solve the puzzles to find the hidden pictures in the grid based on numeric clues
 Levels are sorted by difficulty, and you have to complete one difficulty to unlock the next one. At the moment, there are 103 levels spread across six difficulties.
 
 ## About this fork
-The original [harbour-picross](https://github.com/Baspar/harbour-picross) was developed by @Baspar, along with most of the current levels (99 out of 103, if I am not mistaken).  As the last version released didn't work anymore (without applying [https://github.com/Baspar/harbour-picross/pull/4/commits/805254ddab46750d1f5b15ed5a046cbcaf899478](a patch)), I decided to fork it, fix it, tweak it and release it.
+The original [harbour-picross](https://github.com/Baspar/harbour-picross) was developed by @Baspar, along with most of the current levels (99 out of 103, if I am not mistaken).  As the last version released didn't work anymore without applying [https://github.com/Baspar/harbour-picross/pull/4/commits/805254ddab46750d1f5b15ed5a046cbcaf899478](a patch), I decided to fork it, fix it, tweak it and release it.
 
 ## How to transfer progress from the original Picross?
 ### Background
