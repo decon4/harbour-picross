@@ -1225,12 +1225,12 @@ guesses</source>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="50"/>
         <source>Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Graj</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="51"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Wróć</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="204"/>
