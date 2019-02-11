@@ -1141,7 +1141,18 @@ guesses</source>
 pistas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="444"/>
+        <location filename="../qml/pages/MainPage.qml" line="405"/>
+        <source>Welcome back!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="415"/>
+        <source>You have completed
+%1 / %2 levels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="464"/>
         <source>Try the new on-screen keypad in Settings</source>
         <translation>Prueba el nuevo teclado-juego en Ajustes</translation>
     </message>
@@ -1181,22 +1192,22 @@ pistas</translation>
         <translation>Seccionar nivel</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="401"/>
+        <location filename="../qml/pages/MainPage.qml" line="403"/>
         <source>Congratulations!</source>
         <translation>¡Enhorabuena!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="401"/>
+        <location filename="../qml/pages/MainPage.qml" line="407"/>
         <source>Welcome to Picross</source>
         <translation>Bienvenido a Picross</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="402"/>
+        <location filename="../qml/pages/MainPage.qml" line="413"/>
         <source>You solved every level!</source>
         <translation>¡Has resuelto todos los niveles!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MainPage.qml" line="402"/>
+        <location filename="../qml/pages/MainPage.qml" line="417"/>
         <source>Please choose a level from the pulley menu</source>
         <translation>Elige un nivel desde el menú deslizante</translation>
     </message>
