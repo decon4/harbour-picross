@@ -956,6 +956,15 @@ guesses</translation>
         <source>Try the new on-screen keypad in Settings</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Welcome back!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have completed
+%1 / %2 levels.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewGame</name>
