@@ -34,12 +34,12 @@ Page {
                 source: "/usr/share/icons/hicolor/172x172/apps/harbour-picross2.png"
             }
             Label {
-                text: "Picross v2.3"
+                text: "Picross v2.4"
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeExtraLarge
             }
             Label {
-                text: "17.12.2018"
+                text: "11.2.2019"
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeSmall
             }

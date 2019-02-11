@@ -28,6 +28,17 @@ Page{
             spacing: Theme.paddingSmall
 
             SectionHeader {
+                text: "Picross v2.4 (11.2.2019)"
+                font.pixelSize: Theme.fontSizeSmall
+            }
+            Label {
+                width: parent.width
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: Theme.fontSizeSmall
+                text: "- Added simple statistics to welcome page"
+            }
+            SectionHeader {
                 text: "Picross v2.3 (17.12.2018)"
                 font.pixelSize: Theme.fontSizeSmall
             }
@@ -48,7 +59,7 @@ Page{
 - Added version and date to About page
 - Level select dialog uses SQLite more effectively
 - Code cleanup, reorganisation and clarification"
-                }
+            }
             SectionHeader {
                 text: "Picross v2.2 (09.12.2018)"
                 font.pixelSize: Theme.fontSizeSmall
@@ -67,7 +78,7 @@ Page{
 - Fix stuttering level selection
 - Add loading indicator to main page
 - Auto save when entering level select"
-                }
+            }
             SectionHeader {
                 text: "Picross v2.1 (07.12.2018)"
                 font.pixelSize: Theme.fontSizeSmall
