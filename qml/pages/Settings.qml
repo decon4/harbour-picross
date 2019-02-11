@@ -73,10 +73,9 @@ Page{
             }
             Button{
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Clear ALL databases (saves & progress)")
-
+                text: qsTr("Clear ALL databases")
                 onClicked:{
-                    remorseSettings.execute(qsTr("Clearing ALL Databases"), function(){
+                    remorseSettings.execute(qsTr("Clearing all databases"), function(){
                         game.gState = "welcome"
                         game.clearData()
                         game.allLevelsCompleted = false

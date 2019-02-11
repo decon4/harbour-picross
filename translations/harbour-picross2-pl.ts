@@ -1372,31 +1372,31 @@ guesses</source>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="76"/>
-        <source>Clear ALL databases (saves &amp; progress)</source>
+        <source>Clear ALL databases</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="79"/>
+        <location filename="../qml/pages/Settings.qml" line="78"/>
         <source>Clearing ALL Databases</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="90"/>
+        <location filename="../qml/pages/Settings.qml" line="89"/>
         <source>Clear only saves database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="92"/>
+        <location filename="../qml/pages/Settings.qml" line="91"/>
         <source>Clearing only saves database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="100"/>
+        <location filename="../qml/pages/Settings.qml" line="99"/>
         <source>Reset settings</source>
         <translation>Reset ustawień</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="102"/>
+        <location filename="../qml/pages/Settings.qml" line="101"/>
         <source>Resetting settings</source>
         <translation>Resetowanie ustawień</translation>
     </message>

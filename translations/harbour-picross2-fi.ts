@@ -1377,31 +1377,31 @@ arvaukset</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="76"/>
-        <source>Clear ALL databases (saves &amp; progress)</source>
-        <translation>Nollaa kaikki kentät</translation>
+        <source>Clear ALL databases</source>
+        <translation>Nollaa kaikki tasot</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="79"/>
+        <location filename="../qml/pages/Settings.qml" line="78"/>
         <source>Clearing ALL Databases</source>
         <translation>Nollataan Picross</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="90"/>
+        <location filename="../qml/pages/Settings.qml" line="89"/>
         <source>Clear only saves database</source>
         <translation>Nollaa keskeneräiset kentät</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="92"/>
+        <location filename="../qml/pages/Settings.qml" line="91"/>
         <source>Clearing only saves database</source>
         <translation>Poistetaan keskeneräiset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="100"/>
+        <location filename="../qml/pages/Settings.qml" line="99"/>
         <source>Reset settings</source>
         <translation>Palauta oletukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Settings.qml" line="102"/>
+        <location filename="../qml/pages/Settings.qml" line="101"/>
         <source>Resetting settings</source>
         <translation>Palautetaan oletukset</translation>
     </message>

@@ -1071,10 +1071,6 @@ temporaires</translation>
         <translation>Nombre de cases entre les séparateurs</translation>
     </message>
     <message>
-        <source>Clear ALL databases (saves &amp; progress)</source>
-        <translation>Effacer TOUTES les données</translation>
-    </message>
-    <message>
         <source>Clearing ALL Databases</source>
         <translation>Effacement de TOUTES les données</translation>
     </message>
@@ -1117,6 +1113,10 @@ temporaires</translation>
     <message>
         <source>Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear ALL databases</source>
+        <translation>Effacer TOUTES les données</translation>
     </message>
 </context>
 </TS>
