@@ -69,6 +69,9 @@ ApplicationWindow{
     property bool won: false
     property bool pause: false
 
+    property int numLevels
+    property int levelsCompleted
+
     property bool foldTopMode: true
     property bool foldLeftMode: true
     property bool showKeypadHint: false
@@ -130,7 +133,9 @@ ApplicationWindow{
         loadSettings()
 
         // Are all levels completed?
-        allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
+        levelsCompleted = DB.numCompletedLevels()
+        numLevels = Levels.getNumLevels()
+        allLevelsCompleted = (levelsCompleted === numLevels)
 
         //Buzzer
         longBuzz  = Qt.createQmlObject("import QtFeedback 5.0; HapticsEffect {attackTime: 50; fadeTime: 50; attackIntensity: 0.2; fadeIntensity: 0.01; intensity: 0.8; duration: 100}", game)
@@ -196,6 +201,7 @@ ApplicationWindow{
             DB.setTime(diff, level, time)
         pageStack.replace(Qt.resolvedUrl("pages/ScorePage.qml"))
         allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
+        levelsCompleted = DB.getCompletedLevelsTotal()
     }
 
     function clickSelectedCell() {
