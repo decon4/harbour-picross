@@ -358,7 +358,7 @@
     <message>
         <location filename="../qml/Levels.js" line="486"/>
         <source>Tap</source>
-        <translation>Toque</translation>
+        <translation>Grifo</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="487"/>
@@ -1143,13 +1143,14 @@ pistas</translation>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="405"/>
         <source>Welcome back!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Bienvenido de nuevo!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="415"/>
         <source>You have completed
 %1 / %2 levels.</source>
-        <translation type="unfinished"></translation>
+        <translation>Has completado
+%1 / %2 niveles.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="464"/>
