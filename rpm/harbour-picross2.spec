@@ -14,7 +14,7 @@ Name:       harbour-picross2
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Picross
 # Checklist: .spec .yaml .changes About.qml WhatsNew.qml
-Version:    2.4
+Version:    2.4.1
 Release:    1
 Group:      Qt/Qt
 License:    GPL-3.0
