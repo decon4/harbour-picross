@@ -4,6 +4,11 @@
 <context>
     <name>About</name>
     <message>
+        <location filename="../qml/pages/About.qml" line="16"/>
+        <source>Translations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/About.qml" line="48"/>
         <source>What&apos;s new?</source>
         <translation type="unfinished"></translation>
@@ -1372,12 +1377,12 @@ guesses</source>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="76"/>
-        <source>Clear ALL databases</source>
+        <source>Clear all databases</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="78"/>
-        <source>Clearing ALL Databases</source>
+        <source>Clearing all databases</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1398,6 +1403,14 @@ guesses</source>
     <message>
         <location filename="../qml/pages/Settings.qml" line="101"/>
         <source>Resetting settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Translations</name>
+    <message>
+        <location filename="../qml/pages/Translations.qml" line="16"/>
+        <source>Translations</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

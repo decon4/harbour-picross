@@ -15,6 +15,10 @@
         <source>What&apos;s new?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Translations</source>
+        <translation>Traductions</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -1071,10 +1075,6 @@ temporaires</translation>
         <translation>Nombre de cases entre les séparateurs</translation>
     </message>
     <message>
-        <source>Clearing ALL Databases</source>
-        <translation>Effacement de TOUTES les données</translation>
-    </message>
-    <message>
         <source>Clear only saves database</source>
         <translation>Effacer les sauvegardes</translation>
     </message>
@@ -1115,8 +1115,19 @@ temporaires</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Clear ALL databases</source>
-        <translation>Effacer TOUTES les données</translation>
+        <source>Clearing all databases</source>
+        <translation>Effacement de toutes les données</translation>
+    </message>
+    <message>
+        <source>Clear all databases</source>
+        <translation>Effacement de toutes les données</translation>
+    </message>
+</context>
+<context>
+    <name>Translations</name>
+    <message>
+        <source>Translations</source>
+        <translation>Traductions</translation>
     </message>
 </context>
 </TS>

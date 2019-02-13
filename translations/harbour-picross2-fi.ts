@@ -4,6 +4,11 @@
 <context>
     <name>About</name>
     <message>
+        <location filename="../qml/pages/About.qml" line="16"/>
+        <source>Translations</source>
+        <translation>Käännökset</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/About.qml" line="48"/>
         <source>What&apos;s new?</source>
         <translation>Mitä uutta?</translation>
@@ -1377,13 +1382,13 @@ arvaukset</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="76"/>
-        <source>Clear ALL databases</source>
+        <source>Clear all databases</source>
         <translation>Nollaa kaikki tasot</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="78"/>
-        <source>Clearing ALL Databases</source>
-        <translation>Nollataan Picross</translation>
+        <source>Clearing all databases</source>
+        <translation>Nollataan kaikki tasot</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="89"/>
@@ -1404,6 +1409,14 @@ arvaukset</translation>
         <location filename="../qml/pages/Settings.qml" line="101"/>
         <source>Resetting settings</source>
         <translation>Palautetaan oletukset</translation>
+    </message>
+</context>
+<context>
+    <name>Translations</name>
+    <message>
+        <location filename="../qml/pages/Translations.qml" line="16"/>
+        <source>Translations</source>
+        <translation>Käännökset</translation>
     </message>
 </context>
 </TS>

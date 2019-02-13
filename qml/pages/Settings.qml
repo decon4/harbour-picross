@@ -73,7 +73,7 @@ Page{
             }
             Button{
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Clear ALL databases")
+                text: qsTr("Clear all databases")
                 onClicked:{
                     remorseSettings.execute(qsTr("Clearing all databases"), function(){
                         game.gState = "welcome"

@@ -15,6 +15,10 @@
         <source>What&apos;s new?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Translations</source>
+        <translation>Traduzioni</translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -1071,10 +1075,6 @@ guesses</translation>
         <translation>Spazio fra i separatori</translation>
     </message>
     <message>
-        <source>Clearing ALL Databases</source>
-        <translation>Cancella TUTTE le basi dati</translation>
-    </message>
-    <message>
         <source>Clear only saves database</source>
         <translation>Cancella solo la base dati dei salvataggi</translation>
     </message>
@@ -1115,8 +1115,19 @@ guesses</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Clear ALL databases</source>
-        <translation>Cancella TUTTE le basi dati</translation>
+        <source>Clearing all databases</source>
+        <translation>Cancella tutte le basi dati</translation>
+    </message>
+    <message>
+        <source>Clear all databases</source>
+        <translation>Cancella tutte le basi dati</translation>
+    </message>
+</context>
+<context>
+    <name>Translations</name>
+    <message>
+        <source>Translations</source>
+        <translation>Traduzioni</translation>
     </message>
 </context>
 </TS>
