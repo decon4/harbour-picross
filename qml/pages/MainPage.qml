@@ -395,11 +395,31 @@ Page {
                 left: parent.left
                 right: parent.right
             }
-            // Hint
+            // Welcome screen
             ViewPlaceholder {
+                function getText() {
+                    var text
+                    if(game.allLevelsCompleted)
+                        text = qsTr("Congratulations!")
+                    else if(game.levelsCompleted > 0)
+                        text = qsTr("Welcome back!")
+                    else
+                        text = qsTr("Welcome to Picross")
+                    return text
+                }
+                function getHintText() {
+                    var text
+                    if(game.allLevelsCompleted)
+                        text = qsTr("You solved every level!")
+                    else if(game.levelsCompleted > 0)
+                        text = qsTr("You have completed\n%1 / %2 levels.").arg(game.levelsCompleted).arg(game.numLevels)
+                    else
+                        text = qsTr("Please choose a level from the pulley menu")
+                    return text
+                }
                 enabled: game.gState === "welcome"
-                text: game.allLevelsCompleted ? qsTr("Congratulations!") : qsTr("Welcome to Picross")
-                hintText: game.allLevelsCompleted ? qsTr("You solved every level!") : qsTr("Please choose a level from the pulley menu")
+                text: getText()
+                hintText: getHintText()
             }
 
 

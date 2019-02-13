@@ -956,6 +956,15 @@ guesses</translation>
         <source>Try the new on-screen keypad in Settings</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Welcome back!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have completed
+%1 / %2 levels.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewGame</name>
@@ -1062,10 +1071,6 @@ guesses</translation>
         <translation>Spazio fra i separatori</translation>
     </message>
     <message>
-        <source>Clear ALL databases (saves &amp; progress)</source>
-        <translation>Cancella TUTTE le basi dati (salvataggi &amp; progresso)</translation>
-    </message>
-    <message>
         <source>Clearing ALL Databases</source>
         <translation>Cancella TUTTE le basi dati</translation>
     </message>
@@ -1108,6 +1113,10 @@ guesses</translation>
     <message>
         <source>Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear ALL databases</source>
+        <translation>Cancella TUTTE le basi dati</translation>
     </message>
 </context>
 </TS>

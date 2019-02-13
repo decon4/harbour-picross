@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<TS version="2.1" language="pl">
 <context>
     <name>About</name>
     <message>
         <location filename="../qml/pages/About.qml" line="48"/>
         <source>What&apos;s new?</source>
-        <translation>Novedades</translation>
+        <translation>Co nowego?</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>Developed by</source>
-        <translation>Desarrollado por</translation>
+        <translation>Stworzone przez</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="69"/>
         <source>Maintainer</source>
-        <translation>Mantenimiento</translation>
+        <translation>Opiekun</translation>
     </message>
 </context>
 <context>
@@ -32,93 +32,93 @@
     <message>
         <location filename="../qml/Levels.js" line="6"/>
         <source>Square</source>
-        <translation>Cuadrado</translation>
+        <translation>Kwadrat</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="7"/>
         <source>Numbers = size of the groups</source>
-        <translation>Números = tamaño de los grupos</translation>
+        <translation>Liczby - rozmiar grup</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="13"/>
         <source>Hole</source>
-        <translation>Agujero</translation>
+        <translation>Otwór</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="14"/>
         <source>Groups are separated. But how far?</source>
-        <translation>Los grupos están separados. Pero, ¿cuánto?</translation>
+        <translation>Grupy są oddzielone, ale jak bardzo?</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="20"/>
         <source>Little grid</source>
-        <translation>Pequeña rejilla</translation>
+        <translation>Mała siatka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="21"/>
         <source>Sometimes, there is no choice...</source>
-        <translation>A veces no hay otra opción...</translation>
+        <translation>Czasem nie ma wyboru...</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="29"/>
         <source>Cross</source>
-        <translation>Cruz</translation>
+        <translation>Krzyż</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="30"/>
         <source>Green = corresponds. Click on it</source>
-        <translation>Verde = equivalencia. Haz clic en él</translation>
+        <translation>Zielony = prawidłowo. Kliknij to</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="39"/>
         <source>Pyramid</source>
-        <translation>Pirámide</translation>
+        <translation>Piramida</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="40"/>
         <source>You&apos;re on your own now</source>
-        <translation>Estás sólo ahora</translation>
+        <translation>Teraz jesteś sam</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="48"/>
         <location filename="../qml/Levels.js" line="89"/>
         <source>Heart</source>
-        <translation>Corazón</translation>
+        <translation>Serce</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="49"/>
         <source>Your first real level</source>
-        <translation>Tu primer nivel de verdad</translation>
+        <translation>Twój pierwszy prawdziwy poziom</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="57"/>
         <source>Bubble</source>
-        <translation>Burbuja</translation>
+        <translation>Bąbel</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="58"/>
         <source>What !!?</source>
-        <translation>¿¡¡Qué!!?</translation>
+        <translation>Co?!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="75"/>
         <source>Chick</source>
-        <translation>Pollito</translation>
+        <translation>Kurczak</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="76"/>
         <source>Yellow animal</source>
-        <translation>Animal amarillo</translation>
+        <translation>Żółte zwierze</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="90"/>
         <source>Attraction</source>
-        <translation>Atracción</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="103"/>
         <source>Creeper</source>
-        <translation>Creeper</translation>
+        <translation>Pnącze</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="104"/>
@@ -128,222 +128,222 @@
     <message>
         <location filename="../qml/Levels.js" line="115"/>
         <source>Rabbit</source>
-        <translation>Conejo</translation>
+        <translation>Królik</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="116"/>
         <source>I&apos;m late, I&apos;m late...</source>
-        <translation>Llego tarde, llego tarde...</translation>
+        <translation>Jestem spóźniony, jestem spóźniony...</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="127"/>
         <source>Cup</source>
-        <translation>Taza</translation>
+        <translation>Filiżanka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="128"/>
         <source>Tea time!</source>
-        <translation>¡Hora del té!</translation>
+        <translation>Czas na herbatę!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="141"/>
         <source>Small boat</source>
-        <translation>Bote pequeño</translation>
+        <translation>Mała łódka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="142"/>
         <source>Let&apos;s sail</source>
-        <translation>Vamos a navegar</translation>
+        <translation>Płyńmy</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="155"/>
         <source>Apple</source>
-        <translation>Manzana</translation>
+        <translation>Jabłko</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="156"/>
         <source>It&apos;s meant to fall</source>
-        <translation>Está destinado a caer</translation>
+        <translation>Ma upaść</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="169"/>
         <source>Cherry</source>
-        <translation>Cereza</translation>
+        <translation>Wiśnia</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="170"/>
         <source>Small fruit</source>
-        <translation>Fruta pequeña</translation>
+        <translation>Mały owoc</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="183"/>
         <source>Flat</source>
-        <translation>Piso</translation>
+        <translation>Płaski</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="184"/>
         <source>It&apos;s high!</source>
-        <translation>¡Está alto!</translation>
+        <translation>Jest wysoki!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="202"/>
         <source>Dancer</source>
-        <translation>Bailarín</translation>
+        <translation>Tancerz</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="203"/>
         <source>It swings!</source>
-        <translation>¡Se mueve!</translation>
+        <translation>Huśta się!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="216"/>
         <source>Crab</source>
-        <translation>Cangrejo</translation>
+        <translation>Krab</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="217"/>
         <source>He pinches</source>
-        <translation>Pellizca</translation>
+        <translation>On szczypie</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="230"/>
         <source>Humming-Bird</source>
-        <translation>Colibrí</translation>
+        <translation>Koliber</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="231"/>
         <source>Flower eater</source>
-        <translation>Se alimenta de flores</translation>
+        <translation>Zjadacz kwiatów</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="244"/>
         <source>Monkey</source>
-        <translation>Mono</translation>
+        <translation>Małpa</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="245"/>
         <source>Our ancestor</source>
-        <translation>Nuestro antepasado</translation>
+        <translation>Nasz przodek</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="258"/>
         <source>Snail</source>
-        <translation>Caracol</translation>
+        <translation>Ślimak</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="259"/>
         <source>Small helix</source>
-        <translation>Pequeña espiral</translation>
+        <translation>Mała helisa</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="272"/>
         <source>Goldfish</source>
-        <translation>Pez de colores</translation>
+        <translation>Złota rybka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="273"/>
         <source>A very bad memory...</source>
-        <translation>Tiene muy mala memoria...</translation>
+        <translation>Bardzo złe wspomnienie</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="286"/>
         <source>Kitten</source>
-        <translation>Gatito</translation>
+        <translation>Kociak</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="287"/>
         <source>Little predator</source>
-        <translation>Pequeño depredador</translation>
+        <translation>Mały drapieżnik</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="304"/>
         <source>Owl</source>
-        <translation>Búho</translation>
+        <translation>Sowa</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="305"/>
         <source>Night animal</source>
-        <translation>Animal nocturno</translation>
+        <translation>Nocne zwierzę</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="323"/>
         <source>Beach</source>
-        <translation>Playa</translation>
+        <translation>Plaża</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="324"/>
         <source>Holidays location</source>
-        <translation>Lugar de vacaciones</translation>
+        <translation>Wakacyjne miejsce</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="346"/>
         <source>Helicopter</source>
-        <translation>Helicóptero</translation>
+        <translation>Helikopter</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="347"/>
         <source>Not so &quot;U&quot; for a UFO</source>
-        <translation>No tan &quot;No Identificado&quot; como para ser un OVNI</translation>
+        <translation>Nie tak &quot;U&quot; dla UFO</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="360"/>
         <source>Flask</source>
-        <translation>Matraz</translation>
+        <translation>Fiolka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="361"/>
         <source>Witch&apos;s util</source>
-        <translation>Utensilio para brujas</translation>
+        <translation>Narzędzie czarownic</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="372"/>
         <source>Moose</source>
-        <translation>Alce</translation>
+        <translation>Łoś</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="373"/>
         <source>He loves the cold</source>
-        <translation>Le encanta el frío</translation>
+        <translation>Lubi chłód</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="391"/>
         <source>Sailboat</source>
-        <translation>Velero</translation>
+        <translation>Żaglówka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="392"/>
         <source>You are a pirate~</source>
-        <translation>Eres un pirata~</translation>
+        <translation>Jesteś piratem</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="410"/>
         <source>Duck</source>
-        <translation>Pato</translation>
+        <translation>Kaczka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="411"/>
         <source>Ugly, according to Andersen</source>
-        <translation>Es feo, según Andersen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="429"/>
         <source>Seal</source>
-        <translation>Foca</translation>
+        <translation>Foka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="430"/>
         <source>Often hunted for its fur</source>
-        <translation>A menudo son cazados por su piel</translation>
+        <translation>Często poluje się na nie dla ich futra</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="448"/>
         <source>Squirrel</source>
-        <translation>Ardilla</translation>
+        <translation>Wiewiórka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="449"/>
         <source>Hiding his nuts</source>
-        <translation>Esconden sus avellanas</translation>
+        <translation>Choiwa swoje orzechy</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="467"/>
@@ -353,27 +353,27 @@
     <message>
         <location filename="../qml/Levels.js" line="468"/>
         <source>Stained</source>
-        <translation>Con manchas</translation>
+        <translation>Poplamione</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="486"/>
         <source>Tap</source>
-        <translation>Toque</translation>
+        <translation>Kran</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="487"/>
         <source>In the middle of the night</source>
-        <translation>En mitad de la noche</translation>
+        <translation>W środku nocy</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="502"/>
         <source>Mushroom</source>
-        <translation>Seta</translation>
+        <translation>Grzyb</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="503"/>
         <source>Makes you stronger</source>
-        <translation>Te hace más fuerte</translation>
+        <translation>Uczyni Cię silniejszym</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="523"/>
@@ -383,17 +383,17 @@
     <message>
         <location filename="../qml/Levels.js" line="524"/>
         <source>Gotta catch them all~</source>
-        <translation>Hay que atraparlos todos~</translation>
+        <translation>Złap je wszystkie</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="542"/>
         <source>Elephants</source>
-        <translation>Elefantes</translation>
+        <translation>Słonie</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="543"/>
         <source>Cute couple</source>
-        <translation>Pareja encantadora</translation>
+        <translation>Urocza para</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="561"/>
@@ -403,179 +403,179 @@
     <message>
         <location filename="../qml/Levels.js" line="562"/>
         <source>World most famous plumber</source>
-        <translation>El fontanero más famoso del mundo</translation>
+        <translation>Najbardziej znany hydraulik</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="579"/>
         <source>Father and son</source>
-        <translation>Padre e hijo</translation>
+        <translation>Ojciec i syn</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="580"/>
         <source>Flesh of his flesh</source>
-        <translation>Carne de su carne</translation>
+        <translation>Ciało jego ciała</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="598"/>
         <source>Snake</source>
-        <translation>Serpiente</translation>
+        <translation>Wąż</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="599"/>
         <source>Devil&apos;s animal</source>
-        <translation>Animal satánico</translation>
+        <translation>Zwierzę szatana</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="617"/>
         <source>Dog</source>
-        <translation>Perro</translation>
+        <translation>Pies</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="618"/>
         <source>Woof!</source>
-        <translation>¡Guau!</translation>
+        <translation>Woof!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="636"/>
         <source>Umbrella</source>
-        <translation>Paraguas</translation>
+        <translation>Parasolka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="637"/>
         <source>The best shelter when needed</source>
-        <translation>El mejor refugio cuando es necesario</translation>
+        <translation>Najlepsze schronienie w razie potrzeby</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="655"/>
         <source>Penguin</source>
-        <translation>Pingüino</translation>
+        <translation>Pingwin</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="656"/>
         <source>Classy BlackAndWhite</source>
-        <translation>Elegante Blanco y Negro</translation>
+        <translation>Elegancki czrno-biały</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="679"/>
         <source>UFO</source>
-        <translation>OVNI</translation>
+        <translation>UFO</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="680"/>
         <source>Space Invaders</source>
-        <translation>Invasores espaciales</translation>
+        <translation>Najeźdźcy z kosmosu</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="703"/>
         <source>Lion</source>
-        <translation>León</translation>
+        <translation>Lew</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="704"/>
         <source>King of the jungle</source>
-        <translation>El rey de la jungla</translation>
+        <translation>Król dżungli</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="722"/>
         <source>Woman and mirror</source>
-        <translation>Mujer y espejo</translation>
+        <translation>Kobieta i lustro</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="723"/>
         <source>Who&apos;s the fairest one of all?</source>
-        <translation>¿Quién es el más justo de todos?</translation>
+        <translation>Kto jest najpiękniejszy ze wszystkich?</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="745"/>
         <source>Spiny</source>
-        <translation>Espinoso</translation>
+        <translation>Kolczasty</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="746"/>
         <source>You&apos;re first? Fear him...</source>
-        <translation>¿Eres el primero? Tenle miedo...</translation>
+        <translation>Pierwszy? Bój się go</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="764"/>
         <source>Puppy</source>
-        <translation>Perrito</translation>
+        <translation>Szczeniak</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="765"/>
         <source>Smallest men&apos;s best friend</source>
-        <translation>El más pequeño y mejor amigo del hombre</translation>
+        <translation>Najmniejszy przyjaciel człowieka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="783"/>
         <source>Bunny</source>
-        <translation>Conejito</translation>
+        <translation>Królik</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="784"/>
         <source>Return of the latecomer</source>
-        <translation>El regreso del que llega tarde</translation>
+        <translation>Powrót spóźnionego</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="799"/>
         <source>Stroller</source>
-        <translation>Cochecito</translation>
+        <translation>Wózek dziecinny</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="800"/>
         <source>Legs of the youngest</source>
-        <translation>Piernas de los niños más pequeños</translation>
+        <translation>Nogi najmłodszego</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="823"/>
         <source>The thinker</source>
-        <translation>El pensador</translation>
+        <translation>Myśliciel</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="824"/>
         <source>What to do...?</source>
-        <translation>¿Qué hacer...?</translation>
+        <translation>Co robić...?</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="842"/>
         <source>Nuclear mushroom</source>
-        <translation>Seta nuclear</translation>
+        <translation>Grzyb atomowy</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="843"/>
         <source>It&apos;s very radioactive!</source>
-        <translation>¡Es muy radioactivo!</translation>
+        <translation>Bardzo radioaktywny!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="861"/>
         <source>Flower</source>
-        <translation>Flor</translation>
+        <translation>Kwiat</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="862"/>
         <source>Smells good</source>
-        <translation>Huele bien</translation>
+        <translation>Ładnie pachnie</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="880"/>
         <location filename="../qml/Levels.js" line="1463"/>
         <source>Deer</source>
-        <translation>Ciervo</translation>
+        <translation>Jeleń</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="881"/>
         <source>Majestic</source>
-        <translation>Majestuoso</translation>
+        <translation>Majestatyczny</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="904"/>
         <location filename="../qml/Levels.js" line="979"/>
         <source>Cow</source>
-        <translation>Vaca</translation>
+        <translation>Krowa</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="905"/>
         <source>Moo</source>
-        <translation>Muu</translation>
+        <translation>Moo</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="927"/>
@@ -585,63 +585,63 @@
     <message>
         <location filename="../qml/Levels.js" line="928"/>
         <source>Well-known little dragon</source>
-        <translation>El pequeño y famoso dragón</translation>
+        <translation>Dobrze znany, mały smok</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="941"/>
         <location filename="../qml/Levels.js" line="1487"/>
         <source>Sheep</source>
-        <translation>Oveja</translation>
+        <translation>Owca</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="942"/>
         <source>One falls, others follow</source>
-        <translation>Unos caen, otros siguen</translation>
+        <translation>Jeda upada, inne podążają</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="960"/>
         <source>Bird</source>
-        <translation>Pájaro</translation>
+        <translation>Ptak</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="961"/>
         <source>Flying animal</source>
-        <translation>Animal volador</translation>
+        <translation>Latające zwierzę</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="980"/>
         <source>Farm animal</source>
-        <translation>Animal de granja</translation>
+        <translation>Zwierzę hodowlane</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1003"/>
         <source>Crane and truck</source>
-        <translation>Grúa y camión</translation>
+        <translation>Dźwig i ciężarówka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1004"/>
         <source>Construction site</source>
-        <translation>Obra de construcción</translation>
+        <translation>Plac budowy</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1027"/>
         <source>Boy</source>
-        <translation>Chico</translation>
+        <translation>Chłopiec</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1028"/>
         <source>Sup&apos; bro</source>
-        <translation>¿Qué pasa, tío?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1051"/>
         <source>Camera</source>
-        <translation>Cámara</translation>
+        <translation>Aparat</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1052"/>
         <source>Cheese!</source>
-        <translation>¡Patata!</translation>
+        <translation>Uśmiech!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1075"/>
@@ -651,38 +651,38 @@
     <message>
         <location filename="../qml/Levels.js" line="1076"/>
         <source>Not so fast...</source>
-        <translation>No tan rápido...</translation>
+        <translation>Nie tak szybko...</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1099"/>
         <location filename="../qml/Levels.js" line="1849"/>
         <source>Peanuts</source>
-        <translation>Snoopy</translation>
+        <translation>Orzeszki</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1100"/>
         <source>Classy dog</source>
-        <translation>Perro con clase</translation>
+        <translation>Elegancki pies</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1123"/>
         <source>Parrot</source>
-        <translation>Loro</translation>
+        <translation>Papuga</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1124"/>
         <source>A true singer</source>
-        <translation>Un verdadero cantante</translation>
+        <translation>Prawdziwy śpiewak</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1147"/>
         <source>Barrow</source>
-        <translation>Carretilla</translation>
+        <translation>Taczka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1148"/>
         <source>Easy carry</source>
-        <translation>Fácil de llevar</translation>
+        <translation>Łatwe transportowanie</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1171"/>
@@ -692,147 +692,147 @@
     <message>
         <location filename="../qml/Levels.js" line="1172"/>
         <source>You can&apos;t see him</source>
-        <translation>No puedes verlo</translation>
+        <translation>Jest niewidoczny</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1195"/>
         <source>Rain</source>
-        <translation>Lluvia</translation>
+        <translation>Deszcz</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1196"/>
         <source>Not a day to be out</source>
-        <translation>No es un día para salir</translation>
+        <translation>Kiepski dzien na spacer</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1219"/>
         <source>Monster Truck</source>
-        <translation>Camión monstruo</translation>
+        <translation>Monster Truck</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1220"/>
         <source>Don&apos;t be on its way!</source>
-        <translation>¡No te pongas en su camino!</translation>
+        <translation>Nie bądź na jego drodze!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1247"/>
         <source>Kitty</source>
-        <translation>Kitty</translation>
+        <translation>Kociak</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1248"/>
         <source>King of the Net</source>
-        <translation>El rey de la Red</translation>
+        <translation>Król sieci</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1271"/>
         <source>Scorpion</source>
-        <translation>Escorpión</translation>
+        <translation>Skorpion</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1272"/>
         <source>Beware, he can sting!</source>
-        <translation>¡Ten cuidado, que pica!</translation>
+        <translation>Uważaj, on może żądlić!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1295"/>
         <source>Thumbs up</source>
-        <translation>Pulgares hacia arriba</translation>
+        <translation>Kciuki do góry</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1296"/>
         <source>Good game!</source>
-        <translation>¡Buen juego!</translation>
+        <translation>Dobra gra!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1319"/>
         <source>Runner</source>
-        <translation>Corredor</translation>
+        <translation>Biegacz</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1320"/>
         <source>Run Forrest, run!</source>
-        <translation>¡Corre Forrest, corre!</translation>
+        <translation>BiegnikForrest, biegnij!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1343"/>
         <source>Dinning table</source>
-        <translation>Mesa de comedor</translation>
+        <translation>Stół obiadowy</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1344"/>
         <source>Bon appetit!</source>
-        <translation>¡Buen provecho!</translation>
+        <translation>Smacznego!</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1367"/>
         <source>Shocked rabbit</source>
-        <translation>Conejo sorprendido</translation>
+        <translation>Zszokowany królik</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1368"/>
         <source>He has seen things...</source>
-        <translation>Él ha visto cosas...</translation>
+        <translation>Widział rzeczy ...</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1391"/>
         <source>Octopus</source>
-        <translation>Pulpo</translation>
+        <translation>Ośmiornica</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1392"/>
         <source>Hey there</source>
-        <translation>Hola</translation>
+        <translation>Hej ty</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1415"/>
         <source>Racoon</source>
-        <translation>Mapache</translation>
+        <translation>Szop</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1416"/>
         <source>I&apos;ve got a zombie city</source>
-        <translation>Tengo una ciudad zombi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1439"/>
         <source>Motorcycle</source>
-        <translation>Moto</translation>
+        <translation>Motocross</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1440"/>
         <source>Vroom vroom</source>
-        <translation>Brrrum brrrum</translation>
+        <translation>Wruuum, wruuum</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1464"/>
         <source>Rudolph</source>
-        <translation>Rudolph</translation>
+        <translation>Rudolf</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1488"/>
         <source>Do not follow him...</source>
-        <translation>No lo sigas...</translation>
+        <translation>Nie podążaj za nim...</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1511"/>
         <source>Mask-arade</source>
-        <translation>Máscara</translation>
+        <translation>Mask-arada</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1512"/>
         <source>Incognito</source>
-        <translation>Incógnito</translation>
+        <translation>Incognito</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1535"/>
         <source>Chickadee</source>
-        <translation>Pájaro carbonero</translation>
+        <translation>Sikorka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1536"/>
         <source>Flying American</source>
-        <translation>Ave de América</translation>
+        <translation>Latający Amerykanin</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1559"/>
@@ -842,228 +842,228 @@
     <message>
         <location filename="../qml/Levels.js" line="1560"/>
         <source>Smurf hunter</source>
-        <translation>Cazador de pitufos</translation>
+        <translation>Poluje na Smurfy</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1588"/>
         <source>Polar bear</source>
-        <translation>Oso polar</translation>
+        <translation>Miś polarny</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1589"/>
         <source>Be quiet...</source>
-        <translation>No hagas ruido...</translation>
+        <translation>Bądź cicho...</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1617"/>
         <source>Mouse</source>
-        <translation>Ratón</translation>
+        <translation>Mysz</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1618"/>
         <source>Very cute</source>
-        <translation>Muy adorable</translation>
+        <translation>Bardzo słodka</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1646"/>
         <source>Wolf</source>
-        <translation>Lobo</translation>
+        <translation>Wilk</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1647"/>
         <source>Shouting to the moon</source>
-        <translation>Aullando a la luna</translation>
+        <translation>Wyje do księżyca</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1675"/>
         <source>Rose</source>
-        <translation>Rosa</translation>
+        <translation>Róża</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1676"/>
         <source>Prickly beauty</source>
-        <translation>Belleza con espinas</translation>
+        <translation>Kłujące piękno</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1704"/>
         <source>Peach</source>
-        <translation>Peach</translation>
+        <translation>Brzoskwinia</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1705"/>
         <source>... On another castle</source>
-        <translation>... En otro castillo</translation>
+        <translation>... Na innym zamku</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1733"/>
         <source>Rasputine</source>
-        <translation>Rasputín</translation>
+        <translation>Rasputin</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1734"/>
         <source>Lover of the russian queen~</source>
-        <translation>Amante de la zarina~</translation>
+        <translation>Kochanek rosyjskiej królowej</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1762"/>
         <source>Kiss</source>
-        <translation>Beso</translation>
+        <translation>Pocałunek</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1763"/>
         <source>Fake in every movie</source>
-        <translation>Falso en todas las películas</translation>
+        <translation>Fałszywe w każdym filmie</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1791"/>
         <source>Horseman</source>
-        <translation>Vaquero</translation>
+        <translation>Jeździec</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1792"/>
         <source>Go Jolly Jumper!</source>
-        <translation>¡Vamos, Jolly Jumper!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1820"/>
         <source>Archimedes</source>
-        <translation>Arquímedes</translation>
+        <translation>Archimedes</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1821"/>
         <source>Splash!</source>
-        <translation>¡Splash!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1850"/>
         <source>A dark and stormy night</source>
-        <translation>Una noche oscura y tormentosa</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1878"/>
         <source>Lucy</source>
-        <translation>Lucy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1879"/>
         <source>.. In the sky with diamonds</source>
-        <translation>.. En el cielo con diamantes</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1907"/>
         <source>Partridge</source>
-        <translation>Perdiz</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1908"/>
         <source>Looking for shine</source>
-        <translation>Buscando brillo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1936"/>
         <source>Windy day</source>
-        <translation>Día con viento</translation>
+        <translation>Wietrzny dzień</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1937"/>
         <source>Poupoupidou~</source>
-        <translation>Poupoupidou~</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1965"/>
         <location filename="../qml/Levels.js" line="2081"/>
         <source>Bee</source>
-        <translation>Abeja</translation>
+        <translation>Pszczoła</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1966"/>
         <source>Honey plant</source>
-        <translation>Planta melífera</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1994"/>
         <source>Pilot</source>
-        <translation>Piloto</translation>
+        <translation>Pilot</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="1995"/>
         <source>First flight</source>
-        <translation>Primer vuelo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2023"/>
         <source>Don Quixote</source>
-        <translation>Don Quijote</translation>
+        <translation>Don Kichot</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2024"/>
         <source>Fighting windmill</source>
-        <translation>Molino de viento</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2052"/>
         <source>Viking</source>
-        <translation>Vikingo</translation>
+        <translation>Wiking</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2053"/>
         <source>Old norseman</source>
-        <translation>Viejo escandinavo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2082"/>
         <source>Honey maker</source>
-        <translation>Fabricante de miel</translation>
+        <translation>Pszczelarz</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2110"/>
         <source>Shoemaker</source>
-        <translation>Zapatero</translation>
+        <translation>Szewc</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2111"/>
         <source>Worker at the last</source>
-        <translation>Trabajador al final</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2139"/>
         <source>Eagle</source>
-        <translation>Águila</translation>
+        <translation>Orzeł</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2140"/>
         <source>Sacred feather source</source>
-        <translation>Fuente de plumas sagradas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2173"/>
         <source>Tutorial</source>
-        <translation>Tutorial</translation>
+        <translation>Samouczek</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2176"/>
         <source>Easy</source>
-        <translation>Fácil</translation>
+        <translation>Łatwy</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2179"/>
         <source>Medium</source>
-        <translation>Medio</translation>
+        <translation>Średni</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2182"/>
         <source>Hard</source>
-        <translation>Duro</translation>
+        <translation>Trydny</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2185"/>
         <source>Expert</source>
-        <translation>Experto</translation>
+        <translation>Ekspert</translation>
     </message>
     <message>
         <location filename="../qml/Levels.js" line="2188"/>
         <source>Insane</source>
-        <translation>De locos</translation>
+        <translation>Szalony</translation>
     </message>
 </context>
 <context>
@@ -1071,74 +1071,72 @@
     <message>
         <location filename="../qml/pages/MainPage.qml" line="37"/>
         <source>Tutorial</source>
-        <translation>Tutorial</translation>
+        <translation>Samouczek</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="38"/>
         <source>Easy</source>
-        <translation>Fácil</translation>
+        <translation>Łatwy</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="39"/>
         <source>Medium</source>
-        <translation>Medio</translation>
+        <translation>Średni</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="40"/>
         <source>Hard</source>
-        <translation>Duro</translation>
+        <translation>Trudny</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="41"/>
         <source>Expert</source>
-        <translation>Experto</translation>
+        <translation>Ekspert</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="42"/>
         <source>Insane</source>
-        <translation>De locos</translation>
+        <translation>Szalony</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="47"/>
         <location filename="../qml/pages/MainPage.qml" line="307"/>
         <source>Dimension</source>
-        <translation>Dimensión</translation>
+        <translation>Rozmiar</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="48"/>
         <source>Good luck!</source>
-        <translation>¡Buena suerte!</translation>
+        <translation>Powodzenia</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="70"/>
         <source>Zoom</source>
-        <translation>Zoom</translation>
+        <translation>Powiekszenie</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="170"/>
         <location filename="../qml/pages/MainPage.qml" line="213"/>
         <source>Accepting guesses</source>
-        <translation>Aceptando pistas</translation>
+        <translation>Akceptacja domysłów</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="186"/>
         <location filename="../qml/pages/MainPage.qml" line="227"/>
         <source>Rejecting guesses</source>
-        <translation>Rechazando pistas</translation>
+        <translation>Odrzucanie domysłów</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="202"/>
         <source>Accept
 guesses</source>
-        <translation>Aceptar
-pistas</translation>
+        <translation>Akceptuj</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="234"/>
         <source>Reject
 guesses</source>
-        <translation>Rechazar
-pistas</translation>
+        <translation>Odrzuć</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="405"/>
@@ -1154,62 +1152,62 @@ pistas</translation>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="464"/>
         <source>Try the new on-screen keypad in Settings</source>
-        <translation>Prueba el nuevo teclado-juego en Ajustes</translation>
+        <translation>Wyproj nową klawiaturę w Ustawieniach</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="339"/>
         <source>Level</source>
-        <translation>Nivel</translation>
+        <translation>Poziom</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="353"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>O Picross 2</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="360"/>
         <source>Settings</source>
-        <translation>Ajustes</translation>
+        <translation>Ustawienia</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="369"/>
         <source>Guess mode</source>
-        <translation>Modo predictivo</translation>
+        <translation>Tryb zgadywania</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="377"/>
         <source>Clear grid</source>
-        <translation>Limpiar rejilla</translation>
+        <translation>Wyczyść siatkę</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="378"/>
         <source>Clearing the grid</source>
-        <translation>Limpiando rejilla</translation>
+        <translation>Czyszczenie siatki</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="382"/>
         <source>Level select</source>
-        <translation>Seccionar nivel</translation>
+        <translation>Wybór poziomu</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="403"/>
         <source>Congratulations!</source>
-        <translation>¡Enhorabuena!</translation>
+        <translation>Gratulacje!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="407"/>
         <source>Welcome to Picross</source>
-        <translation>Bienvenido a Picross</translation>
+        <translation>Witaj w Picross</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="413"/>
         <source>You solved every level!</source>
-        <translation>¡Has resuelto todos los niveles!</translation>
+        <translation>Rozwiązałeś każdy poziom!</translation>
     </message>
     <message>
         <location filename="../qml/pages/MainPage.qml" line="417"/>
         <source>Please choose a level from the pulley menu</source>
-        <translation>Elige un nivel desde el menú deslizante</translation>
+        <translation>Wybierz pozion z wysuwanego menu</translation>
     </message>
 </context>
 <context>
@@ -1217,52 +1215,52 @@ pistas</translation>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="49"/>
         <source>Cheat...</source>
-        <translation>Tramposo...</translation>
+        <translation>Oszustwo...</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="49"/>
         <source>Level select</source>
-        <translation>Seleccionar nivel</translation>
+        <translation>Wybór poziomu</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="50"/>
         <source>Play</source>
-        <translation>Jugar</translation>
+        <translation>Graj</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="51"/>
         <source>Back</source>
-        <translation>Volver</translation>
+        <translation>Wróć</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="204"/>
         <source>Locked</source>
-        <translation>Bloqueado</translation>
+        <translation>Zablokowany</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="205"/>
         <source>Complete all previous levels to unlock this difficulty</source>
-        <translation>Completa los niveles anteriores para desbloquear esta dificultad</translation>
+        <translation>Ukończ wszystkie poprzednie poziomy, aby odblokować tę trudność</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="307"/>
         <source>Play from scratch</source>
-        <translation>Jugar desde cero</translation>
+        <translation>Graj od nowa</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="317"/>
         <source>Restore save</source>
-        <translation>Restaurar partidas guardadas</translation>
+        <translation>Przywróć zapisywanie</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="328"/>
         <source>Erase save</source>
-        <translation>Borrar partidas guardadas</translation>
+        <translation>Wymaż zapis</translation>
     </message>
     <message>
         <location filename="../qml/pages/NewGame.qml" line="336"/>
         <source>Details</source>
-        <translation>Detalles</translation>
+        <translation>Szczegóły</translation>
     </message>
 </context>
 <context>
@@ -1270,32 +1268,32 @@ pistas</translation>
     <message>
         <location filename="../qml/pages/ScorePage.qml" line="80"/>
         <source>Next level</source>
-        <translation>Siguiente nivel</translation>
+        <translation>Następny poziom</translation>
     </message>
     <message>
         <location filename="../qml/pages/ScorePage.qml" line="90"/>
         <source>Level details</source>
-        <translation>Detalles del nivel</translation>
+        <translation>Szczegóły poziomu</translation>
     </message>
     <message>
         <location filename="../qml/pages/ScorePage.qml" line="90"/>
         <source>Level completed!</source>
-        <translation>¡Nivel completado!</translation>
+        <translation>Poziom ukończony!</translation>
     </message>
     <message>
         <location filename="../qml/pages/ScorePage.qml" line="96"/>
         <source>Level</source>
-        <translation>Nivel</translation>
+        <translation>Poziom</translation>
     </message>
     <message>
         <location filename="../qml/pages/ScorePage.qml" line="147"/>
         <source>Your time</source>
-        <translation>Tu tiempo</translation>
+        <translation>Twój czas</translation>
     </message>
     <message>
         <location filename="../qml/pages/ScorePage.qml" line="163"/>
         <source>Best time</source>
-        <translation>Mejor tiempo</translation>
+        <translation>Najlepszy czas</translation>
     </message>
 </context>
 <context>
@@ -1303,104 +1301,104 @@ pistas</translation>
     <message>
         <location filename="../qml/pages/Settings.qml" line="18"/>
         <source>Settings</source>
-        <translation>Ajustes</translation>
+        <translation>Ustawienia</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="22"/>
         <source>Vibrate when press-and-hold</source>
-        <translation>Vibrar al mantener pulsado</translation>
+        <translation>Wibracja po naciśnięciu i przytrzymaniu</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="23"/>
         <location filename="../qml/pages/Settings.qml" line="32"/>
         <source>Enabled</source>
-        <translation>Activado</translation>
+        <translation>Włączone</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="23"/>
         <location filename="../qml/pages/Settings.qml" line="32"/>
         <source>Disabled</source>
-        <translation>Desactivado</translation>
+        <translation>Wyłączone</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="31"/>
         <source>Zoom on indicators</source>
-        <translation>Zoom en indicadores</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="40"/>
         <source>Load saves by default</source>
-        <translation>Cargar partidas guardadas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="41"/>
         <source>Saves will be loaded by default</source>
-        <translation>Las partidas guardadas se cargarán por defecto</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="41"/>
         <source>Load them by a long press</source>
-        <translation>Cargar con una pulsación larga</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="46"/>
         <source>Swipe throught difficulty</source>
-        <translation>Deslizar para cambiar dificultad</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="47"/>
         <source>Swipe is enabled</source>
-        <translation>Acción de deslizar activada</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="47"/>
         <source>Swipe disable. Click on a difficulty name to load it</source>
-        <translation>Acción de deslizar desactivada. Haz clic en un nombre de dificultad para cargarla</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="52"/>
         <source>Show gamepad</source>
-        <translation>Mostrar teclado-juego</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="53"/>
         <source>Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!</source>
-        <translation>Usar flechas, botón acción y cursor en pantalla. ¡También soporta teclados Bluetooth!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="63"/>
         <source>Space between separators</source>
-        <translation>Espacio entre separadores</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="76"/>
         <source>Clear ALL databases</source>
-        <translation>Borrar TODO</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="78"/>
         <source>Clearing ALL Databases</source>
-        <translation>Borrando TODO</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="89"/>
         <source>Clear only saves database</source>
-        <translation>Borrar sólo partidas guardadas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="91"/>
         <source>Clearing only saves database</source>
-        <translation>Borrando sólo partidas guardadas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="99"/>
         <source>Reset settings</source>
-        <translation>Reiniciar ajustes</translation>
+        <translation>Reset ustawień</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="101"/>
         <source>Resetting settings</source>
-        <translation>Reiniciando ajustes</translation>
+        <translation>Resetowanie ustawień</translation>
     </message>
 </context>
 </TS>
