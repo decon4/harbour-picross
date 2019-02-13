@@ -4,24 +4,24 @@ import Sailfish.Silica 1.0
 Page {
     id: aboutPage
 
-    PageHeader {
-        id: aboutTitle
-    }
-
     SilicaFlickable {
         id: aboutFlickable
         contentHeight: mainColumn.height
-        anchors.top: aboutTitle.bottom
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
+        anchors.fill: parent
 
         VerticalScrollDecorator { flickable: aboutFlickable }
+
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Translations")
+                onClicked: pageStack.push(Qt.resolvedUrl("Translations.qml"))
+            }
+        }
 
         Column {
             id: mainColumn
             width: parent.width - 2*Theme.paddingLarge
-            y: parent.y
+            y: 4*Theme.paddingLarge
             x: Theme.paddingLarge
             spacing: Theme.paddingMedium
 

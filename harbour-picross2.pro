@@ -30,6 +30,7 @@ DISTFILES += \
     qml/pages/NewGame.qml \
     qml/pages/ScorePage.qml \
     qml/pages/Settings.qml \
+    qml/pages/Translations.qml\
     qml/pages/WhatsNew.qml \
     qml/DB.js \
     qml/Levels.js \
