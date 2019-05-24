@@ -1,12 +1,5 @@
-# Rename this file as Picross.changes to include changelog
-# entries in your RPM file.
-#
-# Add new changelog entries following the format below.
-# Add newest entries to the top of the list.
-# Separate entries from eachother with a blank line.
-
-# * date Author's Name <author's email> version-release
-# - Summary of changes
+* Fri May 24 2019 Matti Viljanen <matti.viljanen@kapsi.fi> 2.4.2-1
+- Animate victory screen
 
 * Wed Feb 13 2019 Matti Viljanen <matti.viljanen@kapsi.fi> 2.4.1-1
 - Added translations' credits page

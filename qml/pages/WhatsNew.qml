@@ -28,6 +28,17 @@ Page{
             spacing: Theme.paddingSmall
 
             SectionHeader {
+                text: "Picross v2.4.2 (24.5.2019)"
+                font.pixelSize: Theme.fontSizeSmall
+            }
+            Label {
+                width: parent.width
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: Theme.fontSizeSmall
+                text: "- Animate victory screen"
+            }
+            SectionHeader {
                 text: "Picross v2.4.1 (13.2.2019)"
                 font.pixelSize: Theme.fontSizeSmall
             }
