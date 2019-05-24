@@ -21,6 +21,22 @@ Page {
     // High score page or level complete page?
     property bool highScorePage: false
 
+    property var shuffledIndices: []
+    property int animIndex
+    property int animationDelay: 90 - Math.floor(10 * Math.log(gDimension * gDimension))
+
+    Timer {
+        id: animationTimer
+        interval: animationDelay
+        repeat: true
+        triggeredOnStart: false
+        onTriggered: {
+            repeater.itemAt(shuffledIndices[animIndex]).opacity = 0.5
+            if(--animIndex < 0)
+                stop()
+        }
+    }
+
     Component.onCompleted:{
 
         // Prepare high score screen
@@ -47,7 +63,6 @@ Page {
         // Prepare the next level
         if(!highScorePage && status == PageStatus.Active) {
 
-            // Prepare the next level
             if(!game.allLevelsCompleted) {
                 game.gState = "loading"
                 game.diff=nextDiff
@@ -58,11 +73,29 @@ Page {
                 game.pause = true
                 game.time = 0
             }
-
-            // Clear loaded level
             else {
                 game.clearData()
             }
+
+            // Get the filled indices
+            for(var i = 0; i < repeater.count; i++) {
+                if(repeater.itemAt(i).color === Theme.highlightColor)
+                    shuffledIndices.push(i)
+            }
+
+            // Shuffle it
+            var iCurr, iRand, vTemp
+            iCurr = shuffledIndices.length
+            while(iCurr > 0) {
+                iRand = Math.floor(Math.random() * iCurr);
+                vTemp = shuffledIndices[--iCurr];
+                shuffledIndices[iCurr] = shuffledIndices[iRand];
+                shuffledIndices[iRand] = vTemp;
+            }
+
+            animIndex = shuffledIndices.length - 1
+
+            animationTimer.start()
         }
     }
 
@@ -116,13 +149,19 @@ Page {
                 spacing: Theme.paddingLarge / gDimension
                 property int rectSize: (myFinalGrid.width-(gDimension-1)*myFinalGrid.spacing)/gDimension
                 Repeater{
+                    id: repeater
                     model: gGridModel
                     Rectangle{
                         width: myFinalGrid.rectSize
                         height: myFinalGrid.rectSize
                         radius: width * 0.1
-                        opacity: 0.5
+                        opacity: highScorePage ? 0.5 : 0.0
                         color: myEstate==="full"?Theme.highlightColor:"transparent"
+                        Behavior on opacity {
+                            NumberAnimation {
+                                duration: 100
+                            }
+                        }
                     }
                 }
             }
