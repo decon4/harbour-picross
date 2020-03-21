@@ -200,8 +200,8 @@ ApplicationWindow{
         if(DB.getTime(diff, level) === 0 || DB.getTime(diff, level) > time)
             DB.setTime(diff, level, time)
         pageStack.replace(Qt.resolvedUrl("pages/ScorePage.qml"))
-        allLevelsCompleted = DB.numCompletedLevels() === Levels.getNumLevels()
-        levelsCompleted = DB.getCompletedLevelsTotal()
+        levelsCompleted = DB.numCompletedLevels()
+        allLevelsCompleted = levelsCompleted === Levels.getNumLevels()
     }
 
     function clickSelectedCell() {
