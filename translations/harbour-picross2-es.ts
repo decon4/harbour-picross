@@ -4,17 +4,17 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="16"/>
+        <location filename="../qml/pages/About.qml" line="17"/>
         <source>Translations</source>
         <translation>Traducciones</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="48"/>
+        <location filename="../qml/pages/About.qml" line="51"/>
         <source>What&apos;s new?</source>
         <translation>Novedades</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="53"/>
+        <location filename="../qml/pages/About.qml" line="55"/>
         <source>Developed by</source>
         <translation>Desarrollado por</translation>
     </message>
@@ -22,6 +22,11 @@
         <location filename="../qml/pages/About.qml" line="69"/>
         <source>Maintainer</source>
         <translation>Mantenimiento</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About.qml" line="85"/>
+        <source>If you like my work and would like to support me, you can buy me a coffee!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

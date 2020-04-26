@@ -19,6 +19,10 @@
         <source>Translations</source>
         <translation>Traductions</translation>
     </message>
+    <message>
+        <source>If you like my work and would like to support me, you can buy me a coffee!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
