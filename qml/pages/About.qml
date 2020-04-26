@@ -79,6 +79,26 @@ Page {
                 text: "GitHub"
                 onClicked: Qt.openUrlExternally("https://github.com/direc85/harbour-picross")
             }
+            BackgroundItem {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: Theme.iconSizeExtraLarge * 1.2
+                height: Theme.iconSizeExtraLarge * 1.2
+                onClicked: Qt.openUrlExternally("https://ko-fi.com/direc85")
+                contentItem.radius: Theme.paddingSmall
+                Image {
+                    anchors.centerIn: parent
+                    source: Qt.resolvedUrl("/usr/share/harbour-picross2/images/Ko-fi_Icon_RGB_rounded.png")
+                    width: Theme.iconSizeExtraLarge
+                    height: Theme.iconSizeExtraLarge
+                    smooth: true
+                    asynchronous: true
+                }
+            }
+            AboutLabel {
+                font.pixelSize: Theme.fontSizeMedium
+                color: Theme.secondaryColor
+                text: qsTr("If you like my work and would like to support me, you can buy me a coffee!")
+            }
         }
     }
 }

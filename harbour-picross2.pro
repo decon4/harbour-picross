@@ -54,3 +54,8 @@ CONFIG += sailfishapp_i18n
 
 TRANSLATIONS += \
     translations/*.ts
+
+images.files = images
+images.path = /usr/share/$${TARGET}
+
+INSTALLS += images
