@@ -17,6 +17,7 @@ CONFIG += sailfishapp_qml
 QT += sql core
 
 DISTFILES += \
+    qml/components/AboutLabel.qml \
     qml/components/Case.qml \
     qml/components/Cursor.qml \
     qml/components/Grille.qml \

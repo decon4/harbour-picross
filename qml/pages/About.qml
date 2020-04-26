@@ -1,12 +1,13 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../components"
 
 Page {
     id: aboutPage
 
     SilicaFlickable {
         id: aboutFlickable
-        contentHeight: mainColumn.height
+        contentHeight: mainColumn.height + header.height + Theme.paddingMedium
         anchors.fill: parent
 
         VerticalScrollDecorator { flickable: aboutFlickable }
@@ -16,6 +17,10 @@ Page {
                 text: qsTr("Translations")
                 onClicked: pageStack.push(Qt.resolvedUrl("Translations.qml"))
             }
+        }
+
+        PageHeader {
+            id: header
         }
 
         Column {
@@ -33,14 +38,12 @@ Page {
                 height: width
                 source: "/usr/share/icons/hicolor/172x172/apps/harbour-picross2.png"
             }
-            Label {
+            AboutLabel {
                 text: "Picross v2.4.2"
-                anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeExtraLarge
             }
-            Label {
+            AboutLabel {
                 text: "24.5.2019"
-                anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeSmall
             }
             Button{
@@ -48,14 +51,12 @@ Page {
                 text: qsTr("What's new?")
                 onClicked: pageStack.push(Qt.resolvedUrl("WhatsNew.qml"))
             }
-            Label {
-                anchors.horizontalCenter: parent.horizontalCenter
+            AboutLabel {
                 text: qsTr("Developed by")
                 font.pixelSize: Theme.fontSizeLarge
                 color: Theme.highlightColor
             }
-            Label {
-                anchors.horizontalCenter: parent.horizontalCenter
+            AboutLabel {
                 text: "Baspar"
                 font.pixelSize: Theme.fontSizeMedium
             }
@@ -64,14 +65,12 @@ Page {
                 text: "GitHub"
                 onClicked: Qt.openUrlExternally("https://github.com/Baspar/harbour-picross")
             }
-            Label {
-                anchors.horizontalCenter: parent.horizontalCenter
+            AboutLabel {
                 text: qsTr("Maintainer")
                 font.pixelSize: Theme.fontSizeLarge
                 color: Theme.highlightColor
             }
-            Label {
-                anchors.horizontalCenter: parent.horizontalCenter
+            AboutLabel {
                 text: "direc85"
                 font.pixelSize: Theme.fontSizeMedium
             }
