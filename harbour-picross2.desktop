@@ -7,3 +7,6 @@ Name=Picross 2
 Name[fr]=Picross 2
 Name[it]=Picross 2
 Name[fi]=Picross 2
+
+[X-HarbourBackup]
+BackupPathList=.local/share/harbour-picross2/
