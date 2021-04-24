@@ -73,7 +73,7 @@
 - FIX: Wrong coloring for headers (Bug #2 on GitHub)
 - Levels added: 1 Easy, 1 Medium, 2 Expert, 1 Hard, 6 Insane
 
-* Fri Aug 19 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.4-0
+* Sat Aug 19 2015 Bastien Laine <bastien.laine@insa-rouen.fr> 1.4-0
 - FIX: arrows and cross visible after app minimized
 - Real-time "cheat"
 - Some design modifications
