@@ -12,7 +12,7 @@ Page{
 
     SilicaFlickable {
         id: newsFlickable
-        contentHeight: mainColumn.height
+        contentHeight: mainColumn.height + Theme.paddingLarge
         anchors.top: newsTitle.bottom
         anchors.left: parent.left
         anchors.right: parent.right
@@ -58,9 +58,8 @@ Page{
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeSmall
-                text:
-"- Added simple statistics to welcome page
-- Added Polish and Spanish translations"
+                text: "- Added simple statistics to welcome page\n"+
+                      "- Added Polish and Spanish translations"
             }
             SectionHeader {
                 text: "Picross v2.3 (17.12.2018)"
@@ -72,17 +71,17 @@ Page{
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeSmall
                 text:
-"- What's new page added in About page
-- Keypad hint added
-- Dragging difficulty bar handled correctly
-- Add indicator for saved level
-- Fix level loading indicator
-- Fix keypad cursor wrapping
-- Less opaque grid in application cover
-- Cross made shorter and bolder (again)
-- Added version and date to About page
-- Level select dialog uses SQLite more effectively
-- Code cleanup, reorganisation and clarification"
+                    "- What's new page added in About page\n"+
+                    "- Keypad hint added\n"+
+                    "- Dragging difficulty bar handled correctly\n"+
+                    "- Add indicator for saved level\n"+
+                    "- Fix level loading indicator\n"+
+                    "- Fix keypad cursor wrapping\n"+
+                    "- Less opaque grid in application cover\n"+
+                    "- Cross made shorter and bolder (again)\n"+
+                    "- Added version and date to About page\n"+
+                    "- Level select dialog uses SQLite more effectively\n"+
+                    "- Code cleanup, reorganisation and clarification"
             }
             SectionHeader {
                 text: "Picross v2.2 (09.12.2018)"
@@ -93,15 +92,14 @@ Page{
                 wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeSmall
-                text:
-"- On-screen keypad
-- Disable cover action if already on level select
-- Code reorganisation
-- Make flash animation weaker and shorter
-- Reseting settings actually works now
-- Fix stuttering level selection
-- Add loading indicator to main page
-- Auto save when entering level select"
+                text: "- On-screen keypad\n"+
+                      "- Disable cover action if already on level select\n"+
+                      "- Code reorganisation\n"+
+                      "- Make flash animation weaker and shorter\n"+
+                      "- Reseting settings actually works now\n"+
+                      "- Fix stuttering level selection\n"+
+                      "- Add loading indicator to main page\n"+
+                      "- Auto save when entering level select"
             }
             SectionHeader {
                 text: "Picross v2.1 (07.12.2018)"
@@ -113,7 +111,7 @@ Page{
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeSmall
                 text:
-"- Don't start next levels game timer in winning screen"
+                    "- Don't start next levels game timer in winning screen"
             }
             SectionHeader {
                 text: "Picross v2.0 (29.11.2018)"
@@ -125,16 +123,15 @@ Page{
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: Theme.fontSizeSmall
                 text:
-"- Fix: level selection empty
-- QML-only application, fix QML warnings
-- Finnish translation
-- Fixed level selection layout
-- Redesign many UI elements
-- Many parts rewritten or revised
-- Retouched zoom levels
-- Option for automatic grid size
-- Update icons
-" // Newline intentional
+                    "- Fix: level selection empty\n"+
+                    "- QML-only application, fix QML warnings\n"+
+                    "- Finnish translation\n"+
+                    "- Fixed level selection layout\n"+
+                    "- Redesign many UI elements\n"+
+                    "- Many parts rewritten or revised\n"+
+                    "- Retouched zoom levels\n"+
+                    "- Option for automatic grid size\n"+
+                    "- Update icons"
             }
         }
     }
