@@ -1,7 +1,7 @@
 /**
  * Picross, a picross/nonogram game for Sailfish
  *
- * Copyright (C) 2019-2020 Matti Viljanen
+ * Copyright (C) 2019-2022 Matti Viljanen
  *
  * Picross is free software: you can redistribute it and/or modify it under the terms of the
  * GNU General Public License as published by the Free Software Foundation, either version 3 of the
