@@ -10,3 +10,6 @@ Name[fi]=Picross 2
 
 [X-HarbourBackup]
 BackupPathList=.local/share/harbour-picross2/
+
+[X-Sailjail]
+Permissions=
