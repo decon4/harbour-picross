@@ -44,6 +44,29 @@ DISTFILES += \
     scripts/genPicross.sh \
     harbour-picross2.desktop
 
+SOURCES += \
+    qml/components/AboutLabel.qml \
+    qml/components/Case.qml \
+    qml/components/Cursor.qml \
+    qml/components/Grille.qml \
+    qml/components/Key.qml \
+    qml/components/KeyPad.qml \
+    qml/components/SolvedGrid.qml \
+    qml/components/UnZoomButton.qml \
+    qml/components/WholeGrid.qml \
+    qml/pages/About.qml \
+    qml/pages/MainPage.qml \
+    qml/pages/NewGame.qml \
+    qml/pages/ScorePage.qml \
+    qml/pages/Settings.qml \
+    qml/pages/Translations.qml\
+    qml/pages/WhatsNew.qml \
+    qml/DB.js \
+    qml/Levels.js \
+    qml/Source.js \
+    qml/harbour-picross2.qml \
+    qml/cover/CoverPage.qml
+
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 OTHER_FILES += translations/*.ts
@@ -53,7 +76,12 @@ OTHER_FILES += translations/*.ts
 CONFIG += sailfishapp_i18n
 
 TRANSLATIONS += \
-    translations/*.ts
+    translations/harbour-picross2-es.ts \
+    translations/harbour-picross2-fi.ts \
+    translations/harbour-picross2-fr.ts \
+    translations/harbour-picross2-it.ts \
+    translations/harbour-picross2-pl.ts \
+    translations/harbour-picross2.ts
 
 images.files = images
 images.path = /usr/share/$${TARGET}

@@ -4,20 +4,20 @@
 <context>
     <name>About</name>
     <message>
-        <source>Developed by</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Maintainer</source>
-        <translation type="unfinished"></translation>
+        <source>Translations</source>
+        <translation>Traduzioni</translation>
     </message>
     <message>
         <source>What&apos;s new?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Translations</source>
-        <translation>Traduzioni</translation>
+        <source>Developed by</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maintainer</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>If you like my work and would like to support me, you can buy me a coffee!</source>
@@ -961,16 +961,16 @@ guesses</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Try the new on-screen keypad in Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Welcome back!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You have completed
 %1 / %2 levels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try the new on-screen keypad in Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1095,6 +1095,14 @@ guesses</translation>
         <translation>Azzero le impostazioni</translation>
     </message>
     <message>
+        <source>Clearing all databases</source>
+        <translation>Cancella tutte le basi dati</translation>
+    </message>
+    <message>
+        <source>Clear all databases</source>
+        <translation>Cancella tutte le basi dati</translation>
+    </message>
+    <message>
         <source>Vibrate when press-and-hold</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1117,14 +1125,6 @@ guesses</translation>
     <message>
         <source>Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Clearing all databases</source>
-        <translation>Cancella tutte le basi dati</translation>
-    </message>
-    <message>
-        <source>Clear all databases</source>
-        <translation>Cancella tutte le basi dati</translation>
     </message>
 </context>
 <context>

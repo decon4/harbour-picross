@@ -4,23 +4,23 @@
 <context>
     <name>About</name>
     <message>
-        <source>Developed by</source>
-        <translation type="unfinished"></translation>
+        <source>Translations</source>
+        <translation>Traductions</translation>
     </message>
     <message>
-        <source>Maintainer</source>
-        <translation type="unfinished"></translation>
+        <source>If you like my work and would like to support me, you can buy me a coffee!</source>
+        <translation>Si vous aimez mon travail et que vous voulez me soutenir, vous poudvez m&apos;acheter un café !</translation>
     </message>
     <message>
         <source>What&apos;s new?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Translations</source>
-        <translation>Traductions</translation>
+        <source>Developed by</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>If you like my work and would like to support me, you can buy me a coffee!</source>
+        <source>Maintainer</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -961,16 +961,16 @@ temporaires</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Try the new on-screen keypad in Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Welcome back!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You have completed
 %1 / %2 levels.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Try the new on-screen keypad in Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1111,20 +1111,20 @@ temporaires</translation>
         <translation>Zoomer les allusions</translation>
     </message>
     <message>
-        <source>Show gamepad</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Clearing all databases</source>
         <translation>Effacement de toutes les données</translation>
     </message>
     <message>
         <source>Clear all databases</source>
         <translation>Effacement de toutes les données</translation>
+    </message>
+    <message>
+        <source>Show gamepad</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use on-screen arrows, action button and cursor. It supports Bluetooth keyboards, too!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
