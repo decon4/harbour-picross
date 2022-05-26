@@ -13,3 +13,5 @@ BackupPathList=.local/share/harbour-picross2/
 
 [X-Sailjail]
 Permissions=
+OrganizationName=harbour-picross2
+ApplicationName=harbour-picross2
