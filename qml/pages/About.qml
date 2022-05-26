@@ -56,11 +56,11 @@ Page {
                 source: "/usr/share/icons/hicolor/172x172/apps/harbour-picross2.png"
             }
             AboutLabel {
-                text: "Picross v2.4.2"
+                text: "Picross v2.5.0"
                 font.pixelSize: Theme.fontSizeExtraLarge
             }
             AboutLabel {
-                text: "24.5.2019"
+                text: "21.2.2022"
                 font.pixelSize: Theme.fontSizeSmall
             }
             Button{

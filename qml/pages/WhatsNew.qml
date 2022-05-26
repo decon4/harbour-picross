@@ -46,6 +46,21 @@ Page{
             spacing: Theme.paddingSmall
 
             SectionHeader {
+                text: "Picross v2.5.0 (13.04.2022)"
+                font.pixelSize: Theme.fontSizeSmall
+            }
+            Label {
+                width: parent.width
+                wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.pixelSize: Theme.fontSizeSmall
+                text: "- Add support for My Backup\n"+
+                      "- Fix bogus date in release notes\n"+
+                      "- Add Ko-Fi link\n"+
+                      "- Add empty Sailjail permission\n"+
+                      "- Fix and regenerate translations"
+            }
+            SectionHeader {
                 text: "Picross v2.4.2 (24.5.2019)"
                 font.pixelSize: Theme.fontSizeSmall
             }
