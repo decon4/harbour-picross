@@ -1,3 +1,7 @@
+* Thu May 26 2022Matti Viljanen <matti.viljanen@kapsi.fi> 2.5.1-1
+- Set Sailjail organisation and application
+- Fix accessing data store i.e. saving progress
+
 * Fri Apr 9 2021 Matti Viljanen <matti.viljanen@kapsi.fi> 2.5.0-1
 - Add support for My Backup
 - Fix bogus date in release notes
