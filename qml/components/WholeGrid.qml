@@ -105,9 +105,9 @@ Item{
                 width: parent.width
                 height: parent.height
                 id: indicUpFlick
+                flickableDirection: Flickable.HorizontalFlick
                 contentHeight: height
                 contentWidth: game.zoomIndic?flick.contentWidth:parent.width
-                contentX: game.zoomIndic?flick.contentX:0
                 VerticalScrollDecorator {}
                 HorizontalScrollDecorator {}
                 Row{
@@ -294,9 +294,9 @@ Item{
                 width: parent.width
                 height: parent.height
                 id: indicLeftFlick
+                flickableDirection: Flickable.VerticalFlick
                 contentHeight: game.zoomIndic?flick.contentHeight:parent.height
                 contentWidth: width
-                contentY: game.zoomIndic?flick.contentY:0
                 VerticalScrollDecorator {}
                 HorizontalScrollDecorator {}
                 Column{
@@ -454,8 +454,6 @@ Item{
             id: flick
             contentWidth: game.gridSize*unitSize+(game.gridSize-1)*insideBorderSize
             contentHeight: column.height
-            contentX: game.zoomIndic?indicUpFlick.contentX:0
-            contentY: game.zoomIndic?indicLeftFlick.contentX:0
             VerticalScrollDecorator {}
             HorizontalScrollDecorator {}
 
@@ -482,4 +480,30 @@ Item{
         width: parent.width
         anchors.bottom: parent.bottom
     }
+
+    states: [
+        State {
+            name: "swipe_indic_up"
+            when: game.zoomIndic && indicUpFlick.moving
+            PropertyChanges { target: flick; contentX : indicUpFlick.contentX; restoreEntryValues: false }
+        },
+        State {
+            name: "swipe_indic_left"
+            when: game.zoomIndic && indicLeftFlick.moving
+            PropertyChanges { target: flick; contentY : indicLeftFlick.contentY; restoreEntryValues: false }
+        },
+        State {
+            name: "zoomed"
+            when: game.zoomIndic
+            PropertyChanges { target: indicUpFlick; contentX : flick.contentX; restoreEntryValues: false }
+            PropertyChanges { target: indicLeftFlick; contentY : flick.contentY; restoreEntryValues: false }
+        },
+        State {
+            name: ""
+            PropertyChanges { target: indicUpFlick; contentX : 0; restoreEntryValues: false }
+            PropertyChanges { target: indicLeftFlick; contentY : 0; restoreEntryValues: false }
+            PropertyChanges { target: flick; contentX : 0; restoreEntryValues: false }
+            PropertyChanges { target: flick; contentY : 0; restoreEntryValues: false }
+        }
+    ]
 }
