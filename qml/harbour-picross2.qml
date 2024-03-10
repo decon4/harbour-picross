@@ -53,6 +53,7 @@ ApplicationWindow{
     property int time: 0
 
     property bool guessMode: false
+    property bool validateMode: false
     property string slideMode: ""
     property bool won: false
     property bool pause: false

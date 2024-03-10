@@ -971,6 +971,14 @@ guesses</source>
 %1 / %2 levels.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Validate mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit validate mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewGame</name>

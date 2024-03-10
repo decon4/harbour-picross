@@ -390,6 +390,14 @@ Page {
                 }
             }
             MenuItem {
+                id: menuValidate
+                visible: game.gridSize!==0
+                text: !game.validateMode ? qsTr("Validate mode") : qsTr("Exit validate mode")
+                onClicked: {
+                    game.validateMode = !game.validateMode
+                }
+            }
+            MenuItem {
                 id: menuClear
                 visible: game.gridSize!==0 && !game.guessMode
                 text: qsTr("Clear grid")

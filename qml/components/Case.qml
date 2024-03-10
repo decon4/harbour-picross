@@ -23,6 +23,20 @@ Item {
     property string estate
     property int myID
 
+    readonly property bool invalid: {
+        switch (estate) {
+        case "full":
+        case "guess_full":
+            return game.solvedGrid.get(myID).myEstate !== "full"
+        case "hint":
+        case "guess_hint":
+            return game.solvedGrid.get(myID).myEstate === "full"
+        default:
+            break
+        }
+        return false
+    }
+
     id: thisrect
     width: unitSize
     height: width
@@ -34,6 +48,16 @@ Item {
         radius: width * 0.1
         Behavior on color {ColorAnimation{duration: 100}}
         Behavior on opacity {NumberAnimation{duration: 100}}
+
+        Rectangle {
+            anchors.fill: parent
+            visible: game.validateMode && thisrect.invalid
+            color: "transparent"
+            border {
+                width: Math.max(0.1 * parent.width, 1)
+                color: "red"
+            }
+        }
     }
 
     Canvas{

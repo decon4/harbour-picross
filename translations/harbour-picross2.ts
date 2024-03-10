@@ -971,6 +971,14 @@ guesses</source>
         <source>Try the new on-screen keypad in Settings</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Validate mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit validate mode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NewGame</name>
